@@ -1,0 +1,1198 @@
+/* ========================================
+   BASIC RESET
+======================================== */
+
+* {
+  box-sizing: border-box;
+  font-variant-numeric: slashed-zero !important;
+  font-feature-settings: "zero" 1 !important;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #222222;
+  background: #fff4e7;
+}
+
+body.filter-is-open {
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.site-header {
+  background: #f26500;
+  color: #ffffff;
+}
+
+.header-inner {
+  max-width: 1366px;
+
+  min-height: clamp(
+    100px,
+    calc(72px + 3.5vw),
+    120px
+  );
+
+  margin: 0 auto;
+
+  padding-block: clamp(
+    18px,
+    calc(9.5px + 1.06vw),
+    24px
+  );
+
+  padding-inline: clamp(
+    20px,
+    4.4vw,
+    60px
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo img {
+  display: block;
+
+  width: 250px;
+  height: auto;
+}
+
+
+/* ========================================
+   DESKTOP NAVIGATION
+======================================== */
+
+.desktop-nav {
+  display: flex;
+
+  gap: 28px;
+}
+
+.desktop-nav a {
+  color: #f9e2c2;
+
+  text-decoration: none;
+
+  font-size: 20px;
+}
+
+.desktop-nav a:hover {
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+
+/* ========================================
+   MOBILE MENU ICON
+======================================== */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 8px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  height: 2px;
+
+  margin: 6px 0;
+
+  background: #ffffff;
+}
+
+
+/* ========================================
+   LISTING TOOLBAR
+======================================== */
+
+.listing-toolbar {
+  background: #f79400;
+
+  color: #ffffff;
+}
+
+.toolbar-inner {
+  max-width: 1366px;
+  min-height: 72px;
+
+  margin: 0 auto;
+
+  padding-block: 12px;
+
+  padding-inline: clamp(
+    20px,
+    4.4vw,
+    60px
+  );
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   RESULT COUNT
+======================================== */
+
+.result-count {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   DISPLAY CONTROL
+======================================== */
+
+.display-control {
+  position: relative;
+
+  margin-right: auto;
+
+  white-space: nowrap;
+}
+
+.display-trigger {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  list-style: none;
+
+  cursor: pointer;
+}
+
+
+/* Remove browser's default details marker */
+
+.display-trigger::marker {
+  content: "";
+}
+
+.display-trigger::-webkit-details-marker {
+  display: none;
+}
+
+
+/* Keep selected value at constant width */
+
+#display-value {
+  display: inline-block;
+
+  min-width: 30px;
+
+  text-align: center;
+}
+
+
+/* Custom display arrow */
+
+.display-arrow {
+  width: 8px;
+  height: 8px;
+
+  margin-left: 2px;
+  margin-right: 2px;
+
+  border-right: 1.5px solid #f9e2c2;
+  border-bottom: 1.5px solid #f9e2c2;
+
+  transform: rotate(225deg);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.15s ease;
+}
+
+
+/* Display arrow hover / open state */
+
+.display-control:hover .display-arrow,
+.display-control[open] .display-arrow {
+  transform: rotate(405deg);
+
+  border-color: #ffffff;
+}
+
+
+/* Dropdown menu */
+
+.display-menu {
+  display: none;
+
+  position: absolute;
+
+  top: calc(100% + 10px);
+  left: 48px;
+
+  min-width: 72px;
+
+  padding: 6px 0;
+
+  background: #ffffff;
+
+  border-radius: 2px;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.18);
+
+  z-index: 20;
+}
+
+
+/* Show dropdown */
+
+.display-control:hover .display-menu,
+.display-control[open] .display-menu {
+  display: block;
+}
+
+
+/* Dropdown options */
+
+.display-menu button {
+  display: block;
+
+  width: 100%;
+
+  border: 0;
+
+  padding: 8px 14px;
+
+  background: transparent;
+
+  color: #333333;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.display-menu button:hover {
+  background: #eef4fb;
+}
+
+.display-menu button.selected-option {
+  background: #dce9f7;
+
+  font-weight: 600;
+}
+
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.page-arrow {
+  width: 36px;
+  height: 36px;
+
+  flex: 0 0 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+
+  padding: 0;
+
+  background: transparent;
+
+  color: #f9e2c2;
+
+  cursor: pointer;
+}
+
+.page-arrow svg {
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 1.5;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+.page-arrow:hover {
+  color: #ffffff;
+}
+
+
+/* Current page */
+
+.page-number {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.page-number strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 46px;
+  height: 34px;
+
+  padding: 0 10px;
+
+  background: #f9e2c2;
+  border-radius: 2px;
+
+  color: #555555;
+
+  text-align: center;
+}
+
+
+/* ========================================
+   FILTER BUTTON
+======================================== */
+
+.filter-button {
+  border: 1px solid rgba(
+    255,
+    255,
+    255,
+    0.55
+  );
+
+  padding: 12px 18px;
+
+  color: #ffffff;
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background: #eb6608;
+}
+
+
+/* ========================================
+   CELL LINE LISTING
+======================================== */
+
+.cell-line-list {
+  max-width: 1366px;
+
+  margin: 0 auto;
+
+  padding-inline: clamp(
+    20px,
+    4.4vw,
+    60px
+  );
+
+  padding-top: 28px;
+}
+
+
+/* Seven-column structure */
+
+.cell-line-headings,
+.cell-line-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(170px, 1.05fr)
+    minmax(0, 1.55fr)
+    minmax(0, 1.10fr)
+    minmax(0, 1.65fr)
+    minmax(0, 0.70fr)
+    minmax(105px, 1.25fr)
+    minmax(0, 1.15fr);
+
+  column-gap: clamp(
+    14px,
+    1.75vw,
+    24px
+  );
+}
+
+
+/* Column headings */
+
+.cell-line-headings {
+  padding-bottom: 10px;
+
+  border-bottom: 1px solid #b8b8b8;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Individual table row */
+
+.cell-line-row {
+  padding-block: 18px;
+
+  border-bottom: 1px solid #d5d5d5;
+
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+
+/* Identifier link */
+
+.cell-identifier a {
+  color: #222222;
+
+  font-weight: 600;
+
+  text-decoration-line: underline;
+  text-decoration-color: #2d9afc;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+
+  white-space: nowrap;
+}
+
+.cell-identifier a:hover {
+  color: #2d9afc;
+}
+
+.cell-locus {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.locus-entry {
+  display: block;
+}
+
+.locus-entry + .locus-entry {
+  margin-top: 4px;
+}
+
+
+/* ========================================
+   DESKTOP TABLE FIELD
+   961px and above
+======================================== */
+
+@media (min-width: 961px) {
+
+  .cell-line-list {
+    width: calc(
+      100% - (2 * clamp(16px, 2.2vw, 30px))
+    );
+
+    max-width: 1306px;
+
+    margin: 28px auto 0;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #c8c8c8;
+    border-radius: 2px;
+  }
+
+}
+
+
+/* ========================================
+   NARROW DESKTOP TABLE
+   961px–1000px
+======================================== */
+
+@media (max-width: 1000px) and (min-width: 961px) {
+
+  .cell-line-list {
+    padding: clamp(
+      20px,
+      2.5vw,
+      30px
+    );
+  }
+
+  .cell-line-headings,
+  .cell-line-row {
+    column-gap: clamp(
+      12px,
+      1.4vw,
+      16px
+    );
+  }
+
+}
+
+
+/* ========================================
+   COMPACT DESKTOP / TABLET
+   801px–1099px
+======================================== */
+
+@media (max-width: 1099px) and (min-width: 801px) {
+
+  .current-search-label {
+    display: none;
+  }
+
+  .toolbar-inner {
+    gap: 20px;
+  }
+
+}
+
+
+/* ========================================
+   WIDE CELL LINE CARD
+   601px–960px
+======================================== */
+
+@media (max-width: 960px) and (min-width: 601px) {
+
+  .cell-line-headings {
+    display: none;
+  }
+
+
+  /* Change table row to wide card */
+
+  .cell-line-row {
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1.35fr)
+      minmax(0, 1fr);
+
+    grid-template-areas:
+      "identifier identifier"
+      "alternative alternative"
+      "contact variant"
+      "disease locus"
+      "disease status";
+
+    column-gap: 32px;
+    row-gap: 20px;
+
+    padding: 24px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
+
+    background: #ffffff;
+  }
+
+
+  /* Position fields */
+
+  .cell-identifier {
+    grid-area: identifier;
+  }
+
+  .cell-alternative {
+    grid-area: alternative;
+  }
+
+  .cell-contact {
+    grid-area: contact;
+  }
+
+  .cell-disease {
+    grid-area: disease;
+  }
+
+  .cell-variant {
+    grid-area: variant;
+  }
+
+  .cell-locus {
+    grid-area: locus;
+  }
+
+  .cell-status {
+    grid-area: status;
+  }
+
+
+  /* Labels within card */
+
+  .cell-field::before {
+    content: attr(data-label);
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+}
+
+@media (max-width: 960px) {
+  .cell-line-row + .cell-line-row {
+    margin-top: 18px;
+  }
+}
+
+
+/* ========================================
+   HEADER NAVIGATION
+   860px AND BELOW
+======================================== */
+
+@media (max-width: 860px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+   800px AND BELOW
+======================================== */
+
+@media (max-width: 800px) {
+
+  .logo img {
+    width: 245px;
+
+    max-width: calc(
+      100vw - 100px
+    );
+  }
+
+
+  /* Remove words Current Search */
+
+  .current-search-label {
+    display: none;
+  }
+
+
+  /* Remove word Display */
+
+  .display-label {
+    display: none;
+  }
+
+
+  .toolbar-inner {
+    gap: 12px;
+
+    flex-wrap: wrap;
+  }
+
+
+  /* Hide desktop pagination arrows */
+
+  .page-arrow {
+    display: none;
+  }
+
+
+  .page-number strong {
+    background: rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+    color: #ffffff;
+  }
+
+
+  .filter-button {
+    margin-left: auto;
+  }
+
+}
+
+/* ========================================
+   FILTER OVERLAY
+======================================== */
+
+.filter-overlay {
+  display: none;
+
+  position: fixed;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  /*
+  Same alignment edge used by the header.
+
+  Up to 1366px this follows the fluid page gutter.
+  Above 1366px it also accounts for the centred
+  maximum-width header.
+  */
+
+  --page-edge: max(
+    clamp(20px, 4.4vw, 60px),
+    calc((100vw - 1366px) / 2 + 60px)
+  );
+
+  /*
+  The text in the 250px-wide logo begins
+  approximately 93px to the right of the
+  logo symbol's left edge.
+  */
+
+  --logo-text-offset: 93px;
+
+  background: rgba(119, 50, 3, 0.80);
+
+  z-index: 1000;
+
+  padding-bottom: 40px;
+}
+
+
+/* Open state */
+
+.filter-overlay.is-open {
+  display: block;
+}
+
+
+/* ========================================
+   FILTER PANEL
+======================================== */
+
+.filter-panel {
+  width: auto;
+  height: 100%;
+
+  /*
+  DESKTOP:
+  Left aligns with T / P / R of logo text.
+  Right aligns with Contact.
+  */
+
+  margin-left:
+    calc(
+      var(--page-edge) +
+      var(--logo-text-offset)
+    );
+
+  margin-right:
+    var(--page-edge);
+
+  overflow-y: auto;
+
+  background: #fff4e7;
+
+  border-radius: 0 0 2px 2px;
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ========================================
+   FILTER PANEL HEADER
+======================================== */
+
+.filter-panel-header {
+  min-height: 52px;
+
+  padding: 8px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  background: #fff4e7;
+}
+
+
+/* Close button */
+
+.filter-close {
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #222222;
+
+  font-size: 30px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* Filter content */
+
+.filter-panel-content {
+  min-height: 500px;
+
+  padding: 0 30px 30px;
+}
+
+/* ========================================
+   FILTER FORM
+======================================== */
+.filter-form { max-width: 920px; margin: 0 auto; }
+.filter-actions-top, .filter-actions-bottom { display: flex; align-items: center; gap: 24px; padding: 12px 0 22px; }
+.filter-actions-bottom { border-top: 1px solid #cbbba9; padding-top: 26px; margin-top: 8px; }
+.filter-apply-button { border: 0; border-radius: 2px; padding: 13px 22px; background: #f26500; color: #fff; font-weight: 600; cursor: pointer; }
+.filter-clear-button { border: 0; padding: 8px 0; background: transparent; color: #1475bd; font-weight: 600; cursor: pointer; }
+.current-filter-summary { margin: 0 0 20px; }
+.current-filter-summary[hidden] { display: none; }
+.current-filter-title { display: block; font-size: 14px; font-weight: 400; margin-bottom: 8px; }
+.current-filter-values { min-height: 46px; padding: 12px 18px; background: #fff; border: 1px solid #dfcfbd; }
+.current-filter-values { display: flex; flex-wrap: wrap; gap: 8px; }
+.current-filter-value { padding: 6px 9px; background: #eef4fb; border: 1px solid #dfcfbd; font-size: 13px; }
+.filter-section { border-top: 1px solid #cbbba9; }
+.filter-accordion-heading { min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 16px; font-weight: 600; list-style: none; cursor: pointer; }
+.filter-accordion-heading::marker { content: ''; }
+.filter-accordion-heading::-webkit-details-marker { display: none; }
+.filter-accordion-arrow { flex: 0 0 18px; font-size: 25px; line-height: 1; font-weight: 400; text-align: center; }
+.filter-accordion-arrow::before { content: '+'; }
+.filter-accordion[open] > .filter-accordion-heading .filter-accordion-arrow::before { content: '−'; }
+.filter-section-body { padding: 2px 0 25px; }
+.filter-field-label { display: block; font-size: 14px; margin-bottom: 8px; }
+.filter-name-control { position: relative; }
+.filter-text-input { width: 100%; min-height: 44px; padding: 10px 42px 10px 12px; border: 1px solid #b9aa9c; border-radius: 2px; background: #fff; font: inherit; }
+.filter-text-input::placeholder { color: #737373; opacity: 1; }
+.search-icon { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 28px; line-height: 1; pointer-events: none; }
+.filter-examples { margin: 9px 0 0; color: #5f5f5f; font-size: 13px; line-height: 1.5; }
+.filter-checkbox { display: flex; align-items: flex-start; gap: 10px; min-width: 0; font-size: 14px; line-height: 1.4; cursor: pointer; }
+.filter-checkbox input { width: 17px; height: 17px; margin: 1px 0 0; flex: 0 0 17px; accent-color: #f26500; }
+.filter-section-body > .filter-checkbox, .filter-tree-children > .filter-checkbox { margin: 10px 0; }
+.filter-tree-node { margin: 10px 0; }
+.filter-section-body[data-filter-group="Disease"] { display: flex; flex-direction: column; gap: 15px; }
+.filter-section-body[data-filter-group="Disease"] > .filter-checkbox,
+.filter-section-body[data-filter-group="Disease"] > .filter-tree-node { margin: 0; }
+.filter-section-body[data-filter-group="Disease"] > .filter-checkbox,
+.filter-section-body[data-filter-group="Disease"] > .filter-tree-node > .filter-tree-row > .filter-checkbox,
+.filter-section-body[data-filter-group="Disease"] input[value="Epilepsy and Seizure Disorders"] + span { font-weight: 700; }
+.filter-section-body[data-filter-group="Disease"] input[value="Epilepsy"] + span { font-weight: 600; }
+.filter-section-body[data-filter-group="Disease"] .disease-count { font-weight: 400; }
+.filter-count { font-weight: 400; }
+.filter-section-body[data-filter-group="Disease"] > .filter-tree-node > .filter-tree-row > .tree-toggle { height: 20px; }
+.filter-tree-row { display: flex; align-items: flex-start; gap: 10px; }
+.filter-tree-row > .filter-checkbox { flex: 1; }
+.tree-toggle { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 26px; flex: 0 0 28px; padding: 0; border: 1px solid #b9aa9c; border-radius: 2px; background: transparent; color: #222; font-size: 20px; line-height: 1; cursor: pointer; }
+.tree-toggle.tree-chevron { border: 0; }
+.tree-chevron::before { content: ''; width: 9px; height: 9px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); transition: transform 0.2s ease; }
+.tree-chevron[aria-expanded="true"]::before { transform: rotate(135deg); }
+.filter-tree-children { margin-left: 25px; padding-left: 12px; border-left: 1px solid #d8c8b8; }
+.filter-tree-children[hidden] { display: none; }
+.disease-subcategories { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.disease-subcategories > .filter-checkbox { margin: 0; }
+.disease-subcategories > .disease-level-2 { margin-left: 20px; }
+.disease-subcategories > .disease-level-3 { margin-left: 40px; }
+.disease-subcategories > .disease-level-4 { margin-left: 60px; }
+.disease-subcategories > .disease-level-5 { margin-left: 80px; }
+.disease-subcategories > .disease-level-6 { margin-left: 100px; }
+.filter-section-body[data-filter-group="Research organisation"] {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.filter-section-body[data-filter-group="Research organisation"] > .filter-tree-node { margin: 0; }
+.filter-section-body[data-filter-group="Research organisation"] .organisation-subcategories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+.filter-section-body[data-filter-group="Disease"] .disease-subcategories[hidden],
+.filter-section-body[data-filter-group="Research organisation"] .organisation-subcategories[hidden] {
+  display: none;
+}
+.filter-section-body[data-filter-group="Research organisation"] .organisation-subcategories > .filter-checkbox,
+.filter-section-body[data-filter-group="Research organisation"] .organisation-subcategories > .filter-tree-node {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.organisation-root > .filter-tree-row > .filter-checkbox,
+.organisation-institute > .filter-tree-row > .filter-checkbox,
+.organisation-root > .filter-tree-children > .organisation-institute {
+  font-weight: 700;
+}
+.organisation-subcategories > .organisation-level-1 {
+  font-weight: 600;
+}
+.organisation-subcategories > .organisation-level-2 {
+  margin-left: 20px;
+  font-weight: 400;
+}
+
+@media (max-width: 799px) {
+  .filter-section-body[data-filter-group="Disease"] .disease-subcategories {
+    margin-left: 27px;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .filter-section-body[data-filter-group="Disease"] .disease-subcategories > .disease-level {
+    margin-left: 0;
+  }
+
+  .filter-section-body[data-filter-group="Research organisation"] .organisation-subcategories {
+    margin-left: 27px;
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .filter-section-body[data-filter-group="Research organisation"] .organisation-subcategories > .organisation-item {
+    margin-left: 0;
+  }
+}
+
+.filter-subheading { margin: 22px 0 12px; font-size: 13px; font-weight: 700; }
+.variant-help { margin: 3px 0 20px; font-size: 14px; line-height: 1.6; }
+.variant-help a { color: #1475bd; }
+.filter-section-body[data-filter-group="Variant"] > .filter-checkbox { margin: 10px 0; }
+.filter-apply-button:focus-visible, .filter-clear-button:focus-visible, .tree-toggle:focus-visible, .filter-accordion-heading:focus-visible, .filter-close:focus-visible, .filter-text-input:focus-visible { outline: 3px solid #1776ba; outline-offset: 2px; }
+@media (max-width: 700px) { .filter-actions-top, .filter-actions-bottom { gap: 12px; flex-wrap: wrap; } .filter-apply-button { padding: 11px 13px; } .filter-panel-content { padding: 0 18px 25px; } }
+
+/* Accessibility helper */
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+
+/* ========================================
+   FILTER DRAWER ALIGNMENT
+   920px and below
+======================================== */
+
+@media (max-width: 920px) {
+
+  .filter-panel {
+
+    /*
+    At narrower widths the drawer moves left
+    and aligns with the left edge of the
+    Australian logo symbol.
+    */
+
+    margin-left:
+      var(--page-edge);
+
+    margin-right:
+      var(--page-edge);
+  }
+
+}
+
+/* ========================================
+   MOBILE PAGE JUMP
+======================================== */
+
+.mobile-page-jump {
+  display: none;
+}
+
+.mobile-page-jump-button {
+  border: 0;
+
+  padding: 10px 16px;
+
+  border-radius: 2px;
+
+  background: #f26500;
+
+  color: #f9e2c2;
+
+  font: inherit;
+
+  cursor: pointer;
+}
+
+.mobile-page-jump-button strong {
+  color: #ffffff;
+}
+
+.mobile-page-jump-button:hover {
+  color: #ffffff;
+}
+
+
+/* ========================================
+   SMALL SCREEN
+   600px AND BELOW
+======================================== */
+
+@media (max-width: 600px) {
+
+  /* Simplify toolbar */
+
+  .display-control {
+    display: none;
+  }
+
+  .pagination {
+    display: none;
+  }
+
+  .toolbar-inner {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .result-count {
+    margin-right: auto;
+  }
+
+  .filter-button {
+    margin-left: 0;
+  }
+
+
+  /* Mobile page jump */
+
+  .mobile-page-jump {
+    display: flex;
+
+    justify-content: center;
+
+    padding: 18px 20px 12px;
+  }
+
+
+  /* ========================================
+     MOBILE CELL LINE CARD
+  ======================================== */
+
+  .cell-line-headings {
+    display: none;
+  }
+
+  .cell-line-row {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    row-gap: 18px;
+
+    padding: 22px 20px;
+
+    border: 1px solid #d5d5d5;
+    border-radius: 2px;
+
+    background: #ffffff;
+  }
+
+  .cell-field::before {
+    content: attr(data-label);
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .filter-form-intro {
+    display: block;
+  }
+
+  .filter-clear-button {
+    margin-top: 10px;
+  }
+
+  .disease-options {
+    grid-template-columns: 1fr;
+  }
+
+}
