@@ -30,7 +30,7 @@ button {
 ======================================== */
 
 .site-header {
-  background: #f26500;
+  background: #000000;
   color: #ffffff;
 }
 
@@ -70,7 +70,7 @@ button {
 .logo img {
   display: block;
 
-  width: 250px;
+  width: 287.5px;
   height: auto;
 }
 
@@ -86,14 +86,17 @@ button {
 }
 
 .desktop-nav a {
-  color: #f9e2c2;
+  color: #bab9b9;
 
   text-decoration: none;
 
   font-size: 20px;
 }
 
-.desktop-nav a:hover {
+.desktop-nav a:hover,
+.desktop-nav a:active,
+.desktop-nav a:focus-visible,
+.desktop-nav a[aria-current] {
   color: #ffffff;
 
   text-decoration: none;
@@ -723,7 +726,7 @@ button {
 @media (max-width: 800px) {
 
   .logo img {
-    width: 245px;
+    width: 281.75px;
 
     max-width: calc(
       100vw - 100px

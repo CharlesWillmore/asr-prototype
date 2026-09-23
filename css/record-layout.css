@@ -1,0 +1,83 @@
+/* Detail-page layout; shared navigation remains in styles.css. */
+.record-redesign{background:#fff9f3;color:#191715}
+.record-redesign .record-hero{background:transparent;border:0}
+.record-redesign .record-hero-inner{padding-block:36px;align-items:start}
+.record-identity{display:flex;align-items:flex-start;gap:24px;min-width:0}
+.registry-symbol{width:var(--symbol-size,148px);height:var(--symbol-size,148px);flex:none;margin-top:3px}
+.record-redesign .record-eyebrow{font-size:12px;line-height:16px;margin-bottom:12px;color:#757473;font-weight:500}
+.record-redesign h1{line-height:1.15;margin-bottom:16px;overflow-wrap:anywhere}
+.record-redesign .alternative-names{margin:0;font-size:12px;line-height:18px;overflow-wrap:anywhere}
+.record-redesign .alternative-names strong{display:block;font-size:10px;font-weight:500;letter-spacing:.06em;margin-bottom:4px}
+.record-redesign .record-actions{gap:10px}
+.record-redesign .record-actions button{display:grid;place-items:center;border:0;background:transparent;color:#757473;width:44px;height:44px;padding:8px;position:relative;flex:none}
+.record-actions svg{width:28px;height:28px}
+.record-redesign .record-actions button:hover,.record-redesign .record-actions button:focus-visible{color:#ef7d0f;background:transparent}
+.record-redesign :focus-visible{outline:2px solid #b45600;outline-offset:4px}
+.record-redesign a.filter-button{text-decoration:none;display:flex;align-items:center}
+.record-navigator{position:sticky;top:0;z-index:25;background:#fff9f3f5;backdrop-filter:blur(12px);border-block:1px solid #e6dbd0}
+.navigator-inner{max-width:1366px;margin:auto;padding:20px clamp(20px,4.4vw,60px) 12px}
+.navigator-stops{display:flex;justify-content:space-between;gap:20px}
+.navigator-stops a{display:flex;gap:10px;align-items:center;color:#757473;font-size:12px;font-weight:400;line-height:1.4;text-decoration:none;max-width:25%}
+.navigator-stops a:last-child{text-align:right;justify-content:flex-end}
+.navigator-stops svg{width:30px;height:30px;flex:none}
+.navigator-stops a:hover,.navigator-stops a[aria-current="location"]{color:#c15b00}
+.record-navigator input{display:block;width:100%;margin:16px 0 0;height:24px;accent-color:#ef7d0f;cursor:ew-resize}
+.record-redesign .record-content{padding-top:36px}
+.record-redesign .record-section{scroll-margin-top:calc(var(--navigator-height,120px) + 22px)}
+.record-redesign .group-heading{display:flex;align-items:center;gap:12px;margin:0 0 24px;font-size:25px;line-height:1.25;font-weight:300;color:#757473}
+.group-heading svg{width:36px;height:36px;flex:none}
+.record-redesign .record-card{border-color:#e6dbd0}
+.record-redesign .record-card p{max-width:90ch}
+.record-redesign .record-card a,.back-top{color:#995000}
+.record-redesign .record-status{background:#fdecdb;color:#774419;font-size:12px}
+.record-redesign .share-message{background:#191715;z-index:50;max-width:calc(100vw - 44px)}
+@media(max-width:800px){
+ .record-redesign .record-hero-inner{grid-template-columns:1fr;gap:18px;padding-block:28px}
+ .record-identity{gap:16px}.registry-symbol{max-width:112px}
+ .record-redesign h1{font-size:26px}.record-redesign .record-actions{justify-content:flex-start}
+ .navigator-stops{gap:10px}.navigator-stops a{font-size:9px;flex-direction:column;align-items:center;text-align:center;flex:1;max-width:25%;gap:6px}.navigator-stops a:last-child{text-align:center}
+ .navigator-stops svg{width:26px;height:26px}.navigator-inner{padding-top:14px}
+ .record-redesign .group-heading{font-size:22px}.record-redesign .section-heading h2{font-size:22px}
+ .record-redesign .toolbar-inner{gap:12px;flex-wrap:wrap}.record-search-summary{gap:8px;font-size:12px}.record-redesign .filter-button{font-size:11px;padding:10px}
+ .record-redesign .record-card{padding:20px}
+}
+@media print{.site-header,.listing-toolbar,.record-navigator,.record-actions,.back-top,.share-message{display:none!important}.record-redesign{background:#fff}.record-redesign .record-content{padding:0}.record-card{break-inside:avoid}.record-section{margin-bottom:28px}.record-hero-inner{padding-top:0!important}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:800px){.registry-symbol{max-width:none;width:min(var(--symbol-size),90px);height:min(var(--symbol-size),90px)}.record-redesign .desktop-nav.mobile-open{display:flex;position:absolute;top:100%;left:0;right:0;background:#000;padding:20px;flex-wrap:wrap;z-index:40}.record-redesign .site-header{position:relative}}
+.record-navigator input{appearance:none;background:transparent;outline-offset:2px}
+.record-navigator input::-webkit-slider-runnable-track{height:2px;background:#bab9b9;border-radius:0}
+.record-navigator input::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border:0;border-radius:50%;background:#ef7d0f;margin-top:-7px}
+.record-navigator input::-moz-range-track{height:2px;background:#bab9b9}
+.record-navigator input::-moz-range-thumb{width:16px;height:16px;border:0;border-radius:50%;background:#ef7d0f}
+
+/* Compact header moves as one unit once the black navigation scrolls away. */
+.record-fixed-top{position:sticky;top:0;z-index:30;background:#fff9f3;box-shadow:0 2px 5px #1917150a}
+.record-fixed-top .record-navigator{position:static;backdrop-filter:none;background:transparent}
+.record-redesign .record-hero-inner{padding-block:18px;gap:12px 24px}
+.record-redesign h1{font-size:24px;margin-bottom:10px}
+.record-redesign .record-eyebrow{margin-bottom:6px}
+.record-redesign .alternative-names strong{margin-bottom:2px}
+.record-identity{gap:18px}
+.registry-symbol{width:var(--symbol-size,42px);height:var(--symbol-size,42px);max-width:none}
+.navigator-inner{padding-top:12px;padding-bottom:6px}
+.record-navigator input{margin-top:8px}
+.how-made-icon{display:inline-block;width:30px;height:30px;flex:none;background:currentColor;mask:url('../assets/how-made.svg') center/contain no-repeat;-webkit-mask:url('../assets/how-made.svg') center/contain no-repeat}
+.group-heading .how-made-icon{width:36px;height:36px}
+@media(max-width:800px){
+ .record-redesign h1{font-size:19.5px}
+ .record-redesign .record-hero-inner{padding-block:14px;gap:6px;position:relative}
+ .record-redesign .record-actions{position:absolute;right:20px;top:12px;gap:0}
+ .record-redesign .record-actions button{width:32px;height:32px;padding:6px}
+ .record-actions svg{width:20px;height:20px}
+ .record-redesign h1{padding-right:78px}
+ .record-identity{gap:12px}
+ .navigator-stops .how-made-icon{width:26px;height:26px}
+}
+@media print{.record-fixed-top{position:static;box-shadow:none}}
+
+/* Optical alignment supplied in ASR_Symbol_Adjustment.pdf. */
+.registry-symbol{margin-top:var(--symbol-top,0px)}
+.record-navigator input:hover::-webkit-slider-thumb,
+.record-navigator input:active::-webkit-slider-thumb{background:#c15b00}
+.record-navigator input:hover::-moz-range-thumb,
+.record-navigator input:active::-moz-range-thumb{background:#c15b00}
