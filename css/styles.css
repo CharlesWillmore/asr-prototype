@@ -5,7 +5,8 @@
 * {
   box-sizing: border-box;
   font-variant-numeric: slashed-zero !important;
-  font-feature-settings: "zero" 1 !important;
+  /* Inter: slashed zero, lowercase l with a curved tail, uppercase I with crossbars. */
+  font-feature-settings: "zero" 1, "cv05" 1, "cv08" 1 !important;
 }
 
 body {
