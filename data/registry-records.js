@@ -1,14 +1,14 @@
 /* Public Registry snapshot, 23 September 2026. See DATA_SOURCES.md. */
 window.registryRecords = [
   {
-    "id": "MCRIi035-B",
+    "id": "ausMCRIi035-B",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/702/",
     "aliases": [
       "Patient 1-UC-cl5",
       "MCRIi-TC160154-UC-cl5",
       "MCRIi-UC-cl5"
     ],
-    "description": "This induced pluripotent stem cell line was reprogrammed from the fibroblasts of a female NEDESBA (Neurodevelopmental Disorder with Epilepsy, Spasticity and Brain Atrophy) patient using non-integrating sendai viral vectors. MCRIi035-B is described as having a normal karyotype and carries a homozygous splice site variant in the TRAPPC4 gene. Expression of OCT4, NANOG, SSEA-4, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line was reprogrammed from the fibroblasts of a female NEDESBA (Neurodevelopmental Disorder with Epilepsy, Spasticity and Brain Atrophy) patient using non-integrating sendai viral vectors. ausMCRIi035-B is described as having a normal karyotype and carries a homozygous splice site variant in the TRAPPC4 gene. Expression of OCT4, NANOG, SSEA-4, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "Nicole Van Bergen",
     "institution": "Murdoch Children's Research Institute",
     "organisation": [
@@ -29,14 +29,15 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "MCRIi035-B-1",
+    "id": "ausMCRIi035-B-1",
+    "modifications": [{"type": "Isogenic modification", "gene": "TRAPPC4"}],
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/704/",
     "aliases": [
       "MCRIi-GC-cl5.14.9",
       "Patient 1-GC-cl5.14.9",
       "MCRIi-TC160154-GC-cl5.1.49"
     ],
-    "description": "This induced pluripotent stem cell line (MCRIi035-B-1) is a subclone of MCRIi035-B, which was originally reprogrammed from the fibroblasts of a female NEDESBA (Neurodevelopmental Disorder with Epilepsy, Spasticity and Brain Atrophy) patient using non-integrating sendai viral vectors. MCRIi035-B-1 carries heterozygous correction of a homozygous TRAPPC4 variant that was present in the parental cell line. MCRIi035-B-1 is described as having a normal karyotype. Expression of OCT4, NANOG, SSEA-4, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line (ausMCRIi035-B-1) is a subclone of ausMCRIi035-B, which was originally reprogrammed from the fibroblasts of a female NEDESBA (Neurodevelopmental Disorder with Epilepsy, Spasticity and Brain Atrophy) patient using non-integrating sendai viral vectors. ausMCRIi035-B-1 carries heterozygous correction of a homozygous TRAPPC4 variant that was present in the parental cell line. ausMCRIi035-B-1 is described as having a normal karyotype. Expression of OCT4, NANOG, SSEA-4, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "Nicole Van Bergen",
     "institution": "Murdoch Children's Research Institute",
     "organisation": [
@@ -58,11 +59,12 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "MCRIi001-A-3",
+    "id": "ausMCRIi001-A-3",
+    "modifications": [{"type": "Isogenic modification", "gene": "TRPV4"}],
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/537/",
     "aliases": [
       "TRPV4 p.F273L",
-      "MCRIi001-A-2-TRPV4 p.F273L",
+      "ausMCRIi001-A-2-TRPV4 p.F273L",
       "PB001-SOX9tdTom-TRPV4p.F273L",
       "SOX9tdTom-TRPV4 p.F273L"
     ],
@@ -87,7 +89,8 @@ window.registryRecords = [
     "curation": "Not yet reviewed"
   },
   {
-    "id": "WAe009-A-3H",
+    "id": "ausWAe009-A-3H",
+    "modifications": [{"type": "Gene knock out", "gene": "TAFAZZIN"}],
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/770/",
     "aliases": [
       "TAFAZZINΔ3 C15",
@@ -97,7 +100,7 @@ window.registryRecords = [
       "TAFAZZINKO C15",
       "TAZKO C15"
     ],
-    "description": "This induced pluripotent stem cell line is a sub clone of WAe009-A which was originally derived from a female blastocyst. WAe009-A-3H has been modified using CRISPR/Cas9 to induce compound heterozygous mutations which cause skipping of TAFAZZIN exon 3. The line represents a model of the mitochondrial disease Barth Syndrome. Expression of OCT4, NANOG, SSEA-4, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line is a sub clone of ausWAe009-A which was originally derived from a female blastocyst. ausWAe009-A-3H has been modified using CRISPR/Cas9 to induce compound heterozygous mutations which cause skipping of TAFAZZIN exon 3. The line represents a model of the mitochondrial disease Barth Syndrome. Expression of OCT4, NANOG, SSEA-4, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "Ann Frazier",
     "institution": "Murdoch Children's Research Institute",
     "organisation": [
@@ -116,12 +119,12 @@ window.registryRecords = [
     "curation": "Reviewed"
   },
   {
-    "id": "AIBNi001-A",
+    "id": "ausAIBNi001-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/769/",
     "aliases": [
       "GENIE 1"
     ],
-    "description": "This induced pluripotent stem cell line was reprogrammed from the peripheral blood mononuclear cells of a female epilepsy patient using non-integrating sendai viral vectors. AIBNi001-A is described as having a normal karyotype. Expression of OCT4, SOX2, NANOG, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line was reprogrammed from the peripheral blood mononuclear cells of a female epilepsy patient using non-integrating sendai viral vectors. ausAIBNi001-A is described as having a normal karyotype. Expression of OCT4, SOX2, NANOG, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "Ernst Wolvetang",
     "institution": "Australian Institute for Bioengineering and Nanotechnology",
     "organisation": [
@@ -138,12 +141,12 @@ window.registryRecords = [
     "curation": "Reviewed"
   },
   {
-    "id": "LEIi023-A",
+    "id": "ausLEIi023-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/868/",
     "aliases": [
       "1150ips4"
     ],
-    "description": "This induced pluripotent stem cell line was reprogrammed from the dermal fibroblasts of a female Retinitis Pigmentosa 11 patient using non-integrating episomal vectors. LEIi023-A is described as having a normal karyotype and a heterozygous variant in the PRPF31 gene which was also present in the donor cells. Expression of OCT4, NANOG, TRA-1-81 and SOX2 in undifferentiated cells, expression of trilineage markers in embryoid bodies, and differentiation to retinal pigment epithelial cells via retinal organoids have been reported.",
+    "description": "This induced pluripotent stem cell line was reprogrammed from the dermal fibroblasts of a female Retinitis Pigmentosa 11 patient using non-integrating episomal vectors. ausLEIi023-A is described as having a normal karyotype and a heterozygous variant in the PRPF31 gene which was also present in the donor cells. Expression of OCT4, NANOG, TRA-1-81 and SOX2 in undifferentiated cells, expression of trilineage markers in embryoid bodies, and differentiation to retinal pigment epithelial cells via retinal organoids have been reported.",
     "contact": "Samuel McLenachan",
     "institution": "Lions Eye Institute",
     "organisation": [
@@ -164,12 +167,12 @@ window.registryRecords = [
     "curation": "Reviewed"
   },
   {
-    "id": "LEIi019-A",
+    "id": "ausLEIi019-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/718/",
     "aliases": [
       "1020ips3"
     ],
-    "description": "This induced pluripotent stem cell line was derived by using episomal vectors to reprogram dermal fibroblasts from a male patient with early onset pattern dystrophy. LEIi019-A is described as having a normal karyotype and a heterozygous variant in the OTX2 gene. Expression of OCT4, NANOG, SOX2, KLF4 and TRA-1-81 in undifferentiated cells has been reported, as have in vitro spontaneous differentiation to endoderm, mesoderm and ectoderm, and directed differentiation to retinal pigment epithelial cells via retinal organoids.",
+    "description": "This induced pluripotent stem cell line was derived by using episomal vectors to reprogram dermal fibroblasts from a male patient with early onset pattern dystrophy. ausLEIi019-A is described as having a normal karyotype and a heterozygous variant in the OTX2 gene. Expression of OCT4, NANOG, SOX2, KLF4 and TRA-1-81 in undifferentiated cells has been reported, as have in vitro spontaneous differentiation to endoderm, mesoderm and ectoderm, and directed differentiation to retinal pigment epithelial cells via retinal organoids.",
     "contact": "Samuel McLenachan",
     "institution": "Lions Eye Institute",
     "organisation": [
@@ -190,12 +193,12 @@ window.registryRecords = [
     "curation": "Reviewed"
   },
   {
-    "id": "LEIi020-A",
+    "id": "ausLEIi020-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/871/",
     "aliases": [
       "1049ips2"
     ],
-    "description": "This induced pluripotent stem cell line was derived by using episomal vectors to reprogram dermal fibroblasts from a male Usher Syndrome type 1B (USH1B) patient. LEIi020-A is described as having a 1MB duplication in chromosome 8p21.2 and a homozygous variant in the MYO7A gene. This duplication and variant were also present in the donor fibroblasts. Expression of OCT4, NANOG, SOX2, MYC and SSEA-4 in undifferentiated cells and in vitro spontaneous differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line was derived by using episomal vectors to reprogram dermal fibroblasts from a male Usher Syndrome type 1B (USH1B) patient. ausLEIi020-A is described as having a 1MB duplication in chromosome 8p21.2 and a homozygous variant in the MYO7A gene. This duplication and variant were also present in the donor fibroblasts. Expression of OCT4, NANOG, SOX2, MYC and SSEA-4 in undifferentiated cells and in vitro spontaneous differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "Samuel McLenachan",
     "institution": "Lions Eye Institute",
     "organisation": [
@@ -216,11 +219,12 @@ window.registryRecords = [
     "curation": "Reviewed"
   },
   {
-    "id": "MCRIi001-A-4",
+    "id": "ausMCRIi001-A-4",
+    "modifications": [{"type": "Isogenic modification", "gene": "TRPV4"}],
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/398/",
     "aliases": [
       "TRPV4 p.P799L",
-      "MCRIi001-A-2-TRPV4 p.P799L",
+      "ausMCRIi001-A-2-TRPV4 p.P799L",
       "PB001-SOX9tdTOM-TRPV4pP799L",
       "SOX9tdTom TRPV4 p.P799L"
     ],
@@ -245,11 +249,12 @@ window.registryRecords = [
     "curation": "Not yet reviewed"
   },
   {
-    "id": "MCRIi001-B",
+    "id": "ausMCRIi001-B",
+    "modifications": [{"type": "Isogenic modification", "gene": "COL2A1"}],
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/604/",
     "aliases": [
       "COL2A1 p.R989C",
-      "MCRIi001-A-SOX9tdTom-COL2A1p.R989C",
+      "ausMCRIi001-A-SOX9tdTom-COL2A1p.R989C",
       "PB001-SOX9tdTom-COL2A1p.R989C"
     ],
     "description": "",
@@ -273,7 +278,7 @@ window.registryRecords = [
     "curation": "Not yet reviewed"
   },
   {
-    "id": "MNZTASi001-A",
+    "id": "ausMNZTASi001-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/357/",
     "aliases": [
       "MS_0004",
@@ -299,7 +304,7 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "MNZTASi002-A",
+    "id": "ausMNZTASi002-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/550/",
     "aliases": [
       "MS_0001.1",
@@ -323,12 +328,12 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "AIBNi015-A",
+    "id": "ausAIBNi015-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/884/",
     "aliases": [
       "SPG1-AU01C15"
     ],
-    "description": "This induced pluripotent stem cell line was reprogrammed from the fibroblasts of a female Hereditary Spastic Paraplegia 56 patient using non-integrating sendai viral vectors. AIBNi015-A is described as having a normal karyotype and compound heterozygous variants in the CYP2U1 gene. Expression of OCT4, SOX2, NANOG, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line was reprogrammed from the fibroblasts of a female Hereditary Spastic Paraplegia 56 patient using non-integrating sendai viral vectors. ausAIBNi015-A is described as having a normal karyotype and compound heterozygous variants in the CYP2U1 gene. Expression of OCT4, SOX2, NANOG, TRA-1-60 and TRA-1-81 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "Ernst Wolvetang",
     "institution": "Australian Institute for Bioengineering and Nanotechnology",
     "organisation": [
@@ -349,7 +354,7 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "AIBNi014-A",
+    "id": "ausAIBNi014-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/385/",
     "aliases": [
       "hONS-derived A-T iPSC",
@@ -377,7 +382,7 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "MCRIi001-A-10",
+    "id": "ausMCRIi001-A-10",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/865/",
     "aliases": [
       "NRG1KO Cln37"
@@ -399,7 +404,7 @@ window.registryRecords = [
     "curation": "Not yet reviewed"
   },
   {
-    "id": "WIMRi003-A",
+    "id": "ausWIMRi003-A",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/504/",
     "aliases": [
       "PKU_FIB_00937"
@@ -425,12 +430,12 @@ window.registryRecords = [
     "curation": "Flagged for further review"
   },
   {
-    "id": "CIAUi002-C",
+    "id": "ausCIAUi002-C",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/878/",
     "aliases": [
       "UBC3 M1"
     ],
-    "description": "This induced pluripotent stem cell line was reprogrammed by using non-integrating episomal vectors to reprogram peripheral blood mononuclear cells. The donor of CIAUi002-C is a female carrier of a heterozygous variant in the SCN5A gene who presented with conduction disease, ventricular fibrillation (recurrent) and non-ischemic cardiomyopathy. CIAUi002-C is described as having a normal karyotype. Expression of OCT4, SOX2, NANOG, TRA-1-60 and SSEA-4 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
+    "description": "This induced pluripotent stem cell line was reprogrammed by using non-integrating episomal vectors to reprogram peripheral blood mononuclear cells. The donor of ausCIAUi002-C is a female carrier of a heterozygous variant in the SCN5A gene who presented with conduction disease, ventricular fibrillation (recurrent) and non-ischemic cardiomyopathy. ausCIAUi002-C is described as having a normal karyotype. Expression of OCT4, SOX2, NANOG, TRA-1-60 and SSEA-4 in undifferentiated cells, and directed differentiation to endoderm, mesoderm and ectoderm have been reported.",
     "contact": "",
     "institution": "Centenary Institute of Cancer Medicine and Cell Biology",
     "organisation": [
@@ -452,7 +457,7 @@ window.registryRecords = [
     "curation": "Reviewed"
   },
   {
-    "id": "CDIi100-A-1",
+    "id": "ausCDIi100-A-1",
     "source": "https://ausstemcellregistry.org.au/stem_cell/cell_line/879/",
     "aliases": [
       "FI.PPMI_42378(SNCA.A53T.11555.104).AAVS1::CAGG-iM-jRCaMP1b"

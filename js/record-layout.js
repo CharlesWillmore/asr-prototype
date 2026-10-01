@@ -1,4 +1,6 @@
 (() => {
+  try { const state = JSON.parse(sessionStorage.getItem('asr-filter-state-v1') || '{}'); state.reviewed = true; sessionStorage.setItem('asr-filter-state-v1', JSON.stringify(state)); } catch {}
+
   const nav = document.querySelector('.record-navigator');
   const fixedTop = document.querySelector('.record-fixed-top');
   const slider = nav.querySelector('input');
@@ -9,10 +11,28 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   function measure() {
     document.documentElement.style.setProperty('--navigator-height', `${fixedTop.offsetHeight}px`);
-    // Optical overshoot: approximately 5% beyond each text alignment line.
-    const textHeight = heading.querySelector('h1').getBoundingClientRect().bottom - heading.getBoundingClientRect().top - 8;
-    identity.style.setProperty('--symbol-size', `${textHeight * 1.11}px`);
-    identity.style.setProperty('--symbol-top', `${3 - textHeight * .055}px`);
+    const context = document.createElement('canvas').getContext('2d');
+    function metrics(element, glyph) {
+      const style = getComputedStyle(element);
+      context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      const text = context.measureText(glyph);
+      const ascent = text.fontBoundingBoxAscent ?? parseFloat(style.fontSize) * .8;
+      const descent = text.fontBoundingBoxDescent ?? parseFloat(style.fontSize) * .2;
+      return { cap: text.actualBoundingBoxAscent, baseline: (parseFloat(style.lineHeight) - ascent - descent) / 2 + ascent };
+    }
+    const label = heading.querySelector('.record-eyebrow');
+    const title = heading.querySelector('h1');
+    const labelMetrics = metrics(label, 'H'), titleMetrics = metrics(title, 'x');
+    // A 32px ink-to-baseline block centred in the 48px symbol: top 8, baseline 40.
+    label.style.top = `${8 + labelMetrics.cap - labelMetrics.baseline}px`;
+    title.style.top = `${40 - titleMetrics.baseline}px`;
+    const aliases = document.querySelector('.record-hero-inner > .alternative-names');
+    if (aliases) {
+      const caption = aliases.querySelector('strong'), values = aliases.querySelector('span');
+      const captionMetrics = metrics(caption, 'H'), valueMetrics = metrics(values, 'H');
+      caption.style.top = `${8 + captionMetrics.cap - captionMetrics.baseline}px`;
+      values.style.top = `${40 - titleMetrics.cap + valueMetrics.cap - valueMetrics.baseline}px`;
+    }
     update();
   }
   function stops() {
@@ -21,10 +41,10 @@
     const targets = sections.map(section => Math.max(0, Math.min(maxScroll,
       section.getBoundingClientRect().top + scrollY - fixedTop.offsetHeight - 22)));
     const points = [{x:0, y:targets[0]}];
-    // Measure labels so alignment survives font changes and narrow-screen wrapping.
+    // Anchor each stop to the symbol’s left edge, allowing for the thumb radius.
     links.forEach((link, i) => {
-      const label = link.querySelector('span:last-child').getBoundingClientRect();
-      const x = Math.max(1, Math.min(999, ((label.left + label.width / 2) - track.left - 8) / (track.width - 16) * 1000));
+      const symbol = link.querySelector('.navigation-dot').getBoundingClientRect();
+      const x = Math.max(1, Math.min(999, (symbol.left + symbol.width / 2 - track.left - 8) / (track.width - 16) * 1000));
       points.push({x, y:targets[i]});
     });
     points.push({x:1000, y:maxScroll});
@@ -42,10 +62,14 @@
     return points.at(-1)[to];
   }
   function update() {
-    const value = interpolate(scrollY, stops(), 'y', 'x');
+    const points = stops();
+    const value = interpolate(scrollY, points, 'y', 'x');
     slider.value = value;
-    const current = sections.reduce((found, section, i) => section.getBoundingClientRect().top <= fixedTop.offsetHeight + 48 ? i : found, 0);
-    links.forEach((link,i) => i === current ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current'));
+    const current = links.reduce((found, link, i) => value >= points[i + 1].x - 0.5 ? i : found, 0);
+    links.forEach((link,i) => {
+      i === current ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current');
+      link.classList.toggle('is-reached', value >= points[i + 1].x - 0.5);
+    });
     slider.setAttribute('aria-valuetext', links[current].textContent.trim());
   }
   slider.addEventListener('input', () => scrollTo({top:interpolate(Number(slider.value), stops(), 'x', 'y'), behavior:'instant'}));
@@ -66,9 +90,10 @@
   document.querySelector('[data-action="share"]').addEventListener('click', async () => {try {await navigator.clipboard.writeText(location.href);announce('Page link copied');} catch {announce('Copy the page address from your browser to share it.');}});
   document.querySelector('[data-action="pdf"]').addEventListener('click', () => window.print());
   document.querySelector('[data-action="json"]').addEventListener('click', () => {
-    const record=window.registryRecords.find(r=>r.id==='MCRIi035-B-1');
+    const identifier = heading.querySelector('h1').textContent.trim();
+    const record=window.registryRecords.find(r=>r.id===identifier);
     const url=URL.createObjectURL(new Blob([JSON.stringify({snapshotDate:'2026-09-23',...record},null,2)], {type:'application/json'}));
-    const a=document.createElement('a');a.href=url;a.download='MCRIi035-B-1.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+    const a=document.createElement('a');a.href=url;a.download=`${identifier}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   document.querySelector('[data-action="pdf"]').title='Download PDF — opens print dialog; choose Save as PDF';
   const menu=document.querySelector('.mobile-menu-button');

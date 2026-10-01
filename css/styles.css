@@ -71,7 +71,7 @@ button {
 .logo img {
   display: block;
 
-  width: 287.5px;
+  width: 301.875px;
   height: auto;
 }
 
@@ -727,7 +727,7 @@ button {
 @media (max-width: 800px) {
 
   .logo img {
-    width: 281.75px;
+    width: 295.8375px;
 
     max-width: calc(
       100vw - 100px

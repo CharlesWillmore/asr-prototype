@@ -17,10 +17,11 @@
 .record-navigator{position:sticky;top:0;z-index:25;background:#fff9f3f5;backdrop-filter:blur(12px);border-block:1px solid #e6dbd0}
 .navigator-inner{max-width:1366px;margin:auto;padding:20px clamp(20px,4.4vw,60px) 12px}
 .navigator-stops{display:flex;justify-content:space-between;gap:20px}
-.navigator-stops a{display:flex;gap:10px;align-items:center;color:#757473;font-size:12px;font-weight:400;line-height:1.4;text-decoration:none;max-width:25%}
+.navigator-stops a{display:flex;gap:10px;align-items:center;color:#757473;font-size:12px;font-weight:400;line-height:1.4;text-decoration:none;max-width:20%}
 .navigator-stops a:last-child{text-align:right;justify-content:flex-end}
 .navigator-stops svg{width:30px;height:30px;flex:none}
-.navigator-stops a:hover,.navigator-stops a[aria-current="location"]{color:#c15b00}
+.navigator-stops a:hover{color:#757473}
+.navigator-stops a[aria-current="location"]{color:#ea660a}
 .record-navigator input{display:block;width:100%;margin:16px 0 0;height:24px;accent-color:#ef7d0f;cursor:ew-resize}
 .record-redesign .record-content{padding-top:36px}
 .record-redesign .record-section{scroll-margin-top:calc(var(--navigator-height,120px) + 22px)}
@@ -28,14 +29,14 @@
 .group-heading svg{width:36px;height:36px;flex:none}
 .record-redesign .record-card{border-color:#e6dbd0}
 .record-redesign .record-card p{max-width:90ch}
-.record-redesign .record-card a,.back-top{color:#995000}
+.record-redesign .record-card a,.back-top{color:#242220;text-decoration:underline;text-decoration-color:#2d9afc;text-underline-offset:3px}
 .record-redesign .record-status{background:#fdecdb;color:#774419;font-size:12px}
 .record-redesign .share-message{background:#191715;z-index:50;max-width:calc(100vw - 44px)}
 @media(max-width:800px){
  .record-redesign .record-hero-inner{grid-template-columns:1fr;gap:18px;padding-block:28px}
  .record-identity{gap:16px}.registry-symbol{max-width:112px}
  .record-redesign h1{font-size:26px}.record-redesign .record-actions{justify-content:flex-start}
- .navigator-stops{gap:10px}.navigator-stops a{font-size:9px;flex-direction:column;align-items:center;text-align:center;flex:1;max-width:25%;gap:6px}.navigator-stops a:last-child{text-align:center}
+ .navigator-stops{gap:10px}.navigator-stops a{font-size:9px;flex-direction:column;align-items:center;text-align:center;flex:1;max-width:20%;gap:6px}.navigator-stops a:last-child{text-align:center}
  .navigator-stops svg{width:26px;height:26px}.navigator-inner{padding-top:14px}
  .record-redesign .group-heading{font-size:22px}.record-redesign .section-heading h2{font-size:22px}
  .record-redesign .toolbar-inner{gap:12px;flex-wrap:wrap}.record-search-summary{gap:8px;font-size:12px}.record-redesign .filter-button{font-size:11px;padding:10px}
@@ -46,9 +47,9 @@
 @media(max-width:800px){.registry-symbol{max-width:none;width:min(var(--symbol-size),90px);height:min(var(--symbol-size),90px)}.record-redesign .desktop-nav.mobile-open{display:flex;position:absolute;top:100%;left:0;right:0;background:#000;padding:20px;flex-wrap:wrap;z-index:40}.record-redesign .site-header{position:relative}}
 .record-navigator input{appearance:none;background:transparent;outline-offset:2px}
 .record-navigator input::-webkit-slider-runnable-track{height:2px;background:#bab9b9;border-radius:0}
-.record-navigator input::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border:0;border-radius:50%;background:#ef7d0f;margin-top:-7px}
+.record-navigator input::-webkit-slider-thumb{appearance:none;width:16px;height:16px;border:0;border-radius:50%;background:#ea660a;margin-top:-7px}
 .record-navigator input::-moz-range-track{height:2px;background:#bab9b9}
-.record-navigator input::-moz-range-thumb{width:16px;height:16px;border:0;border-radius:50%;background:#ef7d0f}
+.record-navigator input::-moz-range-thumb{width:16px;height:16px;border:0;border-radius:50%;background:#ea660a}
 
 /* Compact header moves as one unit once the black navigation scrolls away. */
 .record-fixed-top{position:sticky;top:0;z-index:30;background:#fff9f3;box-shadow:0 2px 5px #1917150a}
@@ -61,7 +62,7 @@
 .registry-symbol{width:var(--symbol-size,42px);height:var(--symbol-size,42px);max-width:none}
 .navigator-inner{padding-top:12px;padding-bottom:6px}
 .record-navigator input{margin-top:8px}
-.how-made-icon{display:inline-block;width:30px;height:30px;flex:none;background:currentColor;mask:url('../assets/how-made.svg') center/contain no-repeat;-webkit-mask:url('../assets/how-made.svg') center/contain no-repeat}
+.how-made-icon{display:inline-block;width:30px;height:30px;flex:none;background:transparent}
 .group-heading .how-made-icon{width:36px;height:36px}
 @media(max-width:800px){
  .record-redesign h1{font-size:19.5px}
@@ -78,6 +79,89 @@
 /* Optical alignment supplied in ASR_Symbol_Adjustment.pdf. */
 .registry-symbol{margin-top:var(--symbol-top,0px)}
 .record-navigator input:hover::-webkit-slider-thumb,
-.record-navigator input:active::-webkit-slider-thumb{background:#c15b00}
+.record-navigator input:active::-webkit-slider-thumb{background:#ea660a}
 .record-navigator input:hover::-moz-range-thumb,
-.record-navigator input:active::-moz-range-thumb{background:#c15b00}
+.record-navigator input:active::-moz-range-thumb{background:#ea660a}
+
+/* Five navigation stops retain readable labels on narrow screens. */
+@media(max-width:800px){
+ .navigator-stops{gap:8px}
+ .navigator-stops a{font-size:11px;min-width:0;overflow-wrap:anywhere}
+}
+
+/* Repeat curation beneath the action icons, level with the identity block. */
+.record-header-meta{align-self:stretch;display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:8px}
+.record-redesign .header-curation{margin:0 8px 0 0;line-height:18px;padding:5px 10px;white-space:nowrap}
+@media(max-width:800px){
+ .record-header-meta{align-items:flex-end;gap:8px}
+ .record-redesign .record-header-meta .record-actions{position:static;justify-content:flex-end}
+ .record-redesign .header-curation{margin-right:6px;white-space:normal;text-align:right}
+ .record-redesign h1{padding-right:0}
+}
+
+/* Page section hierarchy; navigation labels retain their existing treatment. */
+.record-redesign .record-content .group-heading{font-weight:700;color:#ea660a;gap:6px;letter-spacing:0.06em}
+.record-redesign .record-content .group-heading svg,
+.record-redesign .record-content .group-heading .how-made-icon{color:#ea660a}
+.record-redesign .record-content .section-heading h2{font-weight:600}
+
+.record-redesign .record-return-links{min-height:36px;padding-block:6px;gap:28px;flex-wrap:wrap}
+.record-return-links a{font-size:12px;line-height:20px;color:#fff;text-decoration:none}
+.record-return-links a:hover{text-decoration:underline}
+
+/* Issue B1: compact identity, adjacent aliases and circular navigation stops. */
+.record-redesign .record-hero-inner{grid-template-columns:minmax(280px,1fr) minmax(240px,1.6fr) auto;gap:28px;align-items:start;padding-block:20px 10px}
+.record-redesign .record-identity{gap:10px;align-items:center}
+.record-redesign .record-heading h1{margin:0;font-size:24px}
+.record-redesign .record-eyebrow{margin-bottom:2px}
+.record-redesign .record-hero-inner>.alternative-names{padding-top:5px;font-size:11px;line-height:18px}
+.record-redesign .alternative-names strong{font-size:10px;letter-spacing:.06em;color:#666;margin-bottom:3px}
+.record-redesign .header-curation{margin:4px 0 0;border:1px solid #f79400;background:#ffdaaa;color:#333;font-weight:500}
+.record-fixed-top .record-navigator{border:0}
+.record-navigator .navigator-inner{position:relative;padding-top:0;padding-bottom:20px;height:58px}
+.record-navigator .navigator-stops{position:absolute;inset:0 clamp(20px,4.4vw,60px) 20px;display:flex;align-items:center;justify-content:space-between;padding-inline:28px;pointer-events:none;z-index:2}
+.record-navigator .navigator-stops a{display:flex;align-items:center;justify-content:center;flex:none;width:36px;height:36px;max-width:none;pointer-events:auto}
+.navigation-dot{display:block;width:27px;height:27px;border:1px solid #d4d4d4;border-radius:50%;background:white}
+.navigator-stops a:hover .navigation-dot,.navigator-stops a:focus-visible .navigation-dot{border-color:#ea660a}
+.record-navigator input{position:relative;margin:0;width:100%;height:38px}
+@media(max-width:1000px){.record-redesign .record-hero-inner{grid-template-columns:minmax(0,1fr) auto;gap:12px}.record-redesign .record-hero-inner>.alternative-names{grid-column:1;grid-row:2}.record-header-meta{grid-column:2;grid-row:1 / span 2}}
+@media(max-width:600px){.record-redesign .record-hero-inner{grid-template-columns:1fr}.record-header-meta{grid-column:1;grid-row:3;flex-direction:row;align-items:center;flex-wrap:wrap}.record-redesign .header-curation{margin:0}.record-navigator .navigator-stops{padding-inline:12px}.record-redesign .record-heading h1{font-size:21px}}
+
+/* Stops change colour as the scroll indicator reaches and passes them. */
+.navigation-dot{background:#fbd39a;border-color:#fbd39a}
+.navigator-stops a.is-reached .navigation-dot{background:#ea660a;border-color:#ea660a}
+
+/* Issue B2: ink-based alignment, measured after the font loads. */
+.record-redesign .record-identity{align-items:flex-start}
+.record-redesign .registry-symbol{width:48px;height:48px;min-width:48px;margin-top:0}
+.record-redesign .record-heading{position:relative;min-height:48px;flex:1}
+.record-redesign .record-heading .record-eyebrow{position:relative;font-size:10px;line-height:14px;margin:0}
+.record-redesign .record-heading h1{position:relative;line-height:28px;margin:0;margin-top:-14px}
+.record-redesign .record-hero-inner>.alternative-names{position:relative;padding:0;min-height:48px;margin:0}
+.record-redesign .record-hero-inner>.alternative-names strong{position:relative;font-size:10px;line-height:14px;margin:0}
+.record-redesign .record-hero-inner>.alternative-names>span{position:relative;display:block;font-size:11px;line-height:18px;margin-top:-14px}
+
+/* Use the same review-status badge in the header and description. */
+.record-redesign .record-status{border:1px solid #f79400;background:#ffdaaa;color:#333;font-size:12px;font-weight:500;line-height:18px;padding:5px 10px}
+
+/* Alternative sliders: icon circles and boxed labels (Issue B). */
+.navigation-icons .record-navigator .navigator-inner{height:88px;padding-bottom:20px}
+.navigation-icons .record-navigator input{height:68px}
+.navigation-icons .record-navigator .navigator-stops a{width:66px;height:66px}
+.navigation-icons .navigation-dot{display:grid;place-items:center;width:62px;height:62px;color:#242220}
+.navigation-icons .navigation-dot svg{width:34px;height:34px}
+.navigation-icons .navigator-stops a:hover .navigation-dot,.navigation-icons .navigator-stops a:focus-visible .navigation-dot{color:#242220;border-color:#ea660a}
+.navigation-labels .record-navigator .navigator-stops a{width:auto;height:36px}
+.navigation-labels .navigation-dot{width:auto;height:auto;padding:5px 12px;border-radius:0;color:#242220;font-size:12px;line-height:18px;white-space:nowrap}
+.navigation-labels .navigator-stops a:hover .navigation-dot,.navigation-labels .navigator-stops a:focus-visible .navigation-dot{border-color:#ea660a;color:#242220}
+@media(max-width:700px){
+ .navigation-icons .record-navigator .navigator-stops a{width:42px;height:42px}
+ .navigation-icons .navigation-dot{width:40px;height:40px}
+ .navigation-icons .navigation-dot svg{width:24px;height:24px}
+ .navigation-labels .record-navigator .navigator-stops{gap:4px;padding-inline:12px}
+ .navigation-labels .record-navigator .navigator-stops a{flex:1;min-width:0}
+ .navigation-labels .navigation-dot{width:100%;padding:4px 2px;font-size:8px;line-height:12px;white-space:normal;overflow-wrap:anywhere;text-align:center}
+}
+
+/* Consistent table heading colour across the three styled detail pages. */
+.record-redesign .record-card th,.record-redesign .record-table-head{color:#242220}

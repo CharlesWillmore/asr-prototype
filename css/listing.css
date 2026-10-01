@@ -8,10 +8,8 @@
 .search-primary-actions{display:flex;gap:12px;align-items:center}
 .search-primary-actions .filter-apply-button{font-size:12px;padding:12px 11px;white-space:nowrap}
 .search-primary-actions .filter-clear-button{font-size:12px;white-space:nowrap}
-.search-close{margin-left:auto;border:1px solid #a29b93;color:#555;background:#fff;width:26px;height:26px;font-size:23px;line-height:20px;padding:0;cursor:pointer;flex:none}
 .search-secondary-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;font-size:12px;color:#635b51}
-#expand-filter{border:0;background:transparent;color:#1475bd;font-size:12px;cursor:pointer;padding:5px 0;text-decoration:underline;text-underline-offset:3px}
-.search-scroll{overflow:auto;min-height:0;flex:1;overscroll-behavior:contain;scrollbar-gutter:stable;padding:0 8px 32px 0}
+.search-scroll{overflow:auto;min-height:0;flex:1;overscroll-behavior:contain;scrollbar-gutter:stable;margin-right:-6px;padding:0 20px 32px 0}
 .search-section{border-top:1px solid #dfcfbd}
 .search-section:last-child{border-bottom:1px solid #dfcfbd}
 .search-section summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;min-height:48px;font-weight:600;font-size:14px;list-style:none;gap:12px}
@@ -41,7 +39,7 @@
 .results-pane{height:100%;margin-left:0;min-width:0;overflow:auto;overscroll-behavior:contain;background:#fff;border:1px solid #bbb;border-radius:8px;transition:margin-left .32s ease;scrollbar-gutter:stable}
 .filter-open .results-pane{margin-left:calc(var(--filter-width) + var(--gap))}
 .results-table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed;font-size:14px;line-height:20px}
-.results-table th{position:sticky;top:0;z-index:1;background:#fff;color:#735737;font-size:11px;font-weight:600;letter-spacing:.025em;text-align:left;padding:25px 8px 17px;border-bottom:1px solid #bbb;vertical-align:bottom;overflow-wrap:anywhere}
+.results-table th{position:sticky;top:var(--listing-summary-height,0px);z-index:1;background:#fff;color:#242220;font-size:11px;font-weight:600;letter-spacing:.025em;text-align:left;padding:25px 8px 17px;border-bottom:1px solid #bbb;vertical-align:bottom;overflow-wrap:anywhere}
 .results-table td{vertical-align:top;padding:20px 8px;border-bottom:1px solid #bbb;overflow-wrap:anywhere;hyphens:auto}
 .results-table th:first-child,.results-table td:first-child{padding-left:24px}
 .results-table th:last-child,.results-table td:last-child{padding-right:24px}
@@ -67,18 +65,10 @@
 .page-arrow:disabled{opacity:.35;cursor:default}
 .listing-page .mobile-page-jump{display:none}
 .listing-page :is(button,a,input,summary,[tabindex]):focus-visible{outline:2px solid #1475bd;outline-offset:3px}
-.listing-workspace.filter-wide{--filter-width:min(640px,calc(100% - 120px));--gap:24px}
-.filter-open.filter-wide .results-table .contact-col{display:none}
-.filter-open.filter-wide .results-table .identifier-col{width:244px}
-.filter-open.filter-wide .results-table .description-col{display:table-cell}
-.filter-open.preview-identifiers .results-table .description-col{display:none}
-.filter-open.preview-identifiers .results-table .identifier-col{width:100%}
-.filter-open.preview-hidden .results-pane{visibility:hidden;pointer-events:none}
 [hidden]{display:none!important}
 @media(max-width:1199px){
  .filter-open .search-panel{width:100%;box-shadow:0 10px 24px #0002}
  .filter-open .results-pane{margin-left:0;visibility:hidden}
- #expand-filter{display:none}
  .search-panel{padding:24px 20px 0}
  .results-table .identifier-col{width:220px}.results-table .contact-col{width:160px}.results-table .curation-col{width:120px}.results-table .variant-col{width:80px}
 }
@@ -89,7 +79,7 @@
  .results-table tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);padding:22px;gap:18px;border-bottom:1px solid #bbb}
  .results-table td{display:block!important;width:auto!important;padding:0!important;border:0}
  .results-table td.description-col{display:none!important}
- .results-table td::before{content:attr(data-label);display:block;margin-bottom:5px;font-size:10px;font-weight:600;color:#735737}
+ .results-table td::before{content:attr(data-label);display:block;margin-bottom:5px;font-size:10px;font-weight:600;color:#242220}
  .results-table .identifier-col{grid-column:1/-1}
  .results-table .identifier-col::before{display:none}
  .results-pane{border-radius:5px}
@@ -102,8 +92,39 @@
  .tree-list .tree-list{margin-left:5px;padding-left:5px}
  .search-primary-actions .filter-apply-button{font-size:11px}
  .search-primary-actions .filter-clear-button{font-size:11px}
- .search-close{margin-left:auto}
 }
 @media(prefers-reduced-motion:reduce){.search-panel,.results-pane{transition:none!important}}
 /* Wrap prose naturally; reserve emergency breaks for unbroken identifiers. */
 .results-table td{hyphens:manual}
+
+/* Disease guidance and separate, generously sized expansion controls. */
+.disease-help{font-size:12px;line-height:1.5;color:#665e56;margin:10px 0}
+:is(#disease-options, #variant-options) .disclosure,:is(#disease-options, #variant-options) .tree-spacer{width:32px;flex-basis:32px;height:32px}
+:is(#disease-options, #variant-options) .tree-label{padding-top:6px}
+:is(#disease-options, #variant-options) .disclosure{border-radius:4px}
+:is(#disease-options, #variant-options) .disclosure:hover{background:#e9d7c4;color:#333}
+:is(#disease-options, #variant-options) .disclosure:focus-visible{outline:2px solid #a84a00;outline-offset:1px}
+
+.search-section-heading{display:flex;align-items:center;min-height:48px;margin:0;font-weight:600;font-size:14px}
+
+/* Compact listing toolbar, with the filter action aligned beneath the logo. */
+.listing-page .toolbar-inner{min-height:64px}
+.listing-page .toolbar-inner .filter-button{padding-block:8px;margin-left:0;flex-shrink:0}
+.listing-page .page-number strong{height:28px}
+
+/* Keep the search focus ring inside the field so the scrolling panel cannot clip it. */
+.listing-page #filter-name:focus-visible{outline:2px solid #1475bd;outline-offset:-2px}
+
+.selection-summary{font-size:11px;line-height:1.5;color:#52514f;overflow-wrap:anywhere}
+.selection-summary strong{font-weight:700}
+.summary-toggle{font:inherit;color:inherit;border:0;background:none;padding:0;text-decoration:underline;cursor:pointer}
+#listing-filter-summary{position:sticky;top:0;z-index:2;background:#fdecdb;padding:14px 24px;border-bottom:1px solid #ddd}
+.filter-open #listing-filter-summary{display:none}
+.search-secondary-actions:has([hidden]){display:none}
+
+/* The full listing already reports its matching count above the table. */
+.listing-page:not(:has(.listing-workspace.filter-open)) .listing-toolbar .result-count{display:none}
+
+.listing-page .results-table th{color:#242220}
+.results-table tbody tr:last-child td{border-bottom:0}
+@media(max-width:960px){.results-table tbody tr:last-child{border-bottom:0}}

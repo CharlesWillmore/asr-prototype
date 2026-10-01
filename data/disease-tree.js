@@ -1,8 +1,13 @@
-/* Provisional N=10 hierarchy from Andrew’s supplied audit; folded endpoints restored. */
+/* Andrew’s N=10 disease tree: Disease Tree - Flatten at 10 - No merge variants.txt. */
 window.registryDiseaseTree = [
   {
     "label": "cardiovascular disorder",
     "children": [
+      {
+        "label": "catecholaminergic polymorphic ventricular tachycardia",
+        "children": [],
+        "disease": "catecholaminergic polymorphic ventricular tachycardia"
+      },
       {
         "label": "conduction disease",
         "children": [],
@@ -14,17 +19,6 @@ window.registryDiseaseTree = [
         "disease": "idiopathic spontaneous coronary artery dissection"
       },
       {
-        "label": "polymorphic ventricular tachycardia",
-        "children": [
-          {
-            "label": "catecholaminergic polymorphic ventricular tachycardia",
-            "disease": "catecholaminergic polymorphic ventricular tachycardia",
-            "children": []
-          }
-        ],
-        "disease": "polymorphic ventricular tachycardia"
-      },
-      {
         "label": "recurrent ventricular fibrillation",
         "children": [],
         "disease": "recurrent ventricular fibrillation"
@@ -34,6 +28,11 @@ window.registryDiseaseTree = [
   {
     "label": "connective tissue disorder",
     "children": [
+      {
+        "label": "achondrogenesis type ii",
+        "children": [],
+        "disease": "achondrogenesis type ii"
+      },
       {
         "label": "legg-calve-perthes disease",
         "children": [],
@@ -71,19 +70,18 @@ window.registryDiseaseTree = [
       },
       {
         "label": "retinitis pigmentosa",
-        "children": [
-          {
-            "label": "retinitis pigmentosa 11",
-            "disease": "retinitis pigmentosa 11",
-            "children": []
-          },
-          {
-            "label": "retinitis pigmentosa 12",
-            "disease": "retinitis pigmentosa 12",
-            "children": []
-          }
-        ],
+        "children": [],
         "disease": "retinitis pigmentosa"
+      },
+      {
+        "label": "retinitis pigmentosa 11",
+        "children": [],
+        "disease": "retinitis pigmentosa 11"
+      },
+      {
+        "label": "retinitis pigmentosa 12",
+        "children": [],
+        "disease": "retinitis pigmentosa 12"
       },
       {
         "label": "stargardt disease",
@@ -102,19 +100,18 @@ window.registryDiseaseTree = [
       },
       {
         "label": "retinitis pigmentosa",
-        "children": [
-          {
-            "label": "retinitis pigmentosa 11",
-            "disease": "retinitis pigmentosa 11",
-            "children": []
-          },
-          {
-            "label": "retinitis pigmentosa 12",
-            "disease": "retinitis pigmentosa 12",
-            "children": []
-          }
-        ],
+        "children": [],
         "disease": "retinitis pigmentosa"
+      },
+      {
+        "label": "retinitis pigmentosa 11",
+        "children": [],
+        "disease": "retinitis pigmentosa 11"
+      },
+      {
+        "label": "retinitis pigmentosa 12",
+        "children": [],
+        "disease": "retinitis pigmentosa 12"
       },
       {
         "label": "stargardt disease",
@@ -147,20 +144,9 @@ window.registryDiseaseTree = [
         "disease": "chrons disease"
       },
       {
-        "label": "multiple sclerosis",
-        "children": [
-          {
-            "label": "relapsing-remitting multiple sclerosis",
-            "disease": "relapsing-remitting multiple sclerosis",
-            "children": []
-          },
-          {
-            "label": "secondary progressive multiple sclerosis",
-            "disease": "secondary progressive multiple sclerosis",
-            "children": []
-          }
-        ],
-        "disease": "multiple sclerosis"
+        "label": "relapsing-remitting multiple sclerosis",
+        "children": [],
+        "disease": "relapsing-remitting multiple sclerosis"
       },
       {
         "label": "secondary progressive multiple sclerosis",
@@ -211,15 +197,9 @@ window.registryDiseaseTree = [
         "label": "skeletal system disorder",
         "children": [
           {
-            "label": "achondrogenesis",
-            "children": [
-              {
-                "label": "achondrogenesis type ii",
-                "disease": "achondrogenesis type ii",
-                "children": []
-              }
-            ],
-            "disease": "achondrogenesis"
+            "label": "achondrogenesis type ii",
+            "children": [],
+            "disease": "achondrogenesis type ii"
           },
           {
             "label": "familial digital arthropathy-brachydactyly",
@@ -282,20 +262,9 @@ window.registryDiseaseTree = [
         "label": "autoimmune disorder of the nervous system",
         "children": [
           {
-            "label": "multiple sclerosis",
-            "children": [
-              {
-                "label": "relapsing-remitting multiple sclerosis",
-                "disease": "relapsing-remitting multiple sclerosis",
-                "children": []
-              },
-              {
-                "label": "secondary progressive multiple sclerosis",
-                "disease": "secondary progressive multiple sclerosis",
-                "children": []
-              }
-            ],
-            "disease": "multiple sclerosis"
+            "label": "relapsing-remitting multiple sclerosis",
+            "children": [],
+            "disease": "relapsing-remitting multiple sclerosis"
           },
           {
             "label": "secondary progressive multiple sclerosis",
@@ -311,20 +280,9 @@ window.registryDiseaseTree = [
             "label": "autoimmune disorder of central nervous system",
             "children": [
               {
-                "label": "multiple sclerosis",
-                "children": [
-                  {
-                    "label": "relapsing-remitting multiple sclerosis",
-                    "disease": "relapsing-remitting multiple sclerosis",
-                    "children": []
-                  },
-                  {
-                    "label": "secondary progressive multiple sclerosis",
-                    "disease": "secondary progressive multiple sclerosis",
-                    "children": []
-                  }
-                ],
-                "disease": "multiple sclerosis"
+                "label": "relapsing-remitting multiple sclerosis",
+                "children": [],
+                "disease": "relapsing-remitting multiple sclerosis"
               },
               {
                 "label": "secondary progressive multiple sclerosis",
@@ -367,25 +325,14 @@ window.registryDiseaseTree = [
                 "disease": "idiopathic generalised epilepsy"
               },
               {
-                "label": "multiple sclerosis",
-                "children": [
-                  {
-                    "label": "relapsing-remitting multiple sclerosis",
-                    "disease": "relapsing-remitting multiple sclerosis",
-                    "children": []
-                  },
-                  {
-                    "label": "secondary progressive multiple sclerosis",
-                    "disease": "secondary progressive multiple sclerosis",
-                    "children": []
-                  }
-                ],
-                "disease": "multiple sclerosis"
-              },
-              {
                 "label": "parkinson disease",
                 "children": [],
                 "disease": "parkinson disease"
+              },
+              {
+                "label": "relapsing-remitting multiple sclerosis",
+                "children": [],
+                "disease": "relapsing-remitting multiple sclerosis"
               },
               {
                 "label": "schizophrenia",
@@ -421,20 +368,9 @@ window.registryDiseaseTree = [
                 "label": "demyelinating disease",
                 "children": [
                   {
-                    "label": "multiple sclerosis",
-                    "children": [
-                      {
-                        "label": "relapsing-remitting multiple sclerosis",
-                        "disease": "relapsing-remitting multiple sclerosis",
-                        "children": []
-                      },
-                      {
-                        "label": "secondary progressive multiple sclerosis",
-                        "disease": "secondary progressive multiple sclerosis",
-                        "children": []
-                      }
-                    ],
-                    "disease": "multiple sclerosis"
+                    "label": "relapsing-remitting multiple sclerosis",
+                    "children": [],
+                    "disease": "relapsing-remitting multiple sclerosis"
                   },
                   {
                     "label": "secondary progressive multiple sclerosis",
@@ -468,25 +404,18 @@ window.registryDiseaseTree = [
                   },
                   {
                     "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis",
-                    "children": [
-                      {
-                        "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                        "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                        "children": []
-                      }
-                    ],
+                    "children": [],
                     "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis"
                   },
                   {
-                    "label": "hereditary spastic paraplegia",
-                    "children": [
-                      {
-                        "label": "hereditary spastic paraplegia 56",
-                        "disease": "hereditary spastic paraplegia 56",
-                        "children": []
-                      }
-                    ],
-                    "disease": "hereditary spastic paraplegia"
+                    "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+                    "children": [],
+                    "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
+                  },
+                  {
+                    "label": "hereditary spastic paraplegia 56",
+                    "children": [],
+                    "disease": "hereditary spastic paraplegia 56"
                   },
                   {
                     "label": "huntington disease",
@@ -500,29 +429,23 @@ window.registryDiseaseTree = [
                 "children": [
                   {
                     "label": "amyotrophic lateral sclerosis",
-                    "children": [
-                      {
-                        "label": "familial amyotrophic lateral sclerosis",
-                        "disease": "familial amyotrophic lateral sclerosis",
-                        "children": []
-                      },
-                      {
-                        "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                        "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                        "children": []
-                      },
-                      {
-                        "label": "sporadic amyotrophic lateral sclerosis",
-                        "disease": "sporadic amyotrophic lateral sclerosis",
-                        "children": []
-                      }
-                    ],
+                    "children": [],
                     "disease": "amyotrophic lateral sclerosis"
                   },
                   {
                     "label": "familial amyotrophic lateral sclerosis",
                     "children": [],
                     "disease": "familial amyotrophic lateral sclerosis"
+                  },
+                  {
+                    "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+                    "children": [],
+                    "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
+                  },
+                  {
+                    "label": "sporadic amyotrophic lateral sclerosis",
+                    "children": [],
+                    "disease": "sporadic amyotrophic lateral sclerosis"
                   }
                 ]
               },
@@ -548,42 +471,30 @@ window.registryDiseaseTree = [
             "children": [
               {
                 "label": "amyotrophic lateral sclerosis",
-                "children": [
-                  {
-                    "label": "familial amyotrophic lateral sclerosis",
-                    "disease": "familial amyotrophic lateral sclerosis",
-                    "children": []
-                  },
-                  {
-                    "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                    "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                    "children": []
-                  },
-                  {
-                    "label": "sporadic amyotrophic lateral sclerosis",
-                    "disease": "sporadic amyotrophic lateral sclerosis",
-                    "children": []
-                  }
-                ],
+                "children": [],
                 "disease": "amyotrophic lateral sclerosis"
               },
               {
                 "label": "familial amyotrophic lateral sclerosis",
                 "children": [],
                 "disease": "familial amyotrophic lateral sclerosis"
+              },
+              {
+                "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+                "children": [],
+                "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
+              },
+              {
+                "label": "sporadic amyotrophic lateral sclerosis",
+                "children": [],
+                "disease": "sporadic amyotrophic lateral sclerosis"
               }
             ]
           },
           {
-            "label": "hereditary spastic paraplegia",
-            "children": [
-              {
-                "label": "hereditary spastic paraplegia 56",
-                "disease": "hereditary spastic paraplegia 56",
-                "children": []
-              }
-            ],
-            "disease": "hereditary spastic paraplegia"
+            "label": "hereditary spastic paraplegia 56",
+            "children": [],
+            "disease": "hereditary spastic paraplegia 56"
           }
         ]
       },
@@ -644,15 +555,14 @@ window.registryDiseaseTree = [
                 "disease": "familial amyotrophic lateral sclerosis"
               },
               {
-                "label": "hereditary spastic paraplegia",
-                "children": [
-                  {
-                    "label": "hereditary spastic paraplegia 56",
-                    "disease": "hereditary spastic paraplegia 56",
-                    "children": []
-                  }
-                ],
-                "disease": "hereditary spastic paraplegia"
+                "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+                "children": [],
+                "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
+              },
+              {
+                "label": "hereditary spastic paraplegia 56",
+                "children": [],
+                "disease": "hereditary spastic paraplegia 56"
               },
               {
                 "label": "myh7-related skeletal myopathy",
@@ -691,25 +601,18 @@ window.registryDiseaseTree = [
               },
               {
                 "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis",
-                "children": [
-                  {
-                    "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                    "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                    "children": []
-                  }
-                ],
+                "children": [],
                 "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis"
               },
               {
-                "label": "hereditary spastic paraplegia",
-                "children": [
-                  {
-                    "label": "hereditary spastic paraplegia 56",
-                    "disease": "hereditary spastic paraplegia 56",
-                    "children": []
-                  }
-                ],
-                "disease": "hereditary spastic paraplegia"
+                "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+                "children": [],
+                "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
+              },
+              {
+                "label": "hereditary spastic paraplegia 56",
+                "children": [],
+                "disease": "hereditary spastic paraplegia 56"
               },
               {
                 "label": "huntington disease",
@@ -728,19 +631,18 @@ window.registryDiseaseTree = [
               },
               {
                 "label": "retinitis pigmentosa",
-                "children": [
-                  {
-                    "label": "retinitis pigmentosa 11",
-                    "disease": "retinitis pigmentosa 11",
-                    "children": []
-                  },
-                  {
-                    "label": "retinitis pigmentosa 12",
-                    "disease": "retinitis pigmentosa 12",
-                    "children": []
-                  }
-                ],
+                "children": [],
                 "disease": "retinitis pigmentosa"
+              },
+              {
+                "label": "retinitis pigmentosa 11",
+                "children": [],
+                "disease": "retinitis pigmentosa 11"
+              },
+              {
+                "label": "retinitis pigmentosa 12",
+                "children": [],
+                "disease": "retinitis pigmentosa 12"
               },
               {
                 "label": "stargardt disease",
@@ -775,15 +677,9 @@ window.registryDiseaseTree = [
             "disease": "neurodevelopmental disorder with epilepsy, spasticity, and brain atrophy"
           },
           {
-            "label": "neurofibromatosis",
-            "children": [
-              {
-                "label": "neurofibromatosis type 1",
-                "disease": "neurofibromatosis type 1",
-                "children": []
-              }
-            ],
-            "disease": "neurofibromatosis"
+            "label": "neurofibromatosis type 1",
+            "children": [],
+            "disease": "neurofibromatosis type 1"
           },
           {
             "label": "parkinson disease",
@@ -804,6 +700,11 @@ window.registryDiseaseTree = [
             "label": "cerebellar ataxia with neuropathy and bilateral vestibular areflexia syndrome",
             "children": [],
             "disease": "cerebellar ataxia with neuropathy and bilateral vestibular areflexia syndrome"
+          },
+          {
+            "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+            "children": [],
+            "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
           },
           {
             "label": "huntington disease",
@@ -837,23 +738,7 @@ window.registryDiseaseTree = [
         "children": [
           {
             "label": "amyotrophic lateral sclerosis",
-            "children": [
-              {
-                "label": "familial amyotrophic lateral sclerosis",
-                "disease": "familial amyotrophic lateral sclerosis",
-                "children": []
-              },
-              {
-                "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
-                "children": []
-              },
-              {
-                "label": "sporadic amyotrophic lateral sclerosis",
-                "disease": "sporadic amyotrophic lateral sclerosis",
-                "children": []
-              }
-            ],
+            "children": [],
             "disease": "amyotrophic lateral sclerosis"
           },
           {
@@ -867,15 +752,14 @@ window.registryDiseaseTree = [
             "disease": "familial amyotrophic lateral sclerosis"
           },
           {
-            "label": "hereditary spastic paraplegia",
-            "children": [
-              {
-                "label": "hereditary spastic paraplegia 56",
-                "disease": "hereditary spastic paraplegia 56",
-                "children": []
-              }
-            ],
-            "disease": "hereditary spastic paraplegia"
+            "label": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1",
+            "children": [],
+            "disease": "frontotemporal dementia and/or amyotrophic lateral sclerosis 1"
+          },
+          {
+            "label": "hereditary spastic paraplegia 56",
+            "children": [],
+            "disease": "hereditary spastic paraplegia 56"
           },
           {
             "label": "myh7-related skeletal myopathy",
@@ -886,6 +770,11 @@ window.registryDiseaseTree = [
             "label": "oculopharyngodistal myopathy",
             "children": [],
             "disease": "oculopharyngodistal myopathy"
+          },
+          {
+            "label": "sporadic amyotrophic lateral sclerosis",
+            "children": [],
+            "disease": "sporadic amyotrophic lateral sclerosis"
           }
         ]
       },
@@ -899,19 +788,18 @@ window.registryDiseaseTree = [
           },
           {
             "label": "retinitis pigmentosa",
-            "children": [
-              {
-                "label": "retinitis pigmentosa 11",
-                "disease": "retinitis pigmentosa 11",
-                "children": []
-              },
-              {
-                "label": "retinitis pigmentosa 12",
-                "disease": "retinitis pigmentosa 12",
-                "children": []
-              }
-            ],
+            "children": [],
             "disease": "retinitis pigmentosa"
+          },
+          {
+            "label": "retinitis pigmentosa 11",
+            "children": [],
+            "disease": "retinitis pigmentosa 11"
+          },
+          {
+            "label": "retinitis pigmentosa 12",
+            "children": [],
+            "disease": "retinitis pigmentosa 12"
           },
           {
             "label": "stargardt disease",
@@ -950,19 +838,18 @@ window.registryDiseaseTree = [
           },
           {
             "label": "retinitis pigmentosa",
-            "children": [
-              {
-                "label": "retinitis pigmentosa 11",
-                "disease": "retinitis pigmentosa 11",
-                "children": []
-              },
-              {
-                "label": "retinitis pigmentosa 12",
-                "disease": "retinitis pigmentosa 12",
-                "children": []
-              }
-            ],
+            "children": [],
             "disease": "retinitis pigmentosa"
+          },
+          {
+            "label": "retinitis pigmentosa 11",
+            "children": [],
+            "disease": "retinitis pigmentosa 11"
+          },
+          {
+            "label": "retinitis pigmentosa 12",
+            "children": [],
+            "disease": "retinitis pigmentosa 12"
           },
           {
             "label": "stargardt disease",
@@ -972,15 +859,9 @@ window.registryDiseaseTree = [
         ]
       },
       {
-        "label": "neurofibromatosis",
-        "children": [
-          {
-            "label": "neurofibromatosis type 1",
-            "disease": "neurofibromatosis type 1",
-            "children": []
-          }
-        ],
-        "disease": "neurofibromatosis"
+        "label": "neurofibromatosis type 1",
+        "children": [],
+        "disease": "neurofibromatosis type 1"
       }
     ]
   },
@@ -1013,17 +894,6 @@ window.registryDiseaseTree = [
         "disease": "attention deficit hyperactivity disorder"
       },
       {
-        "label": "cardiomyopathy",
-        "children": [
-          {
-            "label": "nonischemic cardiomyopathy",
-            "disease": "nonischemic cardiomyopathy",
-            "children": []
-          }
-        ],
-        "disease": "cardiomyopathy"
-      },
-      {
         "label": "celiac disease",
         "children": [],
         "disease": "celiac disease"
@@ -1032,6 +902,11 @@ window.registryDiseaseTree = [
         "label": "fibromuscular dysplasia",
         "children": [],
         "disease": "fibromuscular dysplasia"
+      },
+      {
+        "label": "nonischemic cardiomyopathy",
+        "children": [],
+        "disease": "nonischemic cardiomyopathy"
       },
       {
         "label": "phenylketonuria",
@@ -1044,31 +919,14 @@ window.registryDiseaseTree = [
         "disease": "primary progressive multiple sclerosis"
       },
       {
-        "label": "Usher syndrome",
-        "children": [
-          {
-            "label": "usher syndrome type 1b",
-            "disease": "usher syndrome type 1b",
-            "children": []
-          },
-          {
-            "label": "usher syndrome type 2",
-            "disease": "usher syndrome type 2",
-            "children": []
-          }
-        ],
-        "disease": "usher syndrome"
+        "label": "usher syndrome type 1b",
+        "children": [],
+        "disease": "usher syndrome type 1b"
       },
       {
-        "label": "Usher syndrome type 1",
-        "children": [
-          {
-            "label": "usher syndrome type 1b",
-            "disease": "usher syndrome type 1b",
-            "children": []
-          }
-        ],
-        "disease": "usher syndrome type 1"
+        "label": "usher syndrome type 2",
+        "children": [],
+        "disease": "usher syndrome type 2"
       }
     ]
   }

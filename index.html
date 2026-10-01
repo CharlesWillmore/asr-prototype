@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://rsms.me">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/listing.css">
+  <link rel="stylesheet" href="css/styles.css?v=logo-size-105">
+  <link rel="stylesheet" href="css/listing.css?v=20261001-header-text">
 </head>
 
 
@@ -25,15 +25,15 @@
 
     <div class="header-inner">
 
-      <a href="#" class="logo">
+      <a href="home.html" class="logo">
         <img
-          src="assets/asr-logo-draft.svg"
+          src="assets/asr-logo.svg?v=approved-20260928"
           alt="Australian Pluripotent Stem Cell Registry">
       </a>
 
 
       <nav class="desktop-nav">
-        <a href="index.html" aria-current="page">Cell Lines</a>
+        <a href="home.html">Home</a>
         <a href="#">About</a>
         <a href="#">FAQs</a>
         <a href="#">Resources</a>
@@ -63,6 +63,9 @@
   <section class="listing-toolbar">
 
     <div class="toolbar-inner">
+      <button class="filter-button" aria-controls="filter-panel" aria-expanded="false">
+        FILTER SEARCH
+      </button>
 
 
       <!-- CURRENT SEARCH -->
@@ -242,9 +245,7 @@
 
       <!-- FILTER -->
 
-      <button class="filter-button" aria-controls="filter-panel" aria-expanded="false">
-        FILTER SEARCH
-      </button>
+
 
 
     </div>
@@ -255,26 +256,24 @@
   <aside class="search-panel" id="filter-panel" aria-label="Filter search" inert>
     <div class="search-actions">
       <div class="search-primary-actions">
-        <button type="button" class="filter-apply-button">APPLY FILTER SEARCH</button>
+        <button type="button" class="filter-apply-button">SHOW DETAILED CELL LIST</button>
         <button type="button" class="filter-clear-button">CLEAR SELECTION</button>
-        <button type="button" class="search-close" aria-label="Close filter">×</button>
       </div>
-      <div class="search-secondary-actions"><span id="filter-result-count" aria-live="polite"></span><button type="button" id="expand-filter" aria-pressed="false">Expand filter ↔</button></div>
+      <div class="search-secondary-actions"><div id="filter-result-count" class="selection-summary" aria-live="polite"></div></div>
     </div>
     <div class="search-scroll" tabindex="0" aria-label="Filter options">
-      <section class="search-section"><details open><summary>Name</summary><div class="section-options">
-        <label for="filter-name">Search by name</label><input id="filter-name" type="search" placeholder="Cell line identifier, disease, institution or research group">
-        <p class="search-example">Examples: AIBNi001-A, retinitis pigmentosa, Murdoch</p>
-      </div></details></section>
-      <section class="search-section"><details open><summary>Disease</summary><div class="section-options" id="disease-options"></div></details></section>
+      <section class="search-section"><h2 class="search-section-heading">Search</h2><div class="section-options">
+        <input id="filter-name" type="search" aria-label="Search by cell line identifier, disease, institution or research group" placeholder="Search by: Cell line identifier, disease, institution or research group">
+        <p class="search-example">Examples: ausAIBNi001-A, retinitis pigmentosa, Lions Eye Institute</p>
+      </div></section>
+      <section class="search-section"><details><summary>Disease</summary><div class="section-options" id="disease-options"></div></details></section>
       <section class="search-section"><details><summary>Sex</summary><div class="section-options" id="sex-options"></div></details></section>
-      <section class="search-section"><details><summary>Has Disease</summary><div class="section-options" id="has-disease-options"></div></details></section>
       <section class="search-section"><details><summary>Research organisation</summary><div class="section-options" id="organisation-options"></div></details></section>
       <section class="search-section"><details><summary>Variant</summary><div class="section-options" id="variant-options"></div></details></section>
     </div>
   </aside>
   <section class="results-pane" aria-label="Cell line results" tabindex="0">
-    <table class="results-table"><caption class="visually-hidden">Matching cell lines</caption>
+    <div id="listing-filter-summary" class="selection-summary"></div><table class="results-table"><caption class="visually-hidden">Matching cell lines</caption>
       <thead><tr><th class="identifier-col" scope="col">IDENTIFIER</th><th class="description-col" scope="col">DESCRIPTION</th><th class="disease-col" scope="col">DISEASE REPORTED</th><th class="loci-col" scope="col">LOCI</th><th class="variant-col" scope="col">VARIANT</th><th class="contact-col" scope="col">CELL LINE CONTACT</th><th class="curation-col" scope="col">CURATION</th></tr></thead>
       <tbody id="results-body"></tbody>
     </table>
@@ -282,7 +281,7 @@
     <noscript>Enable JavaScript to use the live prototype filters.</noscript>
   </section>
 </main>
-<script src="data/registry-records.js"></script>
+<script src="data/registry-records.js?v=20260929-aus-identifiers"></script>
 <script src="data/disease-tree.js"></script>
-<script src="js/listing.js"></script>
+<script src="js/listing.js?v=20261001-browse-all"></script>
 </body></html>
