@@ -6,3 +6,24 @@
 
 /* Home artwork uses Nunito; the shared header retains Inter. */
 .home-page>.home-toolbar,.home-page>main,.home-page>.home-footer,.home-page>dialog{font-family:"Nunito",Arial,sans-serif}
+
+/* Match orange toolbar text to the listing. */
+.home-toolbar,.home-toolbar a,.home-toolbar .filter-button,.home-toolbar .filter-button:hover{color:#3b3938}
+
+.home-toolbar .home-toolbar-inner,.home-toolbar .home-toolbar-inner a,.home-toolbar .filter-button{font-size:16px}
+
+/* Overlaid slides move right to left without changing the carousel height. */
+.hero{display:grid;overflow:hidden}
+.hero>.slide{grid-area:1 / 1;min-width:0;visibility:hidden;pointer-events:none}
+.hero>.slide.is-active{visibility:visible;pointer-events:auto}
+.slider-controls{z-index:2}
+
+/* Three rounded-square slide selectors, matching the 32px filter controls. */
+.slider-controls{background:transparent;border-radius:0;padding:0;gap:10px}
+.slide-dots{gap:8px}
+.slider-controls .slide-dots button{width:32px;height:32px;min-width:32px;min-height:32px;padding:0;border:1px solid #3b3938;border-radius:4px;background:#ffffffed;transition:background-color .15s ease}
+.slide-dots button::before{content:none}
+.slider-controls .slide-dots button[aria-pressed=true]{background:#3b3938}
+.slider-controls .slide-dots button:hover{background:#e9d7c4}
+.slider-controls .slide-dots button[aria-pressed=true]:hover{background:#3b3938}
+#slide-pause{background:#ffffffed;border-radius:4px;color:#3b3938}

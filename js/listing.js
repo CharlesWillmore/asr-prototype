@@ -79,7 +79,17 @@
         const sub = tree(children, group, [...parents, node.label]); sub.hidden = true; sub.id = `tree-${++serial}`;
         button.setAttribute('aria-controls', sub.id);
         button.addEventListener('click', () => { sub.hidden = !sub.hidden; button.setAttribute('aria-expanded', String(!sub.hidden)); button.setAttribute('aria-label', `${sub.hidden ? 'Expand' : 'Collapse'} ${node.label}`); });
-        row.append(button, checkbox(group, allKeys(node), node.label, 'tree-label', undefined, [...parents, node.label])); item.append(row, sub);
+        const topLevelCategory = parents.length === 0 && ['disease', 'hasDisease', 'variant'].includes(group);
+        let label;
+        if (topLevelCategory) {
+          label = el('span', 'tree-label');
+          const text = el('span', '', node.label + ' ');
+          text.append(el('span', 'tree-count', `(${countFor(group, allKeys(node))})`));
+          label.append(text);
+        } else {
+          label = checkbox(group, allKeys(node), node.label, 'tree-label', undefined, [...parents, node.label]);
+        }
+        row.append(button, label); item.append(row, sub);
       } else { row.append(el('span', 'tree-spacer'), checkbox(group, allKeys(node), node.label, 'tree-label', undefined, [...parents, node.label])); item.append(row); }
       list.append(item);
     }
@@ -105,7 +115,7 @@
   diseaseOptions.append(
     diseaseIntro,
     checkbox('disease', allKeys(diseaseRoot), 'All Diseases', 'simple-option'),
-    el('p', 'disease-help', 'A targeted selection can be made by clicking on the disease categories, or selecting individual diseases, which can be revealed by clicking on the arrows. Some diseases appear in more than one category, so selecting a disease selects it wherever it appears.'),
+    el('p', 'disease-help', 'Use the arrows to expand disease categories, then select individual diseases or subcategories. Some diseases appear in more than one category, so selecting a disease selects it wherever it appears.'),
     el('p', 'disease-help', 'A dash means some diseases in that category are selected.'),
     tree(diseases, 'disease'),
     tree([{ label: 'Has Disease', children: [
@@ -143,7 +153,7 @@
     };
   });
   variants.append(
-    el('p', 'disease-help', 'Select a category or use the arrows to choose individual genes. A dash means some options in that category are selected. Gene selections apply only within their donor origin or modification type.'),
+    el('p', 'disease-help', 'Use the arrows to expand variant categories, then select modification types or individual genes. A dash means some options in that category are selected. Gene selections apply only within their donor origin or modification type.'),
     tree([
       { label: 'None reported', key: 'none' },
       { label: 'Donor origin', children: donorGenes.map(gene => ({ label: gene, key: `Donor: ${gene}` })) },
@@ -192,11 +202,17 @@
       const host = document.querySelector(kind === 'filter' ? '#filter-result-count' : '#listing-filter-summary');
       host.hidden = kind === 'filter' && !reviewed;
       host.replaceChildren();
-      host.append(el('strong', '', 'Current filter search'), document.createTextNode(` — ${matches.length} matching cell lines: `));
+      const prefix = el('span', 'summary-prefix');
+      prefix.append(el('strong', '', 'Current search & filter'), document.createTextNode(` — ${matches.length} matching cell lines: `));
+      host.append(prefix);
       const expanded = summaryExpanded[kind], countOnly = kind === 'filter' && editing;
-      const text = el('span', 'selection-summary-text', expanded ? full : countOnly ? '' : [...full].slice(0,75).join(''));
+      host.classList.toggle('summary-expanded', expanded);
+      const text = el('span', 'selection-summary-text', kind === 'listing' || expanded ? full : countOnly ? '' : [...full].slice(0,75).join(''));
       text.id = `summary-text-${kind}`; host.append(text);
-      if (expanded || countOnly || [...full].length > 75) {
+      const needsToggle = kind === 'listing'
+        ? text.scrollWidth > text.clientWidth || host.scrollWidth > host.clientWidth
+        : countOnly || [...full].length > 75;
+      if (expanded || needsToggle) {
         const button = el('button', 'summary-toggle', expanded ? 'less…' : 'more…');
         button.type = 'button'; button.setAttribute('aria-expanded', String(expanded)); button.setAttribute('aria-controls', text.id);
         button.addEventListener('click', () => { summaryExpanded[kind] = !expanded; renderSummaries(); document.querySelector(`#${host.id} .summary-toggle`)?.focus(); });
@@ -204,6 +220,15 @@
       }
     }
   }
+  let summaryWidth = 0;
+  new ResizeObserver(entries => {
+    const width = entries[0].contentRect.width;
+    if (width > 0 && width !== summaryWidth) {
+      summaryWidth = width;
+      renderSummaries();
+    }
+  }).observe(listingSummary);
+  document.fonts.ready.then(renderSummaries);
   function renderRows() {
     const fragment = document.createDocumentFragment();
     for (const r of matches.slice((page - 1) * pageSize, page * pageSize)) {
@@ -227,7 +252,9 @@
     renderSummaries(); persist();
     document.querySelector('.page-number').replaceChildren(el('strong', '', String(page)), el('span', '', `of ${Math.max(1, Math.ceil(matches.length / pageSize))}`));
     const maxPage = Math.max(1, Math.ceil(matches.length / pageSize));
-    document.querySelectorAll('.page-arrow').forEach((b, i) => b.disabled = i < 2 ? page === 1 : page >= maxPage);
+    document.querySelectorAll('.page-arrow').forEach(button => {
+      button.disabled = button.getAttribute('aria-label') === 'Previous page' ? page === 1 : page >= maxPage;
+    });
   }
   function updateResults(resetPage = false) {
     const query = normalise(nameInput.value);
@@ -269,7 +296,11 @@
     document.querySelector('#display-value').textContent = button.textContent.trim(); document.querySelector('.display-control').open = false;
     document.querySelectorAll('.display-menu button').forEach(b => b.classList.toggle('selected-option', b === button)); updateResults(true);
   }));
-  document.querySelectorAll('.page-arrow').forEach((button, i) => button.addEventListener('click', () => { const max = Math.max(1, Math.ceil(matches.length / pageSize)); page = [1, Math.max(1, page - 1), Math.min(max, page + 1), max][i]; resultsPane.scrollTop = 0; renderRows(); }));
+  document.querySelectorAll('.page-arrow').forEach(button => button.addEventListener('click', () => {
+    const max = Math.max(1, Math.ceil(matches.length / pageSize));
+    page = button.getAttribute('aria-label') === 'Previous page' ? Math.max(1, page - 1) : Math.min(max, page + 1);
+    resultsPane.scrollTop = 0; renderRows();
+  }));
   document.addEventListener('keydown', event => {
     if (!workspace.classList.contains('filter-open')) return;
     if (event.key === 'Escape') { event.preventDefault(); setOpen(false); }

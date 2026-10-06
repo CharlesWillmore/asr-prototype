@@ -106,7 +106,7 @@
 .record-redesign .record-content .section-heading h2{font-weight:600}
 
 .record-redesign .record-return-links{min-height:36px;padding-block:6px;gap:28px;flex-wrap:wrap}
-.record-return-links a{font-size:12px;line-height:20px;color:#fff;text-decoration:none}
+.record-return-links a{font-size:12px;line-height:20px;color:#3b3938;text-decoration:none}
 .record-return-links a:hover{text-decoration:underline}
 
 /* Issue B1: compact identity, adjacent aliases and circular navigation stops. */
@@ -165,3 +165,35 @@
 
 /* Consistent table heading colour across the three styled detail pages. */
 .record-redesign .record-card th,.record-redesign .record-table-head{color:#242220}
+
+/* Shared toolbar height, actions, aligned status and compact icon slider. */
+.record-redesign .record-return-links{min-height:64px;padding-block:10px;flex-wrap:nowrap;justify-content:space-between;gap:12px}
+.record-redesign .record-return-links .record-actions{position:static;display:flex;align-items:center;flex-wrap:nowrap;gap:10px;margin-left:auto}
+.record-redesign .record-return-links .record-actions button{width:44px;height:44px;padding:8px;color:#3b3938}
+.record-redesign .record-return-links .record-actions button:hover,
+.record-redesign .record-return-links .record-actions button:focus-visible{color:#fff;background:transparent}
+.record-redesign .record-return-links .record-actions svg{width:28px;height:28px}
+.record-redesign .record-header-meta{align-self:start;justify-content:flex-start;padding-top:8px}
+.record-redesign .header-curation{margin:0}
+.record-redesign .record-hero-inner{padding-bottom:4px}
+.navigation-icons .record-navigator .navigator-inner{height:64px;padding-bottom:12px}
+.navigation-icons .record-navigator .navigator-stops{bottom:12px}
+.navigation-icons .record-navigator .navigator-stops a{width:52px;height:52px}
+.navigation-icons .navigation-dot{width:48px;height:48px}
+.navigation-icons .record-navigator input{height:52px}
+.navigation-icons .navigation-dot svg{width:34px;height:34px}
+@media(max-width:600px){
+ .record-redesign .record-return-links{gap:8px}
+ .record-redesign .record-return-links .record-actions{gap:2px}
+ .record-redesign .record-return-links .record-actions button{width:36px;height:36px;padding:6px}
+ .record-redesign .record-header-meta{padding-top:0}
+}
+
+/* Space above the shared cell-line slider navigation. */
+.navigation-icons .record-navigator{padding-top:16px}
+
+/* Balance the slider icons by their visible artwork dimensions. */
+.navigation-icons .navigator-stops a[data-stop="0"] .navigation-dot svg{width:38.857px;height:38.857px}
+.navigation-icons .navigator-stops a:is([data-stop="2"],[data-stop="3"],[data-stop="4"]) .navigation-dot svg{width:30.6px;height:30.6px}
+
+.record-redesign .record-return-links,.record-redesign .record-return-links a{font-size:16px}

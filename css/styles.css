@@ -1200,3 +1200,25 @@ button {
   }
 
 }
+
+/* Charcoal labels and controls on the orange toolbar. */
+.listing-toolbar,
+.listing-toolbar .filter-button,
+.listing-toolbar .filter-button:hover,
+.listing-toolbar .page-arrow,
+.listing-toolbar .page-arrow:hover,
+.listing-toolbar .page-number strong{color:#3b3938}
+.listing-toolbar .display-arrow,
+.listing-toolbar .display-control:hover .display-arrow,
+.listing-toolbar .display-control[open] .display-arrow{border-color:#3b3938}
+
+/* Consistent text size across orange bars; action icon dimensions stay unchanged. */
+.listing-toolbar .toolbar-inner,
+.listing-toolbar .toolbar-inner a,
+.listing-toolbar .filter-button,
+.listing-toolbar .result-count,
+.listing-toolbar .display-trigger,
+.listing-toolbar .page-number,
+.home-toolbar .home-toolbar-inner,
+.home-toolbar .home-toolbar-inner a,
+.home-toolbar .filter-button{font-size:16px}

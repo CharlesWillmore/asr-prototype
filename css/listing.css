@@ -128,3 +128,12 @@
 .listing-page .results-table th{color:#242220}
 .results-table tbody tr:last-child td{border-bottom:0}
 @media(max-width:960px){.results-table tbody tr:last-child{border-bottom:0}}
+
+/* Fit the detailed-results summary to the actual table width. */
+#listing-filter-summary{font-size:16px;line-height:24px;display:flex;align-items:baseline;gap:0 4px;overflow:hidden}
+#listing-filter-summary .summary-prefix{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#listing-filter-summary .selection-summary-text{flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#listing-filter-summary .summary-toggle{flex:none;white-space:nowrap}
+#listing-filter-summary.summary-expanded{display:block;overflow:visible}
+#listing-filter-summary.summary-expanded .summary-prefix,
+#listing-filter-summary.summary-expanded .selection-summary-text{white-space:normal;overflow:visible}
