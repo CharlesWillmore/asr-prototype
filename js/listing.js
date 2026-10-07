@@ -273,7 +273,7 @@
     body.replaceChildren(fragment);
     document.querySelector('#empty-results').hidden = matches.length > 0;
     document.querySelector('.results-table').hidden = matches.length === 0;
-    document.querySelector('.result-count strong').replaceChildren(document.createTextNode(`${matches.length} `), el('span', 'count-cell-word', 'Cell '), document.createTextNode(matches.length === 1 ? 'Line' : 'Lines'));
+    document.querySelector('.result-count strong').replaceChildren(document.createTextNode(`${matches.length} `), el('span', 'count-cell-word', 'Cell '), el('span', 'count-lines-word', matches.length === 1 ? 'Line' : 'Lines'));
     renderSummaries(); persist();
     const maxPage = Math.max(1, Math.ceil(matches.length / pageSize));
     const pageBox = el('strong');
