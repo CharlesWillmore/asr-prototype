@@ -319,12 +319,6 @@
 /* Keep the orange toolbar on one row at narrow phone widths. */
 @media(min-width:365px) and (max-width:444px){
  .listing-page .listing-toolbar .count-lines-word{display:none}
- .listing-page .listing-toolbar .toolbar-inner,
- .listing-page .listing-toolbar .toolbar-inner a,
- .listing-page .listing-toolbar .filter-button,
- .listing-page .listing-toolbar .result-count,
- .listing-page .listing-toolbar .display-trigger,
- .listing-page .listing-toolbar .page-number{font-size:12px}
  .listing-page .listing-toolbar .toolbar-inner{flex-wrap:nowrap;gap:8px}
  .listing-page .listing-toolbar .filter-button{white-space:nowrap;padding-inline:8px}
  .listing-page .listing-toolbar .page-number{gap:4px}
