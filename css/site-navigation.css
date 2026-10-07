@@ -1,0 +1,20 @@
+/* Shared vertical navigation at the hamburger breakpoint. */
+@media(max-width:860px){
+ .site-header{position:relative;z-index:60;flex:none}
+ .site-header .desktop-nav{display:none}
+ .site-header.menu-open .desktop-nav{display:flex;position:absolute;top:100%;left:0;right:0;z-index:60;flex-direction:column;align-items:stretch;gap:0;padding:12px clamp(20px,4.4vw,60px) 20px;background:#000;border-top:1px solid #393939;box-shadow:0 8px 14px #0003;max-height:var(--menu-available-height,calc(100dvh - 76px));overflow:auto}
+ .site-header.menu-open .desktop-nav a,
+ .site-header.menu-open .desktop-nav button{display:block;min-height:44px;padding:var(--menu-row-padding,12px) 0;color:#ddd;background:transparent;border:0;border-bottom:1px solid #292929;font:inherit;font-size:var(--menu-font-size,20px);line-height:1.3;text-align:left;text-decoration:none;cursor:pointer}
+ .site-header.menu-open .desktop-nav :is(a,button):hover,
+ .site-header.menu-open .desktop-nav [aria-current="page"]{color:#fff}
+ .site-header.menu-open .desktop-nav :is(a,button):focus-visible{outline:2px solid #f79400;outline-offset:2px}
+ .site-header .mobile-menu-button{cursor:pointer}
+ .site-header .mobile-menu-button[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+ .site-header .mobile-menu-button[aria-expanded="true"] span:nth-child(2){opacity:0}
+ .site-header .mobile-menu-button[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+}
+
+/* Orange feedback while a dropdown item is pressed by mouse or touch. */
+@media(max-width:860px){
+ .site-header.menu-open .desktop-nav :is(a,button):active{color:#f79400}
+}

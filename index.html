@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="css/styles.css?v=logo-size-105">
   <link rel="stylesheet" href="css/listing.css?v=20261001-header-text">
-</head>
+<link rel="stylesheet" href="css/site-navigation.css"></head>
 
 
 <body class="listing-page">
@@ -33,13 +33,7 @@
       </a>
 
 
-      <nav class="desktop-nav">
-        <a href="home.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">FAQs</a>
-        <a href="#">Resources</a>
-        <a href="#">Contact</a>
-      </nav>
+      <nav class="desktop-nav" aria-label="Main navigation"><a href="home.html">Home</a><a href="about.html">About</a><a href="faqs.html">FAQs</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a></nav>
 
 
       <button
@@ -211,7 +205,7 @@
     </div>
     <div class="search-scroll" tabindex="0" aria-label="Filter options">
       <section class="search-section"><h2 class="search-section-heading">Search</h2><div class="section-options">
-        <input id="filter-name" type="search" aria-label="Search by cell line identifier, disease, institution or research group" placeholder="Search by: Cell line identifier, disease, institution or research group">
+        <input id="filter-name" type="search" aria-label="Search by cell line identifier, disease, institution or research group" placeholder="Search: Cell line identifier, disease, institution, research group">
         <p class="search-example">Examples: ausAIBNi001-A, retinitis pigmentosa, Lions Eye Institute</p>
       </div></section>
       <section class="search-section"><details><summary>Disease</summary><div class="section-options" id="disease-options"></div></details></section>
@@ -234,4 +228,4 @@
 <script src="data/registry-records.js?v=20260929-aus-identifiers"></script>
 <script src="data/disease-tree.js"></script>
 <script src="js/listing.js?v=20261001-browse-all"></script>
-</body></html>
+<script src="js/site-navigation.js"></script></body></html>

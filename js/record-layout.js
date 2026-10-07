@@ -96,7 +96,5 @@
     const a=document.createElement('a');a.href=url;a.download=`${identifier}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
   document.querySelector('[data-action="pdf"]').title='Download PDF — opens print dialog; choose Save as PDF';
-  const menu=document.querySelector('.mobile-menu-button');
-  menu.addEventListener('click',()=>{const expanded=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!expanded));document.querySelector('.desktop-nav').classList.toggle('mobile-open',!expanded);});
   measure();
 })();

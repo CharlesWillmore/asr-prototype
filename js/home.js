@@ -48,10 +48,9 @@
     dialog.showModal();
   }));
   document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
-  const menu = document.querySelector('.mobile-menu-button');
-  menu.setAttribute('aria-expanded', 'false');
-  menu.addEventListener('click', () => {
-    const open = document.querySelector('.desktop-nav').classList.toggle('is-open');
-    menu.setAttribute('aria-expanded', String(open));menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-  });
+  const requestedInfo = new URLSearchParams(location.search).get('info');
+  if (['FAQs', 'Resources', 'Contact'].includes(requestedInfo)) {
+    document.querySelector('#pending-title').textContent = requestedInfo;
+    dialog.showModal();
+  }
 })();

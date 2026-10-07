@@ -12,6 +12,28 @@
   const body = document.querySelector('#results-body');
   const filterButton = document.querySelector('.filter-button');
   const nameInput = document.querySelector('#filter-name');
+  // Select the longest hint that fits the field, rather than using screen breakpoints.
+  const searchHints = [
+    'Search: Cell line identifier, disease, institution, research group',
+    'Search: Identifier, disease, institution, research group',
+    'Identifier, disease, institution, research group',
+    'Identifier, disease, research group',
+    'Identifier, disease, group',
+    'Identifier, disease etc'
+  ];
+  const hintContext = document.createElement('canvas').getContext('2d');
+  function fitSearchHint() {
+    if (!nameInput.clientWidth || !hintContext) return;
+    const style = getComputedStyle(nameInput);
+    hintContext.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    const spacing = parseFloat(style.letterSpacing) || 0;
+    // Keep room for the native search clear control and browser rounding.
+    const available = nameInput.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 28;
+    nameInput.placeholder = searchHints.find(hint => hintContext.measureText(hint).width + Math.max(0, hint.length - 1) * spacing <= available) || searchHints.at(-1);
+  }
+  new ResizeObserver(fitSearchHint).observe(nameInput);
+  document.fonts.ready.then(fitSearchHint);
+  fitSearchHint();
   const selections = { disease: new Set(), organisation: new Set(), sex: new Set(), hasDisease: new Set(), variant: new Set() };
   const storageKey = 'asr-filter-state-v1';
   let saved = {};
