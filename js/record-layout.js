@@ -5,6 +5,16 @@
   const fixedTop = document.querySelector('.record-fixed-top');
   const slider = nav.querySelector('input');
   const links = [...nav.querySelectorAll('a')];
+  links.forEach(link => {
+    const label = link.getAttribute('title') || link.getAttribute('aria-label');
+    if (!label) return;
+    link.removeAttribute('title');
+    const tooltip = document.createElement('span');
+    tooltip.className = 'navigator-tooltip';
+    tooltip.textContent = label;
+    tooltip.setAttribute('aria-hidden', 'true');
+    link.append(tooltip);
+  });
   const sections = links.map(link => document.querySelector(link.hash));
   const heading = document.querySelector('.record-heading');
   const identity = document.querySelector('.record-identity');
@@ -72,7 +82,7 @@
       i === current ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current');
       link.classList.toggle('is-reached', value >= points[i + 1].x - 0.5);
     });
-    slider.setAttribute('aria-valuetext', links[current].textContent.trim());
+    slider.setAttribute('aria-valuetext', links[current].getAttribute('aria-label') || links[current].textContent.trim());
   }
   // Follow the drag smoothly, including the initial scroll past the site header.
   function followSlider() {
