@@ -33,12 +33,16 @@
     fitMenu();
   }
   button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
-  nav.addEventListener('click', event => { if (event.target.closest('a,button')) setOpen(false); });
+  nav.addEventListener('click', event => { if (event.target.closest('a,button')) setTimeout(() => setOpen(false), 0); });
   document.addEventListener('keydown', event => {
     if (event.key === 'Escape' && header.classList.contains('menu-open')) { setOpen(false); button.focus(); }
   });
   document.addEventListener('click', event => { if (!header.contains(event.target)) setOpen(false); });
-  header.addEventListener('focusout', () => queueMicrotask(() => { if (!header.contains(document.activeElement)) setOpen(false); }));
+  // Some desktop browsers do not focus links on mouse-down. Only close on
+  // a confirmed focus move outside the header, so the link can receive its click.
+  header.addEventListener('focusout', event => {
+    if (event.relatedTarget && !header.contains(event.relatedTarget)) setOpen(false);
+  });
   narrow.addEventListener('change', () => setOpen(false));
   setOpen(false);
 })();
