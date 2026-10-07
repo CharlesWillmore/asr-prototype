@@ -300,3 +300,9 @@
 @media(max-width:647px){
  #listing-filter-summary .summary-search-filter-words{display:none}
 }
+
+/* Keep the detailed-results summary type in step with the orange toolbar. */
+#listing-filter-summary{font-size:16px;line-height:1.5}
+@media(max-width:739px){#listing-filter-summary{font-size:15px}}
+@media(max-width:694px){#listing-filter-summary{font-size:14px}}
+@media(max-width:379px){#listing-filter-summary{font-size:13px}}
