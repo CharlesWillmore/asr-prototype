@@ -272,3 +272,10 @@
 .listing-page .page-number-input{display:block;min-width:0;max-width:100%;border:0;border-radius:0;padding:0;margin:0;background:transparent;color:inherit;font:inherit;font-weight:inherit;line-height:normal;text-align:center;cursor:text}
 .listing-page .listing-toolbar .page-number-input:focus,
 .listing-page .listing-toolbar .page-number-input:focus-visible{outline:none;box-shadow:none}
+
+/* Suppress native mobile input decoration as well as the former focus underline. */
+.listing-page .listing-toolbar .page-number-input,
+.listing-page .listing-toolbar .page-number-input:focus,
+.listing-page .listing-toolbar .page-number-input:focus-visible{
+ -webkit-appearance:none;appearance:none;border:0;border-bottom:0;outline:none;box-shadow:none;text-decoration:none;background-image:none;
+}
