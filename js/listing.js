@@ -248,7 +248,7 @@
     body.replaceChildren(fragment);
     document.querySelector('#empty-results').hidden = matches.length > 0;
     document.querySelector('.results-table').hidden = matches.length === 0;
-    document.querySelector('.result-count strong').textContent = `${matches.length} Cell ${matches.length === 1 ? 'Line' : 'Lines'}`;
+    document.querySelector('.result-count strong').replaceChildren(document.createTextNode(`${matches.length} `), el('span', 'count-cell-word', 'Cell '), document.createTextNode(matches.length === 1 ? 'Line' : 'Lines'));
     renderSummaries(); persist();
     document.querySelector('.page-number').replaceChildren(el('strong', '', String(page)), el('span', '', `of ${Math.max(1, Math.ceil(matches.length / pageSize))}`));
     const maxPage = Math.max(1, Math.ceil(matches.length / pageSize));
@@ -274,7 +274,7 @@
   }
   function responsiveState() {
     const open = workspace.classList.contains('filter-open');
-    const overlay = window.matchMedia('(max-width:1199px)').matches;
+    const overlay = window.matchMedia('(max-width:600px)').matches;
     panel.setAttribute('role', open && overlay ? 'dialog' : 'complementary');
     if (open && overlay) panel.setAttribute('aria-modal', 'true'); else panel.removeAttribute('aria-modal');
     resultsPane.inert = open && overlay;

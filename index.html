@@ -16,6 +16,7 @@
 
 
 <body class="listing-page">
+<div class="listing-shell">
 
   <!-- =====================================
        HEADER
@@ -77,7 +78,7 @@
         </span>
 
         <strong>
-          116 Cell Lines
+          116 <span class="count-cell-word">Cell </span>Lines
         </strong>
 
       </div>
@@ -87,7 +88,7 @@
 
       <details class="display-control">
 
-        <summary class="display-trigger">
+        <summary class="display-trigger" aria-label="Cell lines per page">
 
           <span class="display-label">
             Display
@@ -99,9 +100,7 @@
 
           <span class="display-arrow"></span>
 
-          <span>
-            lines per page
-          </span>
+          <span class="per-page-label"><span class="per-page-lines">lines </span><span class="per-page-words">per page</span></span>
 
         </summary>
 
@@ -230,6 +229,8 @@
     <noscript>Enable JavaScript to use the live prototype filters.</noscript>
   </section>
 </main>
+</div>
+<footer class="site-footer"><div>The Australian Pluripotent Stem Cell Registry<p>Supporting Australian stem cell research.</p></div></footer>
 <script src="data/registry-records.js?v=20260929-aus-identifiers"></script>
 <script src="data/disease-tree.js"></script>
 <script src="js/listing.js?v=20261001-browse-all"></script>

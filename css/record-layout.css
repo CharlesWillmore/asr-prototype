@@ -86,7 +86,7 @@
 /* Five navigation stops retain readable labels on narrow screens. */
 @media(max-width:800px){
  .navigator-stops{gap:8px}
- .navigator-stops a{font-size:11px;min-width:0;overflow-wrap:anywhere}
+ .navigator-stops a{font-size:11px;min-width:0;overflow-wrap:break-word}
 }
 
 /* Repeat curation beneath the action icons, level with the identity block. */
@@ -160,7 +160,7 @@
  .navigation-icons .navigation-dot svg{width:24px;height:24px}
  .navigation-labels .record-navigator .navigator-stops{gap:4px;padding-inline:12px}
  .navigation-labels .record-navigator .navigator-stops a{flex:1;min-width:0}
- .navigation-labels .navigation-dot{width:100%;padding:4px 2px;font-size:8px;line-height:12px;white-space:normal;overflow-wrap:anywhere;text-align:center}
+ .navigation-labels .navigation-dot{width:100%;padding:4px 2px;font-size:8px;line-height:12px;white-space:normal;overflow-wrap:break-word;text-align:center}
 }
 
 /* Consistent table heading colour across the three styled detail pages. */

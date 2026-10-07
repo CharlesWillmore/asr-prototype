@@ -1222,3 +1222,18 @@ button {
 .home-toolbar .home-toolbar-inner,
 .home-toolbar .home-toolbar-inner a,
 .home-toolbar .filter-button{font-size:16px}
+
+/* Provisional shared footer; final content to be confirmed. */
+.site-footer{flex:none;margin-top:28px;background:#242220;color:#fff;padding:45px max(30px,calc((100vw - 1158px)/2));min-height:170px;font-size:15px;line-height:1.5}
+.site-footer p{margin-bottom:0;color:#bbb;font-size:13px}
+@media(max-width:600px){.site-footer{padding:32px 20px}}
+@media print{.site-footer{display:none!important}}
+
+/* Prose wraps at word boundaries. Only an overlong unbroken token may split. */
+body{hyphens:none;overflow-wrap:break-word;word-break:normal}
+
+/* Compact shared black header at the smallest phone width. */
+@media(max-width:379px){
+ .site-header .logo img{width:200px;max-width:calc(100vw - 100px)}
+ .site-header .header-inner{min-height:76px;padding-block:12px}
+}

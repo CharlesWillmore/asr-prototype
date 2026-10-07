@@ -30,7 +30,7 @@
 .disclosure[aria-expanded=true]::before{transform:rotate(90deg)}
 .tree-label,.simple-option{display:flex!important;align-items:flex-start;gap:7px;font-size:13px;line-height:20px;cursor:pointer;min-width:0;margin:0}
 .tree-label{flex:1}
-.tree-label span{min-width:0;overflow-wrap:anywhere;hyphens:auto}
+.tree-label span{min-width:0;overflow-wrap:break-word;hyphens:none}
 .tree-label input,.simple-option input{width:15px;height:15px;flex:0 0 15px;margin:3px 0 0;accent-color:#ed6909}
 .tree-count{font-weight:400;color:#81796f;white-space:nowrap;font-size:12px}
 .simple-option{margin:10px 0!important}
@@ -39,8 +39,8 @@
 .results-pane{height:100%;margin-left:0;min-width:0;overflow:auto;overscroll-behavior:contain;background:#fff;border:1px solid #bbb;border-radius:8px;transition:margin-left .32s ease;scrollbar-gutter:stable}
 .filter-open .results-pane{margin-left:calc(var(--filter-width) + var(--gap))}
 .results-table{border-collapse:separate;border-spacing:0;width:100%;table-layout:fixed;font-size:14px;line-height:20px}
-.results-table th{position:sticky;top:var(--listing-summary-height,0px);z-index:1;background:#fff;color:#242220;font-size:11px;font-weight:600;letter-spacing:.025em;text-align:left;padding:25px 8px 17px;border-bottom:1px solid #bbb;vertical-align:bottom;overflow-wrap:anywhere}
-.results-table td{vertical-align:top;padding:20px 8px;border-bottom:1px solid #bbb;overflow-wrap:anywhere;hyphens:auto}
+.results-table th{position:sticky;top:var(--listing-summary-height,0px);z-index:1;background:#fff;color:#242220;font-size:11px;font-weight:600;letter-spacing:.025em;text-align:left;padding:25px 8px 17px;border-bottom:1px solid #bbb;vertical-align:bottom;overflow-wrap:break-word}
+.results-table td{vertical-align:top;padding:20px 8px;border-bottom:1px solid #bbb;overflow-wrap:break-word;hyphens:none}
 .results-table th:first-child,.results-table td:first-child{padding-left:24px}
 .results-table th:last-child,.results-table td:last-child{padding-right:24px}
 .results-table .identifier-col{width:244px}
@@ -67,10 +67,19 @@
 .listing-page :is(button,a,input,summary,[tabindex]):focus-visible{outline:2px solid #1475bd;outline-offset:3px}
 [hidden]{display:none!important}
 @media(max-width:1199px){
+ .listing-workspace{--gap:24px}
+ .filter-open .results-table .contact-col{display:none}
+ .results-table .identifier-col{width:220px}.results-table .contact-col{width:160px}.results-table .curation-col{width:120px}.results-table .variant-col{width:80px}
+}
+@media(max-width:1000px) and (min-width:601px){
+ .listing-workspace{--filter-width:360px;--gap:20px}
+ .filter-open .results-table .description-col{display:none}
+ .filter-open .results-table .identifier-col{width:100%}
+}
+@media(max-width:600px){
  .filter-open .search-panel{width:100%;box-shadow:0 10px 24px #0002}
  .filter-open .results-pane{margin-left:0;visibility:hidden}
  .search-panel{padding:24px 20px 0}
- .results-table .identifier-col{width:220px}.results-table .contact-col{width:160px}.results-table .curation-col{width:120px}.results-table .variant-col{width:80px}
 }
 @media(max-width:960px){
  .listing-workspace{padding-top:20px}
@@ -95,7 +104,9 @@
 }
 @media(prefers-reduced-motion:reduce){.search-panel,.results-pane{transition:none!important}}
 /* Wrap prose naturally; reserve emergency breaks for unbroken identifiers. */
-.results-table td{hyphens:manual}
+.results-table td{hyphens:none}
+/* Preserve the agreed emergency wrapping for cell-line identifiers and aliases. */
+.results-table td.identifier-col{overflow-wrap:anywhere;hyphens:manual}
 
 /* Disease guidance and separate, generously sized expansion controls. */
 .disease-help{font-size:12px;line-height:1.5;color:#665e56;margin:10px 0}
@@ -115,15 +126,14 @@
 /* Keep the search focus ring inside the field so the scrolling panel cannot clip it. */
 .listing-page #filter-name:focus-visible{outline:2px solid #1475bd;outline-offset:-2px}
 
-.selection-summary{font-size:11px;line-height:1.5;color:#52514f;overflow-wrap:anywhere}
+.selection-summary{font-size:11px;line-height:1.5;color:#52514f;overflow-wrap:break-word}
 .selection-summary strong{font-weight:700}
 .summary-toggle{font:inherit;color:inherit;border:0;background:none;padding:0;text-decoration:underline;cursor:pointer}
 #listing-filter-summary{position:sticky;top:0;z-index:2;background:#fdecdb;padding:14px 24px;border-bottom:1px solid #ddd}
 .filter-open #listing-filter-summary{display:none}
 .search-secondary-actions:has([hidden]){display:none}
 
-/* The full listing already reports its matching count above the table. */
-.listing-page:not(:has(.listing-workspace.filter-open)) .listing-toolbar .result-count{display:none}
+/* Keep the matching count visible in the toolbar in both listing views. */
 
 .listing-page .results-table th{color:#242220}
 .results-table tbody tr:last-child td{border-bottom:0}
@@ -137,3 +147,123 @@
 #listing-filter-summary.summary-expanded{display:block;overflow:visible}
 #listing-filter-summary.summary-expanded .summary-prefix,
 #listing-filter-summary.summary-expanded .selection-summary-text{white-space:normal;overflow:visible}
+
+/* Footer follows the viewport-sized search workspace without reducing its height. */
+.listing-page{height:auto;min-height:100dvh;overflow:auto}
+.listing-shell{height:100vh;height:100dvh;display:flex;flex-direction:column;flex:none;overflow:hidden}
+.listing-shell>.site-header,.listing-shell>.listing-toolbar{flex:none}
+
+/* Keep the compact identifier listing beside the filter before the mobile drawer takes over. */
+@media(min-width:601px) and (max-width:960px){
+ .filter-open .results-table{display:table}
+ .filter-open .results-table tbody{display:table-row-group}
+ .filter-open .results-table thead{display:table-header-group}
+ .filter-open .results-table tr{display:table-row;padding:0;border:0}
+ .filter-open .results-table td{display:none!important}
+ .filter-open .results-table td.identifier-col{display:table-cell!important;padding:20px 24px!important;border-bottom:1px solid #bbb}
+ .filter-open .results-table th:not(.identifier-col){display:none}
+ .filter-open .results-table tbody tr:last-child td.identifier-col{border-bottom:0}
+}
+
+/* Compact the search/results orange bar on narrow screens. */
+@media(max-width:739px){
+ .listing-page .listing-toolbar .toolbar-inner,
+ .listing-page .listing-toolbar .toolbar-inner a,
+ .listing-page .listing-toolbar .filter-button,
+ .listing-page .listing-toolbar .result-count,
+ .listing-page .listing-toolbar .display-trigger,
+ .listing-page .listing-toolbar .page-number{font-size:15px}
+ .listing-page .listing-toolbar .toolbar-inner{gap:10px}
+ .listing-page .listing-toolbar .toolbar-inner .filter-button{padding:7px 10px}
+}
+
+/* Preserve toolbar information, then shorten wording in stages. */
+.listing-page .listing-toolbar .result-count{display:flex;margin-right:0}
+.listing-page .listing-toolbar .current-search-label,
+.listing-page .listing-toolbar .display-label{display:inline}
+.listing-page .listing-toolbar .display-control{display:block}
+.listing-page .listing-toolbar .pagination{display:flex}
+.listing-page .listing-toolbar .page-arrow{display:flex}
+.listing-page .listing-toolbar .toolbar-inner{flex-wrap:wrap;justify-content:flex-start}
+@media(max-width:900px){
+ .listing-page .listing-toolbar .toolbar-inner{gap:10px}
+ .listing-page .listing-toolbar .pagination{gap:4px}
+}
+@media(max-width:951px){
+ .listing-page .listing-toolbar .current-search-label{display:none}
+}
+@media(max-width:666px){
+ .listing-page .listing-toolbar .display-label{display:none}
+ .listing-page .listing-toolbar .display-control{margin-right:auto}
+ .listing-page .listing-toolbar .page-arrow{width:28px;height:32px;flex-basis:28px}
+ .listing-page .listing-toolbar .page-number strong{min-width:32px;padding-inline:6px}
+}
+@media(max-width:520px){
+ .listing-page .listing-toolbar .per-page-lines{display:none}
+}
+@media(max-width:549px){
+ .listing-page .listing-toolbar .per-page-label{display:none}
+}
+
+/* Preserve the desktop current-page colours at every viewport width. */
+.listing-page .listing-toolbar .page-number strong{background:#f9e2c2;color:#3b3938}
+
+@media(max-width:778px){
+ .listing-page .listing-toolbar .count-cell-word{display:none}
+}
+
+/* Use the remaining horizontal space for identifiers beside the unchanged filter. */
+@media(min-width:601px) and (max-width:760px){
+ .filter-open .results-table th.identifier-col{padding-inline:12px}
+ .filter-open .results-table td.identifier-col{padding-inline:12px!important}
+}
+
+/* Smaller toolbar type on phone widths. */
+@media(max-width:694px){
+ .listing-page .listing-toolbar .toolbar-inner,
+ .listing-page .listing-toolbar .toolbar-inner a,
+ .listing-page .listing-toolbar .filter-button,
+ .listing-page .listing-toolbar .result-count,
+ .listing-page .listing-toolbar .display-trigger,
+ .listing-page .listing-toolbar .page-number{font-size:14px}
+}
+
+/* Keep page positions compact on the narrowest screens. */
+@media(max-width:444px){
+ .listing-page .listing-toolbar .page-arrow{display:none}
+}
+
+@media(max-width:379px){
+ .listing-page .listing-toolbar .toolbar-inner,
+ .listing-page .listing-toolbar .toolbar-inner a,
+ .listing-page .listing-toolbar .filter-button,
+ .listing-page .listing-toolbar .result-count,
+ .listing-page .listing-toolbar .display-trigger,
+ .listing-page .listing-toolbar .page-number{font-size:13px}
+}
+
+/* Two-row toolbar fallback below the 365px design width. */
+@media(max-width:364px){
+ .listing-page .listing-toolbar .toolbar-inner{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px}
+ .listing-page .listing-toolbar .filter-button{grid-column:1 / -1;grid-row:1;justify-self:start}
+ .listing-page .listing-toolbar .result-count{grid-column:1;grid-row:2}
+ .listing-page .listing-toolbar .display-control{grid-column:2;grid-row:2;margin-right:0;justify-self:center}
+ .listing-page .listing-toolbar .pagination{grid-column:3;grid-row:2;justify-self:end}
+}
+
+/* Restore fuller wording once the toolbar uses two rows. */
+@media(max-width:364px){
+ .listing-page .listing-toolbar .count-cell-word,
+ .listing-page .listing-toolbar .per-page-label,
+ .listing-page .listing-toolbar .per-page-lines{display:inline}
+ .listing-page .listing-toolbar .toolbar-inner{column-gap:6px}
+ .listing-page .listing-toolbar .display-trigger{gap:3px}
+ .listing-page .listing-toolbar #display-value{min-width:22px}
+ .listing-page .listing-toolbar .page-number{gap:4px}
+}
+
+/* Shorten the second-row labels at the narrowest fallback width. */
+@media(max-width:320px){
+ .listing-page .listing-toolbar .count-cell-word,
+ .listing-page .listing-toolbar .per-page-words{display:none}
+}
