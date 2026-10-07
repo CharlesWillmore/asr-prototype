@@ -310,3 +310,8 @@
 /* Keep the summary label intact while the remaining details shorten. */
 #listing-filter-summary .summary-current{flex:none;white-space:nowrap}
 #listing-filter-summary.summary-expanded .summary-current{margin-right:4px}
+
+/* Prevent iPhone focus zoom while preserving pinch-to-zoom accessibility. */
+@media(max-width:767px){
+ #filter-name{font-size:16px}
+}
