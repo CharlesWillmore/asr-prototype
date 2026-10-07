@@ -272,8 +272,41 @@
     document.querySelector('.results-table').hidden = matches.length === 0;
     document.querySelector('.result-count strong').replaceChildren(document.createTextNode(`${matches.length} `), el('span', 'count-cell-word', 'Cell '), document.createTextNode(matches.length === 1 ? 'Line' : 'Lines'));
     renderSummaries(); persist();
-    document.querySelector('.page-number').replaceChildren(el('strong', '', String(page)), el('span', '', `of ${Math.max(1, Math.ceil(matches.length / pageSize))}`));
     const maxPage = Math.max(1, Math.ceil(matches.length / pageSize));
+    const pageBox = el('strong');
+    const pageInput = el('input', 'page-number-input');
+    pageInput.type = 'text';
+    pageInput.inputMode = 'numeric';
+    pageInput.pattern = '[0-9]*';
+    pageInput.value = String(page);
+    pageInput.setAttribute('aria-label', `Page number, 1 to ${maxPage}`);
+    pageInput.title = `Enter a page from 1 to ${maxPage} and press Enter`;
+    pageInput.style.width = `${Math.max(2, String(maxPage).length)}ch`;
+    let committed = false;
+    function commitPage(restoreFocus = false) {
+      if (committed) return;
+      const value = pageInput.value.trim();
+      if (!/^[0-9]+$/.test(value)) { pageInput.value = String(page); return; }
+      const next = Math.max(1, Math.min(maxPage, Number(value)));
+      pageInput.value = String(next);
+      if (next === page) return;
+      committed = true;
+      page = next;
+      resultsPane.scrollTop = 0;
+      renderRows();
+      if (restoreFocus) {
+        const input = document.querySelector('.page-number-input');
+        input.focus({ preventScroll: true }); input.select();
+      }
+    }
+    pageInput.addEventListener('focus', () => pageInput.select());
+    pageInput.addEventListener('blur', () => commitPage());
+    pageInput.addEventListener('keydown', event => {
+      if (event.key === 'Enter') { event.preventDefault(); commitPage(true); }
+      if (event.key === 'Escape') { event.preventDefault(); pageInput.value = String(page); pageInput.blur(); }
+    });
+    pageBox.append(pageInput);
+    document.querySelector('.page-number').replaceChildren(pageBox, el('span', '', `of ${maxPage}`));
     document.querySelectorAll('.page-arrow').forEach(button => {
       button.disabled = button.getAttribute('aria-label') === 'Previous page' ? page === 1 : page >= maxPage;
     });

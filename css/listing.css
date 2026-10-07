@@ -267,3 +267,7 @@
  .listing-page .listing-toolbar .count-cell-word,
  .listing-page .listing-toolbar .per-page-words{display:none}
 }
+
+/* Editable current page retains the existing page-number box treatment. */
+.listing-page .page-number-input{display:block;min-width:0;max-width:100%;border:0;border-radius:0;padding:0;margin:0;background:transparent;color:inherit;font:inherit;font-weight:inherit;line-height:normal;text-align:center;cursor:text}
+.listing-page .page-number-input:focus-visible{outline:2px solid #3b3938;outline-offset:2px}
