@@ -291,3 +291,8 @@
  background-image:none!important;
 }
 .listing-page .listing-toolbar .page-number-input{-webkit-appearance:none!important;appearance:none!important}
+
+/* Align compact page-size choices with their own value and arrow. */
+@media(max-width:666px){
+ .listing-page .listing-toolbar .display-control .display-menu{left:0;right:auto}
+}
