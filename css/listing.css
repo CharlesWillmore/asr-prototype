@@ -306,3 +306,7 @@
 @media(max-width:739px){#listing-filter-summary{font-size:15px}}
 @media(max-width:694px){#listing-filter-summary{font-size:14px}}
 @media(max-width:379px){#listing-filter-summary{font-size:13px}}
+
+/* Keep the summary label intact while the remaining details shorten. */
+#listing-filter-summary .summary-current{flex:none;white-space:nowrap}
+#listing-filter-summary.summary-expanded .summary-current{margin-right:4px}

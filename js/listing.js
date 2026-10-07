@@ -225,7 +225,8 @@
       host.hidden = kind === 'filter' && !reviewed;
       host.replaceChildren();
       const prefix = el('span', 'summary-prefix');
-      const summaryHeading = el('strong', '', 'Current');
+      const summaryHeading = el('strong', '', kind === 'listing' ? '' : 'Current');
+      if (kind === 'listing') host.append(el('strong', 'summary-current', 'Current'));
       summaryHeading.append(el('span', 'summary-search-filter-words', ' search & filter'));
       prefix.append(summaryHeading, document.createTextNode(` — ${matches.length} matching cell lines: `));
       host.append(prefix);
@@ -234,7 +235,7 @@
       const text = el('span', 'selection-summary-text', kind === 'listing' || expanded ? full : countOnly ? '' : [...full].slice(0,75).join(''));
       text.id = `summary-text-${kind}`; host.append(text);
       const needsToggle = kind === 'listing'
-        ? text.scrollWidth > text.clientWidth || host.scrollWidth > host.clientWidth
+        ? prefix.scrollWidth > prefix.clientWidth || text.scrollWidth > text.clientWidth || host.scrollWidth > host.clientWidth
         : countOnly || [...full].length > 75;
       if (expanded || needsToggle) {
         const button = el('button', 'summary-toggle', expanded ? 'less…' : 'more…');

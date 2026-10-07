@@ -40,7 +40,7 @@
     const maxScroll = Math.max(0, document.documentElement.scrollHeight - innerHeight);
     const targets = sections.map(section => Math.max(0, Math.min(maxScroll,
       section.getBoundingClientRect().top + scrollY - fixedTop.offsetHeight - 22)));
-    const points = [{x:0, y:targets[0]}];
+    const points = [{x:0, y:0}];
     // Anchor each stop to the symbol’s left edge, allowing for the thumb radius.
     links.forEach((link, i) => {
       const symbol = link.querySelector('.navigation-dot').getBoundingClientRect();
@@ -61,10 +61,12 @@
     }
     return points.at(-1)[to];
   }
+  let sliderFrame = 0;
+  let sliderTarget = 0;
   function update() {
     const points = stops();
     const value = interpolate(scrollY, points, 'y', 'x');
-    slider.value = value;
+    if (!sliderFrame) slider.value = value;
     const current = links.reduce((found, link, i) => value >= points[i + 1].x - 0.5 ? i : found, 0);
     links.forEach((link,i) => {
       i === current ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current');
@@ -72,9 +74,37 @@
     });
     slider.setAttribute('aria-valuetext', links[current].textContent.trim());
   }
-  slider.addEventListener('input', () => scrollTo({top:interpolate(Number(slider.value), stops(), 'x', 'y'), behavior:'instant'}));
+  // Follow the drag smoothly, including the initial scroll past the site header.
+  function followSlider() {
+    const distance = sliderTarget - scrollY;
+    if (Math.abs(distance) < 1) {
+      scrollTo({top:sliderTarget, behavior:'instant'});
+      sliderFrame = 0;
+      update();
+      return;
+    }
+    scrollTo({top:scrollY + distance * .2, behavior:'instant'});
+    sliderFrame = requestAnimationFrame(followSlider);
+  }
+  slider.addEventListener('input', () => {
+    sliderTarget = interpolate(Number(slider.value), stops(), 'x', 'y');
+    if (reduced.matches) {
+      scrollTo({top:sliderTarget, behavior:'instant'});
+    } else if (!sliderFrame) {
+      sliderFrame = requestAnimationFrame(followSlider);
+    }
+  });
+  function cancelSliderMotion() {
+    cancelAnimationFrame(sliderFrame);
+    sliderFrame = 0;
+  }
+  addEventListener('wheel', cancelSliderMotion, {passive:true});
+  addEventListener('touchstart', event => {
+    if (event.target !== slider) cancelSliderMotion();
+  }, {passive:true});
   links.forEach(link => link.addEventListener('click', event => {
     event.preventDefault();
+    cancelSliderMotion();
     document.querySelector(link.hash).scrollIntoView({behavior:reduced.matches ? 'instant' : 'smooth',block:'start'});
     history.replaceState(null, '', link.hash);
   }));
