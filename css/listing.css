@@ -271,4 +271,4 @@
 /* Editable current page retains the existing page-number box treatment. */
 .listing-page .page-number-input{display:block;min-width:0;max-width:100%;border:0;border-radius:0;padding:0;margin:0;background:transparent;color:inherit;font:inherit;font-weight:inherit;line-height:normal;text-align:center;cursor:text}
 .listing-page .listing-toolbar .page-number-input:focus,
-.listing-page .listing-toolbar .page-number-input:focus-visible{outline:none;box-shadow:0 1px 0 #3b3938}
+.listing-page .listing-toolbar .page-number-input:focus-visible{outline:none;box-shadow:none}
