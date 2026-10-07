@@ -296,3 +296,7 @@
 @media(max-width:666px){
  .listing-page .listing-toolbar .display-control .display-menu{left:0;right:auto}
 }
+
+@media(max-width:647px){
+ #listing-filter-summary .summary-search-filter-words{display:none}
+}

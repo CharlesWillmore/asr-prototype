@@ -225,7 +225,9 @@
       host.hidden = kind === 'filter' && !reviewed;
       host.replaceChildren();
       const prefix = el('span', 'summary-prefix');
-      prefix.append(el('strong', '', 'Current search & filter'), document.createTextNode(` — ${matches.length} matching cell lines: `));
+      const summaryHeading = el('strong', '', 'Current');
+      summaryHeading.append(el('span', 'summary-search-filter-words', ' search & filter'));
+      prefix.append(summaryHeading, document.createTextNode(` — ${matches.length} matching cell lines: `));
       host.append(prefix);
       const expanded = summaryExpanded[kind], countOnly = kind === 'filter' && editing;
       host.classList.toggle('summary-expanded', expanded);
