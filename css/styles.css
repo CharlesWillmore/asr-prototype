@@ -1233,6 +1233,10 @@ button {
 body{hyphens:none;overflow-wrap:break-word;word-break:normal}
 
 /* Compact shared black header at the smallest phone width. */
+@media(max-width:500px){
+ .site-header .logo img{width:220px;max-width:calc(100vw - 100px)}
+}
+
 @media(max-width:379px){
  .site-header .logo img{width:200px;max-width:calc(100vw - 100px)}
  .site-header .header-inner{min-height:76px;padding-block:12px}
