@@ -116,7 +116,7 @@
 .record-redesign .record-eyebrow{margin-bottom:2px}
 .record-redesign .record-hero-inner>.alternative-names{padding-top:5px;font-size:11px;line-height:18px}
 .record-redesign .alternative-names strong{font-size:10px;letter-spacing:.06em;color:#666;margin-bottom:3px}
-.record-redesign .header-curation{margin:4px 0 0;border:1px solid #f79400;background:#ffdaaa;color:#333;font-weight:500}
+.record-redesign .header-curation{margin:4px 0 0;border:1px solid #3b3938;background:transparent;color:#3b3938;font-weight:500}
 .record-fixed-top .record-navigator{border:0}
 .record-navigator .navigator-inner{position:relative;padding-top:0;padding-bottom:20px;height:58px}
 .record-navigator .navigator-stops{position:absolute;inset:0 clamp(20px,4.4vw,60px) 20px;display:flex;align-items:center;justify-content:space-between;padding-inline:28px;pointer-events:none;z-index:2}
@@ -142,7 +142,7 @@
 .record-redesign .record-hero-inner>.alternative-names>span{position:relative;display:block;font-size:11px;line-height:18px;margin-top:-14px}
 
 /* Use the same review-status badge in the header and description. */
-.record-redesign .record-status{border:1px solid #f79400;background:#ffdaaa;color:#333;font-size:12px;font-weight:500;line-height:18px;padding:5px 10px}
+.record-redesign .record-status{border:1px solid #3b3938;background:transparent;color:#3b3938;font-size:12px;font-weight:500;line-height:18px;padding:5px 10px}
 
 /* Alternative sliders: icon circles and boxed labels (Issue B). */
 .navigation-icons .record-navigator .navigator-inner{height:88px;padding-bottom:20px}
