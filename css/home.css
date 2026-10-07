@@ -27,3 +27,6 @@
 .slider-controls .slide-dots button:hover{background:#e9d7c4}
 .slider-controls .slide-dots button[aria-pressed=true]:hover{background:#3b3938}
 #slide-pause{background:#ffffffed;border-radius:4px;color:#3b3938}
+
+/* Match the search and results toolbar typography. */
+.home-page>.home-toolbar{font-family:"Inter",Arial,Helvetica,sans-serif}
