@@ -29,3 +29,22 @@
  body.record-redesign .listing-toolbar .record-return-links{padding-inline:16px}
  body.record-redesign .record-return-links .record-actions{margin-right:-5.75px}
 }
+
+/* Shared phone edges across headers, filters, results and page copy. */
+@media(max-width:500px){
+ body .site-header .header-inner,
+ body .listing-toolbar .toolbar-inner,
+ body .home-toolbar .home-toolbar-inner{padding-inline:16px}
+ body .site-header .mobile-menu-button{margin-right:-8px}
+ body .site-header.menu-open .desktop-nav{padding-inline:16px}
+ .listing-page .listing-workspace{padding-inline:16px}
+ .listing-page .results-pane{width:100%;scrollbar-gutter:auto}
+ .listing-page .filter-open .search-panel{padding-inline:16px}
+ .listing-page .search-scroll{margin-right:0;padding-right:0;scrollbar-gutter:auto}
+ .home-page .slide-copy,
+ .home-page .home-tiles,
+ .home-page .about-inner,
+ .content-page .content-main{padding-inline:16px}
+ body.record-redesign .record-return-links .record-actions{align-items:center;align-self:center}
+ body.record-redesign .record-return-links .record-actions button{padding:0;display:flex;align-items:center;justify-content:center}
+}
