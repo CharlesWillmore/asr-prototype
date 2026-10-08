@@ -216,3 +216,9 @@
  .record-redesign .record-return-links .record-actions{margin-right:-9.75px}
  .record-redesign #overview-content > .group-heading > svg{transform:translateX(-6px)}
 }
+
+/* Give Safari a stable top-edge colour while the orange toolbar is sticky. */
+@media(min-width:861px){
+ .record-redesign::before{content:"";position:fixed;inset:0 0 auto;height:1px;background:#000;z-index:100;pointer-events:none}
+}
+@media print{.record-redesign::before{display:none}}
