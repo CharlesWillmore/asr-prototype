@@ -205,3 +205,8 @@
 .navigator-stops a:last-child .navigator-tooltip{left:auto;right:0;transform:none}
 @media(hover:hover){.navigator-stops a:hover .navigator-tooltip{visibility:visible;opacity:1;transition:visibility 0s .5s,opacity 0s .5s}}
 .navigator-stops a:focus-visible .navigator-tooltip{visibility:visible;opacity:1;transition:none}
+
+/* Match the mobile names-to-curation gap to the alternative names' 18px line height. */
+@media(max-width:600px){
+ .record-redesign .record-header-meta{margin-top:6px}
+}
