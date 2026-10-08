@@ -229,7 +229,7 @@
 }
 
 /* Keep page positions compact on the narrowest screens. */
-@media(max-width:444px){
+@media(max-width:455px){
  .listing-page .listing-toolbar .page-arrow{display:none}
 }
 
@@ -324,9 +324,10 @@
  .listing-page .listing-toolbar .page-number{gap:4px}
 }
 
-/* Tighten the phone page-size arrow. */
-@media(max-width:444px){
- .listing-page .listing-toolbar .display-arrow{margin-left:calc(2px - 7px / 3)}
+/* Reduce the number-to-arrow gap by one third at every viewport width. */
+.listing-page .listing-toolbar .display-arrow{margin-left:calc(2px - 7px / 3)}
+@media(max-width:364px){
+ .listing-page .listing-toolbar .display-arrow{margin-left:calc(2px - 5px / 3)}
 }
 
 /* Align the final page digit with the mobile header and results panel. */
