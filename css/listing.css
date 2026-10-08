@@ -323,3 +323,9 @@
  .listing-page .listing-toolbar .filter-button{white-space:nowrap;padding-inline:8px}
  .listing-page .listing-toolbar .page-number{gap:4px}
 }
+
+/* Tighten the phone page-size arrow and align the last page digit with the menu icon. */
+@media(max-width:444px){
+ .listing-page .listing-toolbar .display-arrow{margin-left:calc(2px - 7px / 3)}
+ .listing-page .listing-toolbar .toolbar-inner{padding-right:calc(clamp(20px,4.4vw,60px) + 8px)}
+}
