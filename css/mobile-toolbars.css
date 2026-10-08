@@ -3,7 +3,7 @@
  body{--mobile-toolbar-font-size:15px}
  body .listing-toolbar .toolbar-inner,
  body .home-toolbar .home-toolbar-inner{
-  min-height:64px!important;padding-block:12px!important;font-size:var(--mobile-toolbar-font-size);align-items:center;
+  min-height:60px!important;padding-block:10px!important;font-size:var(--mobile-toolbar-font-size);align-items:center;
  }
  body .listing-toolbar .toolbar-inner a,
  body .listing-toolbar .filter-button,
@@ -18,3 +18,14 @@
 }
 @media(max-width:694px){body{--mobile-toolbar-font-size:14px}}
 @media(max-width:379px){body{--mobile-toolbar-font-size:13px}}
+
+/* Match the black header's vertical breathing room to the phone side margins. */
+@media(max-width:500px){
+ body .site-header .header-inner{min-height:0;padding-block:16px}
+}
+
+/* Align the PDF artwork (including its SVG inset) with the 16px mobile margin. */
+@media(max-width:500px){
+ body.record-redesign .listing-toolbar .record-return-links{padding-inline:16px}
+ body.record-redesign .record-return-links .record-actions{margin-right:-5.75px}
+}
