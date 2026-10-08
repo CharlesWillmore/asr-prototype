@@ -171,7 +171,7 @@
 .record-redesign .record-return-links .record-actions{position:static;display:flex;align-items:center;flex-wrap:nowrap;gap:10px;margin-left:auto}
 .record-redesign .record-return-links .record-actions button{width:44px;height:44px;padding:8px;color:#3b3938}
 .record-redesign .record-return-links .record-actions button:hover,
-.record-redesign .record-return-links .record-actions button:focus-visible{color:#fff;background:transparent}
+.record-redesign .record-return-links .record-actions button:focus-visible{color:#3b3938;background:#ffffff30;border-radius:3px}
 .record-redesign .record-return-links .record-actions svg{width:28px;height:28px}
 .record-redesign .record-header-meta{align-self:start;justify-content:flex-start;padding-top:8px}
 .record-redesign .header-curation{margin:0}

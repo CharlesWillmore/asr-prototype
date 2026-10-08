@@ -37,7 +37,7 @@ Disease and category display labels capitalise their first letter while retainin
 - The record page's body and legacy filter are deferred; only the shared black header and supplied SVG were changed there.
 
 ## ausMCRIi035-B-1 detail prototype
-`cell-line-704.html` uses the public Registry record at https://ausstemcellregistry.org.au/stem_cell/cell_line/704/ (snapshot 23 September 2026). Unrecorded fields remain explicitly unrecorded. The legacy cell-line-395 page is retained separately. The selected listing row opens the new local detail page.
+`cell-line-704.html` uses the public Registry record at https://ausstemcellregistry.org.au/stem_cell/cell_line/704/ (snapshot 23 September 2026). Unrecorded fields remain explicitly unrecorded. The legacy cell-line-395 page is excluded from the prototype review files; its earlier version remains in Git history. The selected listing row opens the new local detail page.
 
 Icons are from IBM Carbon's official `packages/icons/src/svg/32` sources: chemistry, certificate--check, user--access, information, share, document--pdf and JSON. Source: https://github.com/carbon-design-system/carbon. Apache 2.0 licence is retained in `assets/CARBON-LICENSE.txt`. Registry symbol extracted from the supplied outlined logo.
 
