@@ -333,3 +333,8 @@
 @media(max-width:500px){
  .listing-page .listing-toolbar .toolbar-inner{padding-inline:16px}
 }
+
+/* The next-page arrow's visible tip meets the shared desktop right edge. */
+@media(min-width:861px){
+ .listing-page .listing-toolbar .pagination{margin-left:auto;margin-right:-13.25px}
+}

@@ -30,3 +30,8 @@
 
 /* Match the search and results toolbar typography. */
 .home-page>.home-toolbar{font-family:"Inter",Arial,Helvetica,sans-serif}
+
+/* Expand desktop cards to the shared page column without changing their gutters. */
+@media(min-width:801px){
+ .home-tiles{max-width:1366px;padding-inline:clamp(20px,4.4vw,60px)}
+}

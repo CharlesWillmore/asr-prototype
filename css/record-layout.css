@@ -210,3 +210,9 @@
 @media(max-width:600px){
  .record-redesign .record-header-meta{margin-top:6px}
 }
+
+/* Align desktop artwork rather than the padded icon buttons. */
+@media(min-width:861px){
+ .record-redesign .record-return-links .record-actions{margin-right:-9.75px}
+ .navigation-icons .record-navigator .navigator-stops a:first-child{transform:translateX(-30px)}
+}
