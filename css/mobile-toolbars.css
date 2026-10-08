@@ -1,0 +1,20 @@
+/* Shared mobile orange bars: match the registry listing's established type and height. */
+@media(max-width:739px){
+ body{--mobile-toolbar-font-size:15px}
+ body .listing-toolbar .toolbar-inner,
+ body .home-toolbar .home-toolbar-inner{
+  min-height:64px!important;padding-block:12px!important;font-size:var(--mobile-toolbar-font-size);align-items:center;
+ }
+ body .listing-toolbar .toolbar-inner a,
+ body .listing-toolbar .filter-button,
+ body .listing-toolbar .result-count,
+ body .listing-toolbar .display-trigger,
+ body .listing-toolbar .page-number,
+ body .home-toolbar .home-toolbar-inner a{
+  font-size:var(--mobile-toolbar-font-size)!important;
+ }
+ body .listing-toolbar .toolbar-inner .filter-button,
+ body .home-toolbar .home-toolbar-inner .filter-button{padding-block:7px;line-height:20px}
+}
+@media(max-width:694px){body{--mobile-toolbar-font-size:14px}}
+@media(max-width:379px){body{--mobile-toolbar-font-size:13px}}
