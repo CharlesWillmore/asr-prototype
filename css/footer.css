@@ -1,0 +1,17 @@
+/* Shared footer based on the desktop and mobile footer draft. */
+.site-footer{flex:none;margin-top:28px;padding:0;min-height:0;background:#242220;color:#f2efec;font-family:"Inter",Arial,Helvetica,sans-serif}
+.footer-inner{box-sizing:border-box;max-width:1366px;min-height:336px;margin-inline:auto;padding:48px clamp(20px,4.4vw,60px) 80px}
+.footer-copy{max-width:740px}
+.site-footer .footer-copy p{margin:0 0 14px;color:inherit;font-size:11px;font-weight:400;line-height:1.4}
+.site-footer .footer-copy p:last-child{margin-bottom:0}
+.site-footer .footer-copy a{color:#83c5e9;text-decoration:none;overflow-wrap:anywhere}
+.site-footer .footer-copy a:hover{text-decoration:underline;text-underline-offset:2px}
+.site-footer .footer-copy a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+@media(max-width:600px){
+ .footer-inner{min-height:355px;padding:32px 16px 80px}
+ .footer-copy{max-width:none}
+}
+/* Let short listing windows scroll rather than squeeze the results below the footer. */
+.listing-page{overflow-y:auto}
+.listing-page .listing-workspace{min-height:360px}
+@media print{.site-footer{display:none!important}}
