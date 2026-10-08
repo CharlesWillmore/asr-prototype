@@ -324,8 +324,12 @@
  .listing-page .listing-toolbar .page-number{gap:4px}
 }
 
-/* Tighten the phone page-size arrow and align the last page digit with the menu icon. */
+/* Tighten the phone page-size arrow. */
 @media(max-width:444px){
  .listing-page .listing-toolbar .display-arrow{margin-left:calc(2px - 7px / 3)}
- .listing-page .listing-toolbar .toolbar-inner{padding-right:calc(clamp(20px,4.4vw,60px) + 8px)}
+}
+
+/* Align the final page digit with the mobile header and results panel. */
+@media(max-width:500px){
+ .listing-page .listing-toolbar .toolbar-inner{padding-inline:16px}
 }

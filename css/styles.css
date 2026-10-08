@@ -1241,3 +1241,9 @@ body{hyphens:none;overflow-wrap:break-word;word-break:normal}
  .site-header .logo img{width:200px;max-width:calc(100vw - 100px)}
  .site-header .header-inner{min-height:76px;padding-block:12px}
 }
+
+/* Match the mobile header artwork to the results panel's 16px outer margins. */
+@media(max-width:500px){
+ .site-header .header-inner{padding-inline:16px}
+ .site-header .mobile-menu-button{margin-right:-8px}
+}
