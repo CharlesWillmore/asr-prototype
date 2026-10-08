@@ -214,5 +214,5 @@
 /* Align desktop artwork rather than the padded icon buttons. */
 @media(min-width:861px){
  .record-redesign .record-return-links .record-actions{margin-right:-9.75px}
- .navigation-icons .record-navigator .navigator-stops a:first-child{transform:translateX(-30px)}
+ .record-redesign #overview-content > .group-heading > svg{transform:translateX(-6px)}
 }
