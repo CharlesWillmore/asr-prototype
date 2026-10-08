@@ -72,9 +72,11 @@
  .results-table .identifier-col{width:220px}.results-table .contact-col{width:160px}.results-table .curation-col{width:120px}.results-table .variant-col{width:80px}
 }
 @media(max-width:1000px) and (min-width:601px){
- .listing-workspace{--filter-width:360px;--gap:20px}
  .filter-open .results-table .description-col{display:none}
  .filter-open .results-table .identifier-col{width:100%}
+}
+@media(max-width:960px) and (min-width:601px){
+ .listing-workspace{--filter-width:360px;--gap:20px}
 }
 @media(max-width:600px){
  .filter-open .search-panel{width:100%;box-shadow:0 10px 24px #0002}
