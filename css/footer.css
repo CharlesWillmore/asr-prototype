@@ -16,3 +16,9 @@
 .listing-page{overflow-y:auto}
 .listing-page .listing-workspace{min-height:360px}
 @media print{.site-footer{display:none!important}}
+
+.page-back-top{box-sizing:border-box;width:100%;max-width:1366px;margin:0 auto;padding:28px clamp(20px,4.4vw,60px)}
+.page-back-top a{color:#242220;font-size:16px;text-decoration:underline;text-decoration-color:#2d9afc;text-underline-offset:3px}
+.page-back-top a:focus-visible{outline:3px solid #005a9c;outline-offset:4px}
+@media(max-width:600px){.page-back-top{padding:24px 16px}}
+@media print{.page-back-top{display:none}}

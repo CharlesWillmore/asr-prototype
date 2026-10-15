@@ -1,0 +1,57 @@
+.resources-page{background:#fff}
+.resources-banner{margin:0}
+.resources-banner picture,.resources-banner img{display:block;width:100%}
+.resources-banner img{height:auto;max-height:530px;object-fit:cover;object-position:center}
+.resources-main{flex:1}
+.resources-sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.resources-inner{width:100%;max-width:1366px;margin:auto;padding-inline:clamp(20px,4.4vw,60px)}
+.resources-intro{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding-block:76px}
+.resources-intro p{font-size:23px;font-weight:300;line-height:1.5;margin:0 0 20px}
+.resources-jump{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.resources-jump a{border:1px solid #999;padding:9px 12px;min-width:275px;color:#555;font-size:16px;text-decoration:none}
+.resources-jump a:hover{background:#e8f9f7}
+.resources-related{display:grid;gap:4px;font-size:16px;line-height:1.4}
+.resources-related a{color:#666;text-decoration:none}
+.resources-related a:hover{text-decoration:underline}
+.resources-publications,.resources-partners{background:#e8f9f7;padding-block:64px 80px}
+.resources-facilities{background:#cde6f7;padding-block:56px 88px;margin-block:80px 64px}
+.resources-main h2{font-size:26px;font-weight:500;line-height:1.4;margin:0 0 40px}
+.resources-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.publication-card,.facility-card,.stemformatics-feature{background:#fff;border-radius:12px;padding:42px}
+.publication-card{display:flex;flex-direction:column;min-height:350px}
+.publication-meta{font-size:15px;line-height:1.5;color:#555;margin:0 0 10px}
+.publication-meta strong{text-transform:uppercase;font-weight:650}
+.resources-main h3{font-size:19px;font-weight:650;line-height:1.35;margin:0 0 14px}
+.publication-authors{font-size:16px;line-height:1.5;color:#555;margin:0 0 32px}
+.publication-link{align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-size:16px;color:#555;text-decoration:none;min-height:32px}
+.publication-link span{font-size:26px;color:#333}
+.publication-link:hover{text-decoration:underline}
+.resources-main .stemformatics-heading{margin-top:64px}
+.stemformatics-feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:40px}
+.stemformatics-feature>img{width:100%;height:auto}
+.stemformatics-feature p,.facility-card p{font-size:16px;line-height:1.5;color:#555;margin:0 0 16px}
+.resource-site-link{display:inline-block;color:#247f84;font-size:13px;font-weight:500;line-height:1.5;text-decoration:none;overflow-wrap:anywhere}
+.resource-site-link:hover{text-decoration:underline}
+.facility-logo{height:120px;display:flex;align-items:center;margin-bottom:24px}
+.facility-logo img{max-width:290px;max-height:115px;width:auto;height:auto;object-fit:contain}
+.facility-wordmark{font-size:32px;font-weight:650;color:#b91925;line-height:1.1}
+.facility-wordmark small{display:block;color:#333;font-size:15px;font-weight:400;margin-top:6px}
+.facility-card{min-width:0}
+.resources-main section[id]{scroll-margin-top:24px}
+.resources-page a:focus-visible{outline:3px solid #005a9c;outline-offset:4px}
+@media(max-width:1000px){.resources-jump a{min-width:0;width:100%}.publication-card,.facility-card,.stemformatics-feature{padding:28px}.stemformatics-feature{gap:32px}.facility-logo img{max-width:100%}}
+@media(max-width:600px){.resources-inner{padding-inline:16px}.resources-intro{grid-template-columns:1fr;gap:28px;padding-block:32px 40px}.resources-intro>div{grid-row:1}.resources-intro p{font-size:19px}.resources-jump{align-items:stretch}.resources-main h2{font-size:23px;margin-bottom:24px}.resources-grid{grid-template-columns:1fr;gap:20px}.resources-publications,.resources-partners{padding-block:36px 44px}.resources-facilities{padding-block:36px 44px;margin-block:40px}.publication-card,.facility-card,.stemformatics-feature{padding:24px;border-radius:10px}.publication-card{min-height:300px}.stemformatics-feature{grid-template-columns:1fr;gap:24px;margin-bottom:24px}.resources-main .stemformatics-heading{margin-top:40px}.facility-logo{height:100px}.facility-logo img{max-height:95px}.resources-main h3{font-size:18px}}
+
+.resources-banner{position:relative}
+.resources-image-caption{max-width:1366px;margin:auto;padding:8px clamp(20px,4.4vw,60px) 0;display:grid;grid-template-columns:1fr 2fr;gap:40px}
+.resources-image-credit{grid-column:2;position:relative;z-index:3;font-size:13px;line-height:1.5;color:#555;min-width:0;text-align:right}
+.resources-image-credit summary{cursor:pointer;list-style:none;text-decoration:none;min-height:24px}
+.resources-image-credit summary::before{content:'ⓘ '}
+.resources-image-credit summary::-webkit-details-marker{display:none}
+.resources-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#e8f9f7;text-align:left;max-height:60vh;overflow-y:auto}
+.resources-credit-flag h2{margin:0 0 8px;font-size:15px;line-height:1.5;font-weight:600}
+.resources-credit-flag p{margin:0 0 12px}
+.resources-credit-flag p:last-child{margin-bottom:0}
+.resources-image-credit summary:focus-visible{outline:3px solid #005a9c;outline-offset:3px}
+@media(max-width:600px){.resources-image-caption{grid-template-columns:1fr;padding-inline:16px}.resources-image-credit{grid-column:1}.resources-credit-flag{padding:16px}}
+

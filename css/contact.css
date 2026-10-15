@@ -1,0 +1,59 @@
+.contact-page{background:#fff}
+.contact-banner{margin:0;position:relative}
+.contact-banner picture,.contact-banner img{display:block;width:100%}
+.contact-banner img{height:auto}
+.contact-banner figcaption{max-width:1366px;margin:auto;padding:8px clamp(20px,4.4vw,60px) 0;display:grid;grid-template-columns:1fr 2fr;gap:40px}
+.image-credit{grid-column:2;position:relative;font-size:13px;line-height:1.5;color:#555;min-width:0;text-align:right}
+.image-credit summary{cursor:pointer;list-style:none;text-decoration:none;min-height:24px}
+.image-credit summary::before{content:'ⓘ ';text-decoration:none}
+.image-credit summary::-webkit-details-marker{display:none}
+.image-credit-flag{position:absolute;z-index:1;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#e8f9f7;text-align:left;max-height:60vh;overflow-y:auto}
+.image-credit-flag h2{margin:0 0 8px;font-size:15px;line-height:1.5;font-weight:600}
+.image-credit-flag p{margin:0 0 12px}
+.image-credit-flag p:last-child{margin-bottom:0}
+.image-credit a{color:inherit;text-underline-offset:3px}
+@media(max-width:600px){.contact-banner figcaption{grid-template-columns:1fr}.image-credit{grid-column:1}.image-credit-flag{padding:16px}}
+.contact-main{width:100%;max-width:1366px;margin:auto;padding:48px clamp(20px,4.4vw,60px) 64px;flex:1}
+.contact-intro{display:grid;grid-template-columns:1fr 2fr;gap:40px;margin-bottom:50px}
+.contact-intro h1{font-size:26px;font-weight:500;line-height:1.4;margin:0}
+.contact-intro>p{font-size:23px;font-weight:300;line-height:1.55;margin:0}
+.contact-panel{display:grid;grid-template-columns:1fr 2fr;gap:40px;padding:64px 32px 72px;background:#fdecdb}
+.contact-note{align-self:start;padding:0 20px;font-size:16px;line-height:1.5;color:#555}
+.contact-note p{margin:0}
+.contact-field{margin-bottom:24px}
+.contact-field label{display:block;font-size:16px;font-weight:600;margin-bottom:8px}
+.contact-field input,.contact-field select,.contact-field textarea{display:block;box-sizing:border-box;width:100%;border:1px solid #222;border-radius:3px;background:#fff;padding:12px 14px;color:#333;font:inherit;font-size:16px;min-height:48px}
+.contact-field select{appearance:none;-webkit-appearance:none;padding-right:56px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='m3 8 9 9 9-9' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 18px center;background-size:19.2px 19.2px}
+@media(forced-colors:active){.contact-field select{appearance:auto;-webkit-appearance:auto;background-image:none}}
+.contact-field textarea{resize:vertical;min-height:180px}
+.contact-submit{border:0;background:#f79400;color:#111;font:inherit;font-size:14px;padding:14px 20px;cursor:pointer;min-height:48px}
+.contact-submit:hover{background:#e88700}
+.contact-related{margin:28px 0 0 calc((100% - 40px)/3 + 40px);display:grid;gap:6px;font-size:16px;line-height:1.5}
+.contact-related a{color:#666;text-decoration:none}
+.contact-related a:hover{text-decoration:underline}
+.prototype-notice{font-size:13px;line-height:1.5;color:#555;margin:0 0 24px}
+.contact-status{font-size:16px;line-height:1.5;margin:20px 0 0}
+.contact-page :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #005a9c;outline-offset:3px}
+@media(max-width:860px){.contact-banner figcaption{gap:24px}.contact-intro{gap:24px}.contact-intro>p{font-size:20px}.contact-panel{gap:24px;padding:36px 24px}.contact-note{padding:0;font-size:15px}}
+@media(max-width:600px){.contact-main{padding:28px 16px 40px}.contact-banner figcaption{padding-inline:16px}.contact-intro{grid-template-columns:1fr;gap:16px;margin-bottom:28px}.contact-intro h1{font-size:26px}.contact-intro>p{font-size:18px}.contact-panel{grid-template-columns:1fr;gap:24px;padding:28px 20px}.contact-related{margin:24px 0 0;font-size:15px}.contact-note{max-width:40ch}}
+
+.contact-select{position:relative}
+.contact-select-native{position:absolute!important;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;opacity:0;pointer-events:none}
+.contact-select-trigger{display:block;width:100%;min-height:48px;border:1px solid #222;border-radius:3px;background:#fff;color:#333;padding:12px 56px 12px 14px;font:inherit;font-size:16px;text-align:left;cursor:pointer;position:relative}
+@media(min-width:601px){.contact-note{font-size:16px}.contact-select-trigger{line-height:1.5}}
+.contact-select-trigger::after{content:'';position:absolute;right:21px;top:calc(50% - 10.25px);width:12px;height:12px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg)}
+.contact-select-options{position:absolute;z-index:5;top:calc(100% + 4px);left:0;right:0;margin:0;padding:4px;list-style:none;background:#fff;border:1px solid #222;border-radius:3px;box-shadow:0 4px 12px #0002;max-height:260px;overflow:auto}
+.contact-select-options[hidden]{display:none}
+.contact-select-options li{padding:10px;font-size:16px;cursor:pointer;overflow-wrap:anywhere}
+.contact-select-options li.is-active{background:#def2ff;color:#333}
+.contact-field label{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+.contact-field-error{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.contact-field-error[hidden]{display:none}
+.contact-field input[aria-invalid="true"]::placeholder{color:#c44f00;opacity:1}
+.contact-select-trigger[aria-invalid="true"]{color:#c44f00}
+.contact-field input[type="email"][aria-invalid="true"]:not(:placeholder-shown){color:#c44f00}
+.contact-field input:autofill{background-color:#fff;color:#333;box-shadow:0 0 0 1000px #fff inset}
+.contact-field input:-webkit-autofill,
+.contact-field input:-webkit-autofill:hover,
+.contact-field input:-webkit-autofill:focus{background-color:#fff;-webkit-text-fill-color:#333;-webkit-box-shadow:0 0 0 1000px #fff inset;box-shadow:0 0 0 1000px #fff inset}
+.contact-field input[aria-invalid="true"]:-webkit-autofill{-webkit-text-fill-color:#c44f00}
