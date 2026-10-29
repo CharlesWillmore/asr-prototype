@@ -86,7 +86,7 @@
   });
   const tree=document.querySelector('#variant-tree');
   groups.forEach(group=>{
-    const details=document.createElement('details');details.open=true;
+    const details=document.createElement('details');
     details.className=group.name==='Donor'?'variant-donor':'variant-alteration';
     const summary=document.createElement('summary');summary.textContent=group.name;
     const list=document.createElement('ul');

@@ -200,3 +200,15 @@
  .location-note{padding:18px 0 0}
 }
 @media(prefers-reduced-motion:reduce){.location-mobile-tree summary:before{transition:none}}
+
+/* Compact mobile variant disclosures, using the same chevrons as the state list. */
+@media(max-width:759px){
+ .variant-tree{gap:1px;border-radius:5px;overflow:hidden}
+ .variant-tree details{border-radius:0}
+ .variant-tree summary{display:flex;align-items:center;gap:13px;list-style:none;min-height:54px;font-size:17px;line-height:1.4}
+ .variant-tree summary::-webkit-details-marker{display:none}
+ .variant-tree summary:before{content:'';width:8px;height:8px;flex-shrink:0;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+ .variant-tree details[open]>summary:before{transform:rotate(45deg)}
+ .variant-tree summary:focus-visible{outline:3px solid #1475bd;outline-offset:-4px}
+}
+@media(prefers-reduced-motion:reduce){.variant-tree summary:before{transition:none}}
