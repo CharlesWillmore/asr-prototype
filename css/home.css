@@ -175,3 +175,28 @@
    Keyboard focus follows the state outline through the stroke rule above. */
 .location-map-svg:focus,.location-hit-areas [data-region]:focus{outline:none!important;box-shadow:none}
 .location-hit-areas [data-region]{-webkit-tap-highlight-color:transparent}
+
+/* Smaller screens use the filter's state → organisation disclosure hierarchy. */
+.location-mobile-tree{display:none}
+@media(max-width:1000px){
+ .location-inner{padding:34px clamp(20px,4.4vw,44px) 26px}
+ .location-heading{position:static;display:block;padding:0;pointer-events:auto}
+ .location-heading h2{font:500 25px/1.3 Inter,Arial,sans-serif;margin:0 0 22px}
+ .location-heading>p{display:none}
+ .location-stage{display:none}
+ .location-mobile-tree{display:grid;gap:1px;background:#80aecd;border:1px solid #80aecd;border-radius:5px;overflow:hidden}
+ .location-mobile-tree details{background:#316b97;color:#fff}
+ .location-mobile-tree summary{display:flex;align-items:center;gap:13px;list-style:none;cursor:pointer;padding:17px 18px;min-height:54px;font:500 17px/1.4 Inter,Arial,sans-serif}
+ .location-mobile-tree summary::-webkit-details-marker{display:none}
+ .location-mobile-tree summary:before{content:'';width:8px;height:8px;flex-shrink:0;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+ .location-mobile-tree details[open]>summary:before{transform:rotate(45deg)}
+ .location-mobile-tree summary:hover{background:#285e88}
+ .location-mobile-tree summary:focus-visible{outline:3px solid #f79400;outline-offset:-4px}
+ .location-mobile-tree ul{list-style:none;margin:0;padding:0 18px 8px 39px;background:#e2f1fc;color:#002b49}
+ .location-mobile-tree li+li{border-top:1px solid #b9d5e9}
+ .location-mobile-tree a{display:flex;flex-direction:column;gap:5px;padding:14px 0;font:400 15px/1.45 Inter,Arial,sans-serif;color:inherit;min-height:44px}
+ .location-mobile-tree a:hover>span:first-child{text-decoration:underline}
+ .location-mobile-count{font-size:13px;color:#305777}
+ .location-note{padding:18px 0 0}
+}
+@media(prefers-reduced-motion:reduce){.location-mobile-tree summary:before{transition:none}}

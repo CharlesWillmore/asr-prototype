@@ -26,6 +26,26 @@
     section.querySelectorAll('[data-region]').forEach(el => el.setAttribute('aria-expanded', 'false'));
     active = null;
   }
+  // Compact state hierarchy for tablets and phones, matching the filter disclosures.
+  const mobileTree = section.querySelector('.location-mobile-tree');
+  const regionNames = ['New South Wales', 'Queensland', 'Tasmania', 'Victoria', 'Western Australia', 'Overseas'];
+  regionNames.forEach(region => {
+    const details = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = region;
+    const organisations = document.createElement('ul');
+    institutions[region].forEach(name => {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `index.html?institution=${encodeURIComponent(name)}`;
+      const label = document.createElement('span'); label.textContent = name;
+      const count = records.filter(record => normalise(record.institution) === normalise(name)).length;
+      const lines = document.createElement('span'); lines.className = 'location-mobile-count';
+      lines.textContent = `${count} Cell ${count === 1 ? 'Line' : 'Lines'} →`;
+      link.append(label, lines); item.append(link); organisations.append(item);
+    });
+    details.append(summary, organisations); mobileTree.append(details);
+  });
   const groupedRegion = region => ({'Northern Territory': 'South Australia', 'Australian Capital Territory': 'Victoria'}[region] || region);
   function select(region) {
     region = groupedRegion(region);
