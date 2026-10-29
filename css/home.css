@@ -212,3 +212,5 @@
  .variant-tree summary:focus-visible{outline:3px solid #1475bd;outline-offset:-4px}
 }
 @media(prefers-reduced-motion:reduce){.variant-tree summary:before{transition:none}}
+
+@media(max-width:650px){.curation-cell-word{display:none}}

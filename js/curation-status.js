@@ -22,7 +22,8 @@
     bar.style.width = `${counts[index] / maximum * 100}%`;
     const callout = document.createElement('span'); callout.className = 'curation-callout';
     const number = document.createElement('strong'); number.textContent = counts[index];
-    callout.append(number, ' Cell Lines'); bar.append(callout); track.append(bar); link.append(label, track); plot.append(link);
+    const cellWord = document.createElement('span'); cellWord.className = 'curation-cell-word'; cellWord.textContent = 'Cell ';
+    callout.append(number, ' ', cellWord, 'Lines'); bar.append(callout); track.append(bar); link.append(label, track); plot.append(link);
   });
   const axis = document.createElement('div'); axis.className = 'curation-axis'; axis.setAttribute('aria-hidden', 'true');
   for (let value = 0; value <= maximum; value += 50) {
