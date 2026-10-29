@@ -35,3 +35,143 @@
 @media(min-width:801px){
  .home-tiles{max-width:1366px;padding-inline:clamp(20px,4.4vw,60px)}
 }
+
+/* Variant origin: responsive SVG, with a touch-friendly hierarchy on phones. */
+.variant-origin{background:#f2f8fd;scroll-margin-top:24px;color:#282828}
+.variant-inner{max-width:1366px;margin:auto;padding:48px clamp(20px,4.4vw,60px) 30px}
+.variant-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:40px}
+.variant-heading h2{flex-shrink:0;font:500 28px/1.3 Inter,Arial,sans-serif;margin:0}
+.variant-intro a{font-size:16px;color:#00517b}
+.variant-intro a:hover{text-decoration:underline}
+.variant-intro{max-width:62ch;text-align:left;font-size:17px;line-height:1.6;margin:0;color:#52616b}
+.variant-chart{max-width:1200px;margin:0 auto;font-family:Inter,Arial,sans-serif}
+.variant-chart svg{display:block;width:100%;height:auto;overflow:visible}
+.variant-origin-label{font-size:21px;font-weight:400}
+.variant-gene-label{font-size:10px;pointer-events:none}
+.variant-center{font-size:22px;fill:#032b43;font-weight:400}
+.variant-wedge{transition:filter .15s,stroke-width .15s}
+.variant-chart a{outline:none}
+.variant-chart a:hover .variant-wedge,.variant-chart a.is-selected .variant-wedge{filter:brightness(1.2);stroke:#fff;stroke-width:2}
+.variant-chart a:focus-visible .variant-wedge{stroke:#f79400;stroke-width:4;filter:brightness(1.2)}
+.variant-callout{opacity:0;pointer-events:none}
+.variant-callout.is-visible{opacity:1}
+
+.variant-callout-name{font-size:22px;font-weight:700;fill:#202628}
+.variant-callout-count{font-size:20px;font-weight:400;fill:#202628}
+
+.variant-caption{display:flex;justify-content:space-between;gap:40px;border-top:1px solid #d7e4ed;padding-top:18px;color:#52616b;font:13px/1.6 Inter,Arial,sans-serif}
+.variant-caption p{margin:0;max-width:580px}
+.variant-tree{display:none}
+@keyframes variant-line{from{stroke-dashoffset:850}to{stroke-dashoffset:0}}
+@keyframes variant-text{0%,55%{opacity:0}100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.variant-callout.is-visible path,.variant-callout.is-visible text{animation:none}.variant-wedge{transition:none}}
+@media(max-width:759px){
+ .variant-inner{padding-top:34px;padding-bottom:28px}
+ .variant-heading{align-items:flex-start;flex-direction:column;gap:12px}
+ .variant-heading h2{font-size:25px}
+ .variant-intro{font-size:16px;line-height:1.5;margin-bottom:24px}
+ .variant-chart{display:none}
+ .variant-tree{display:grid;gap:16px;font-family:Inter,Arial,sans-serif}
+ .variant-tree details{border-radius:5px;overflow:hidden;background:#00517b;color:#fff}
+ .variant-tree summary{padding:17px 18px;background:#032b43;cursor:pointer;font-size:18px}
+ .variant-tree ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr}
+ .variant-tree li{min-width:0;border-bottom:1px solid #ffffff26}
+ .variant-tree a{display:flex;flex-direction:column;gap:5px;padding:14px 18px;color:inherit;min-height:44px;font-size:14px}
+ .variant-tree a:hover{background:#ffffff18}
+ .variant-tree a span{font-size:12px;font-weight:400;opacity:.85}
+ .variant-tree .variant-alteration{background:#fbd59c;color:#332b20}
+ .variant-alteration summary{background:#f79400}
+ .variant-alteration li{border-color:#e5ba7a}
+ .variant-caption{margin-top:24px;display:block}
+ .variant-caption p+p{display:none}
+}
+
+.variant-chart a:focus-visible{outline:none}
+
+/* Curation status follows the supplied mint panel and three-colour bar artwork. */
+.curation-status{background:#eefaf8;color:#282828}
+.curation-inner{max-width:1366px;margin:auto;padding:44px clamp(20px,4.4vw,60px) 36px}
+.curation-inner h2{font:500 28px/1.3 Inter,Arial,sans-serif;margin:0 0 60px}
+.curation-card{background:white;border-radius:14px;padding:40px 190px 54px 36px}
+.curation-chart{font-family:Inter,Arial,sans-serif}
+.curation-plot{--label-width:270px;position:relative;padding-bottom:0}
+.curation-row{--bar-color:#326e98;display:grid;grid-template-columns:var(--label-width) minmax(0,1fr);gap:32px;align-items:center;color:#111;padding:8px 0}
+.curation-row-1{--bar-color:#ef6900}.curation-row-2{--bar-color:#008e7e}
+.curation-label{display:flex;flex-direction:column;text-align:right;font-size:21px;line-height:1.3}
+.curation-label strong{font-weight:600}
+.curation-track{display:block;background:repeating-linear-gradient(to right,#ccc 0,#ccc 1px,transparent 1px,transparent var(--grid-step));border-right:1px solid #ccc}
+.curation-bar{position:relative;display:block;height:84px;background:var(--bar-color);min-width:2px}
+.curation-callout{position:absolute;left:calc(100% + 38px);top:50%;transform:translateY(-50%);width:190px;padding:9px 12px;border:2px solid var(--bar-color);background:#fff;color:#111;text-align:center;white-space:nowrap;font-size:17px;font-weight:400;opacity:0;pointer-events:none;z-index:2}
+.curation-callout:before{content:'';position:absolute;right:100%;top:50%;width:40px;border-top:2px solid var(--bar-color)}
+.curation-row:hover .curation-callout,.curation-row:focus-visible .curation-callout{opacity:1}
+.curation-row:hover .curation-bar{filter:brightness(.96)}
+.curation-axis{position:relative;margin-left:calc(var(--label-width) + 32px);border-top:1px solid #bbb;height:1px;margin-top:8px;font-size:16px;color:#222}
+.curation-axis span{position:absolute;top:8px;transform:translateX(-50%)}
+.curation-note{font:14px/1.6 Inter,Arial,sans-serif;color:#52616b;margin:20px 0 0}
+@media(max-width:1000px){.curation-card{padding-right:140px;padding-left:22px}.curation-plot{--label-width:210px}.curation-label{font-size:18px}.curation-callout{width:150px;font-size:14px;left:calc(100% + 20px)}.curation-callout:before{width:22px}}
+@media(max-width:650px){.curation-inner{padding-top:34px}.curation-inner h2{font-size:25px;margin-bottom:28px}.curation-card{padding:22px 20px 42px}.curation-row{grid-template-columns:1fr;gap:10px;padding:12px 0 18px}.curation-label{text-align:left;font-size:17px;flex-direction:row;flex-wrap:wrap;gap:0 5px}.curation-bar{height:52px}.curation-callout{opacity:1;left:10px;width:auto;border:0;padding:3px 6px;font-size:14px;white-space:nowrap}.curation-callout:before{display:none}.curation-axis{margin-left:0}.curation-note{font-size:13px}}
+@media(hover:none){.curation-callout{opacity:1}}
+
+/* Location row: geographic hit areas over the pale blue bubble illustration. */
+.location-section{background:#f2f8fd;color:#282828;scroll-margin-top:24px}
+.location-inner{max-width:1366px;margin:auto;padding:44px clamp(20px,4.4vw,60px) 24px;font-family:Inter,Arial,sans-serif}
+.location-heading{display:grid;grid-template-columns:1.7fr 1fr;gap:35px;align-items:start}
+.location-heading h2{font-size:28px;font-weight:500;line-height:1.3;margin:0}
+.location-heading p{font-size:16px;line-height:1.5;color:#305777;margin:0}
+.location-stage{position:relative;min-height:660px}
+.location-map-svg{display:block;width:66%;height:auto;overflow:visible}
+.location-bubbles{fill:#cde6f9;pointer-events:none}
+.overseas-label{fill:#305777;font-size:18px;pointer-events:none}
+.location-hit-areas [data-region]{fill:transparent;stroke:transparent;stroke-width:1;cursor:pointer;fill-rule:evenodd;outline:none}
+.location-hit-areas [data-region]:focus-visible{stroke:#326e98;stroke-width:3;fill:#326e9812}
+.location-connector{pointer-events:none;opacity:0}
+.location-active .location-connector{opacity:1}
+.location-marker{fill:#326e98;transform-box:fill-box;transform-origin:center}
+.location-active .location-marker{animation:location-dot .18s ease-out both}
+.location-line{fill:none;stroke:#77a7cb;stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1}
+.location-active .location-line{animation:location-draw .45s .18s ease-out forwards}
+.location-panel{position:absolute;left:66%;right:0;top:110px;background:#e2f0fc;border:1px solid #77a7cb;padding-bottom:43px;color:#152c3c}
+.location-panel h3{background:#326e98;color:white;font-size:19px;line-height:1.4;margin:0;padding:8px 18px;font-weight:600}
+.location-institutions{padding:14px 18px;display:grid;gap:14px}
+.location-institutions a{font-size:14px;line-height:1.4;color:inherit;display:block}
+.location-institutions a:hover span:first-child{text-decoration:underline}
+.location-count{display:block;color:#305777;margin-top:2px;font-size:13px}
+.location-institutions p{font-size:15px;line-height:1.6;margin:0}
+.location-close{position:absolute;bottom:12px;right:16px;width:28px;height:28px;border:1px solid #77a7cb;border-radius:50%;background:transparent;font:24px/22px Arial;color:#326e98;cursor:pointer}
+.location-reveal .location-panel{animation:location-panel .18s ease-out both}
+.location-note{font-size:12px;line-height:1.6;color:#52616b;margin:0}
+.location-note a{color:inherit;text-decoration:underline}
+@keyframes location-dot{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes location-draw{to{stroke-dashoffset:0}}
+@keyframes location-panel{from{opacity:0}to{opacity:1}}
+@media(min-width:1400px){.location-stage{min-height:710px}}
+@media(max-width:1000px){.location-stage{min-height:580px}.location-heading h2{font-size:25px}.location-panel{top:60px}.location-institutions{gap:10px;padding:12px}.location-institutions a{font-size:12px}}
+@media(max-width:700px){.location-heading{grid-template-columns:1fr;gap:14px}.location-heading p{font-size:15px}.location-stage{min-height:0;display:flex;flex-direction:column}.location-map-svg{width:100%;margin-top:-30px}.location-panel{position:relative;left:auto;right:auto;top:auto;margin:0 0 20px}.location-institutions a{font-size:15px}.location-line{display:none}.location-close{width:32px;height:32px}.location-inner{padding-top:34px}}
+@media(prefers-reduced-motion:reduce){.location-active .location-marker,.location-active .location-line,.location-reveal .location-panel{animation:none}.location-active .location-line{stroke-dashoffset:0}}
+
+/* Original ASR_Map_A1 vector artwork, in its unaltered 1364.97 × 800 coordinate system. */
+.location-inner{position:relative;padding:0;max-width:1364.97px}
+.location-heading{position:absolute;z-index:1;left:4.2845%;right:4.54%;top:4.6%;grid-template-columns:63.9% 1fr;gap:0;pointer-events:none}
+.location-heading h2{font-family:Nunito,Arial,sans-serif;font-size:clamp(18px,2.05vw,28px);font-weight:700;line-height:1.25}
+.location-heading p{font:400 clamp(12px,1.172vw,16px)/1.25 Inter,Arial,sans-serif;color:#002b49}
+.location-stage{min-height:0}
+.location-map-svg{width:100%;margin:0}
+.location-bubbles{fill:rgb(81.2% 90.6% 97.6%)}
+.overseas-label{fill:#002b49;font:20px Inter,Arial,sans-serif}
+.location-marker{fill:rgb(19.2% 42% 59.2%)}
+.location-line{stroke:rgb(19.2% 42% 59.2%);stroke-width:2}
+.location-panel{left:62.7178%;right:4.54%;top:24.7154%;border:2px solid #316b97;background:#e2f1fc;padding-bottom:48px}
+.location-panel h3{background:#316b97;padding:8px 18px;font-size:20px;line-height:24px}
+.location-institutions{padding:25px 18px 12px;gap:10px}
+.location-institutions a{font:600 16px/1.25 Inter,Arial,sans-serif;color:#000}
+.location-count{font:400 16px/1.25 Inter,Arial,sans-serif;color:#000;margin-top:0}
+.location-close{right:30px;bottom:28px;width:35px;height:35px;color:#316b97;border:2px solid #316b97;font-size:30px;line-height:28px}
+.location-note{padding:0 4.2845% 22px}
+.location-awaiting-art .location-connector{opacity:0}
+@media(min-width:701px) and (max-width:1100px){.location-panel h3{font-size:16px;line-height:20px;padding:5px 12px}.location-institutions{padding:14px 12px 8px;gap:7px}.location-institutions a,.location-count{font-size:12px}.location-panel{padding-bottom:40px}.location-close{bottom:12px;right:14px;width:28px;height:28px;font-size:24px;line-height:22px}.location-stage{min-height:580px}}
+@media(max-width:700px){.location-heading{position:relative;left:auto;right:auto;top:auto;padding:30px 20px 0;grid-template-columns:1fr;gap:12px}.location-heading h2{font-size:25px}.location-heading p{font-size:15px}.location-stage{min-height:0}.location-map-svg{width:100%;margin-top:-28px}.location-panel{position:relative;left:auto;right:auto;top:auto;margin:0 20px 20px;padding-bottom:52px}.location-panel h3{font-size:20px}.location-institutions{padding:20px 18px;gap:14px}.location-institutions a,.location-count{font-size:15px}.location-close{bottom:12px;right:18px}.location-note{padding:0 20px 25px}}
+
+/* Suppress native rectangular SVG focus rings, including Safari on macOS.
+   Keyboard focus follows the state outline through the stroke rule above. */
+.location-map-svg:focus,.location-hit-areas [data-region]:focus{outline:none!important;box-shadow:none}
+.location-hit-areas [data-region]{-webkit-tap-highlight-color:transparent}

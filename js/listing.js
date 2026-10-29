@@ -1,6 +1,9 @@
 (() => {
   'use strict';
-  const records = Array.from({ length: 300 }, (_, i) => ({ ...window.registryRecords[i % window.registryRecords.length], rowKey: `sample-${i}` }));
+  // Institution links use the actual snapshot so map counts and result counts agree.
+  const records = new URLSearchParams(location.search).has('institution')
+    ? window.registryRecords.map((record, i) => ({ ...record, rowKey: `institution-${i}` }))
+    : Array.from({ length: 300 }, (_, i) => ({ ...window.registryRecords[i % window.registryRecords.length], rowKey: `sample-${i}` }));
   const workspace = document.querySelector('#listing-workspace');
   const panel = document.querySelector('#filter-panel');
   const resultsPane = document.querySelector('.results-pane');
@@ -34,7 +37,7 @@
   new ResizeObserver(fitSearchHint).observe(nameInput);
   document.fonts.ready.then(fitSearchHint);
   fitSearchHint();
-  const selections = { disease: new Set(), organisation: new Set(), sex: new Set(), hasDisease: new Set(), variant: new Set() };
+  const selections = { disease: new Set(), organisation: new Set(), sex: new Set(), hasDisease: new Set(), variant: new Set(), curation: new Set() };
   const storageKey = 'asr-filter-state-v1';
   let saved = {};
   try { saved = JSON.parse(sessionStorage.getItem(storageKey) || '{}'); } catch {}
@@ -45,6 +48,18 @@
     url.searchParams.delete('view');
     history.replaceState(null, '', url.pathname + url.search + url.hash);
   }
+  const curationRequest = new URLSearchParams(location.search).get('curation');
+  if (['Not yet reviewed', 'Reviewed', 'Flagged for further review'].includes(curationRequest)) {
+    saved = { selections: { curation: [curationRequest] }, page: 1, pageSize: 25 };
+  }
+  const institutionRequest = new URLSearchParams(location.search).get('institution');
+  if (institutionRequest !== null) {
+    const canonical = value => value.toLowerCase().replace(/[’']/g, "'").replace(/[,]/g, '').replace(/\s+/g, ' ').trim();
+    const institutionRecords = records.filter(record => canonical(record.institution) === canonical(institutionRequest));
+    saved = { selections: { organisation: institutionRecords.map(record => record.organisation.join(' / ')) }, reviewed: true, page: 1, pageSize: 25 };
+    // An unmatched institution must show an empty result, never the full registry.
+    if (!institutionRecords.length) saved.selections.organisation = ['Institution: ' + institutionRequest];
+  }
   for (const group of Object.keys(selections)) selections[group] = new Set(saved.selections?.[group] || []);
   nameInput.value = saved.query || '';
   let reviewed = Boolean(saved.reviewed), editing = false;
@@ -53,7 +68,7 @@
   const controls = [];
   let page = saved.page || 1, pageSize = saved.pageSize || 25, matches = records, serial = 0;
   const normalise = value => value.toLowerCase().replace(/[’']/g, "'").replace(/[,]/g, '').replace(/\s+/g, ' ').trim();
-  const diseaseKeys = r => r.diseases.map(normalise);
+  const diseaseKeys = r => r.diseases.length ? r.diseases.map(normalise) : ['none-reported'];
   const orgKey = r => r.organisation.join(' / ');
   const modificationTypes = ['Isogenic modification', 'Gene knock in', 'Transgene expression', 'Gene knock out'];
   const modificationKey = modification => `Modification: ${modification.type}: ${modification.gene}`;
@@ -64,7 +79,7 @@
     ];
     return keys.length ? keys : ['none'];
   };
-  const keysFor = (r, group) => ({ disease: () => diseaseKeys(r), organisation: () => [orgKey(r)], sex: () => [r.sex], hasDisease: () => [r.diseases.length ? 'yes' : 'no'], variant: () => variantKeys(r) }[group])();
+  const keysFor = (r, group) => ({ disease: () => diseaseKeys(r), organisation: () => [orgKey(r)], sex: () => [r.sex], hasDisease: () => [r.diseases.length ? 'yes' : 'no'], variant: () => variantKeys(r), curation: () => [r.curation] }[group])();
   const intersects = (set, values) => values.some(value => set.has(value));
   const el = (tag, className, text) => { const n = document.createElement(tag); if (className) n.className = className; if (text !== undefined) n.textContent = text; return n; };
   function allKeys(node) {
@@ -134,9 +149,12 @@
   const diseaseOptions = document.querySelector('#disease-options');
   const diseaseIntro = el('p', 'disease-help');
   diseaseIntro.textContent = 'Select "All Diseases" to show all cell lines with a reported disease.';
+  const noneReportedOption = checkbox('disease', ['none-reported'], 'None Reported', 'simple-option');
+  noneReportedOption.querySelector('.tree-count').remove();
   diseaseOptions.append(
     diseaseIntro,
     checkbox('disease', allKeys(diseaseRoot), 'All Diseases', 'simple-option'),
+    noneReportedOption,
     el('p', 'disease-help', 'Use the arrows to expand disease categories, then select individual diseases or subcategories. Some diseases appear in more than one category, so selecting a disease selects it wherever it appears.'),
     el('p', 'disease-help', 'A dash means some diseases in that category are selected.'),
     tree(diseases, 'disease'),
@@ -163,6 +181,7 @@
     tree(organisations, 'organisation')
   );
   for (const sex of [...new Set(records.map(r => r.sex))].sort()) document.querySelector('#sex-options').append(checkbox('sex', [sex], sex, 'simple-option'));
+  for (const status of ['Not yet reviewed', 'Reviewed', 'Flagged for further review']) document.querySelector('#curation-options').append(checkbox('curation', [status], status, 'simple-option'));
   const variants = document.querySelector('#variant-options');
   const donorGenes = [...new Set(records.filter(r => r.origins.includes('Donor')).flatMap(r => r.loci))].sort();
   const modificationBranches = modificationTypes.map(type => {
@@ -202,8 +221,8 @@
   function summaryText() {
     const parts = [];
     if (nameInput.value.trim()) parts.push(`Search: “${nameInput.value.trim()}”`);
-    const names = { disease: 'Disease', hasDisease: 'Has disease', sex: 'Sex', organisation: 'Research organisation', variant: 'Variant' };
-    for (const group of ['disease', 'hasDisease', 'sex', 'organisation', 'variant']) {
+    const names = { disease: 'Disease', hasDisease: 'Has disease', sex: 'Sex', organisation: 'Research organisation', variant: 'Variant', curation: 'Curation Status' };
+    for (const group of ['disease', 'hasDisease', 'sex', 'organisation', 'variant', 'curation']) {
       const selected = selections[group];
       if (!selected.size) continue;
       const remaining = new Set(selected), labels = [];
@@ -374,7 +393,7 @@
   updateChecks(); updateResults(); responsiveState();
   const params = new URLSearchParams(location.search);
   if (params.get('filter') === 'open') setOpen(true);
-  const section = { disease: 'disease-options', organisation: 'organisation-options', variant: 'variant-options' }[params.get('section')];
+  const section = { disease: 'disease-options', organisation: 'organisation-options', variant: 'variant-options', curation: 'curation-options' }[params.get('section')];
   if (section) {
     const target = document.getElementById(section);
     target.closest('details').open = true;
