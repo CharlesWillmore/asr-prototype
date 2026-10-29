@@ -214,3 +214,10 @@
 @media(prefers-reduced-motion:reduce){.variant-tree summary:before{transition:none}}
 
 @media(max-width:650px){.curation-cell-word{display:none}}
+
+/* Mobile count labels use pale tones of their corresponding bars. */
+@media(max-width:650px){
+ .curation-row .curation-callout{background:#cde6f9}
+ .curation-row-1 .curation-callout{background:#fbd59c}
+ .curation-row-2 .curation-callout{background:#ccf6f2}
+}
