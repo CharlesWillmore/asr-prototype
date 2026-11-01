@@ -148,3 +148,8 @@ a.team-photo:focus-visible::after{opacity:.1}
 
 /* Align both partner wordmarks along a shared baseline. */
 .partner-logo-half>a{align-items:baseline}
+/* Shared proportional logo area; compensate for the Stemformatics circle
+   extending below its wordmark baseline. */
+.partner-logo-half{height:auto;aspect-ratio:2294/442;container-type:inline-size}
+.partner-logo-half>a{height:100%;align-items:flex-end}
+.partner-logo-half img[src$="willmore-design-logo.svg"]{margin-bottom:4.4cqw}
