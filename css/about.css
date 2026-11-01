@@ -112,3 +112,16 @@ a.team-photo:focus-visible::after{opacity:.1}
 
 /* Keep the desktop intro measure constant inside the centred page container. */
 @media(min-width:1001px){.about-intro{padding-left:calc(min(100vw,1366px) - clamp(20px,4.4vw,60px) - (1366px - 120px) * 2 / 3)}}
+
+/* Match Image credit to the 16px cell-motion control and 20px icon. */
+.about-image-credit summary{font-size:16px;line-height:1.4}
+.about-image-credit summary::before{font-size:20px;line-height:1;display:inline-block;vertical-align:-1px}
+
+/* Match the pause control's icon gap while retaining right alignment. */
+.about-image-credit summary{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.about-image-credit summary::before{content:'ⓘ';width:20px;flex:0 0 20px;text-align:center;vertical-align:baseline}
+
+/* Additional image attribution directly beneath the cell-motion control. */
+.cell-image-credit{display:block;grid-column:auto;width:100%;margin-top:12px;font-size:16px}
+.cell-image-credit summary{justify-content:flex-start}
+.cell-image-credit .about-credit-flag{left:0;max-width:100%;width:100%}

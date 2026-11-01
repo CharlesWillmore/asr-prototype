@@ -55,3 +55,11 @@
 .resources-image-credit summary:focus-visible{outline:3px solid #005a9c;outline-offset:3px}
 @media(max-width:600px){.resources-image-caption{grid-template-columns:1fr;padding-inline:16px}.resources-image-credit{grid-column:1}.resources-credit-flag{padding:16px}}
 
+
+/* Match Image credit to the 16px cell-motion control and 20px icon. */
+.resources-image-credit summary{font-size:16px;line-height:1.4}
+.resources-image-credit summary::before{font-size:20px;line-height:1;display:inline-block;vertical-align:-1px}
+
+/* Match the pause control's icon gap while retaining right alignment. */
+.resources-image-credit summary{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.resources-image-credit summary::before{content:'ⓘ';width:20px;flex:0 0 20px;text-align:center;vertical-align:baseline}

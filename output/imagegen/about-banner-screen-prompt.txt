@@ -1,0 +1,8 @@
+Mode: built-in image generation, precise-object-edit.
+Inputs: original desktop/mobile About banner photographs; supplied Registry screenshot.
+Prompt: Replace only the large foreground HP monitor content with the supplied Registry screenshot, mapped to its angled screen plane and cropped naturally. Preserve people and facial identities, composition, bezel, glass, foreground occlusions, laptop, office, and lighting. Match a photographed LCD with subdued brightness and contrast, optical softness, photo grain, and broad subtle window reflections especially at the left of the screen. Remove original code content. Avoid a flat pasted-on or overbright screen. Preserve each source aspect ratio.
+Outputs: assets/about/about_banner_desktop_registry.webp; assets/about/about_banner_mobile_registry.webp
+
+Revision: built-in image editor prompted to correct the entire screen to a single plane with shared vanishing points. Final screen geometry refined with one mathematical four-corner projective mapping of the supplied screenshot, antialiased and toned to retain photographed glass. Updated assets: about_banner_desktop_registry_v2.webp and about_banner_mobile_registry_v2.webp.
+
+Revision 3: Extended the same projective screen mapping through the interior of the foreground metal frame, preserving the frame and foreground objects with a separate mask. Final assets: about_banner_desktop_registry_v3.webp; about_banner_mobile_registry_v3.webp.

@@ -45,3 +45,11 @@
 .faq-image-credit summary:focus-visible{outline:3px solid #005a9c;outline-offset:3px}
 @media(max-width:600px){.faq-image-caption{grid-template-columns:1fr;padding-inline:16px}.faq-image-credit{grid-column:1}.faq-credit-flag{padding:16px}}
 
+
+/* Match Image credit to the 16px cell-motion control and 20px icon. */
+.faq-image-credit summary{font-size:16px;line-height:1.4}
+.faq-image-credit summary::before{font-size:20px;line-height:1;display:inline-block;vertical-align:-1px}
+
+/* Match the pause control's icon gap while retaining right alignment. */
+.faq-image-credit summary{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.faq-image-credit summary::before{content:'ⓘ';width:20px;flex:0 0 20px;text-align:center;vertical-align:baseline}

@@ -57,3 +57,11 @@
 .contact-field input:-webkit-autofill:hover,
 .contact-field input:-webkit-autofill:focus{background-color:#fff;-webkit-text-fill-color:#333;-webkit-box-shadow:0 0 0 1000px #fff inset;box-shadow:0 0 0 1000px #fff inset}
 .contact-field input[aria-invalid="true"]:-webkit-autofill{-webkit-text-fill-color:#c44f00}
+
+/* Match Image credit to the 16px cell-motion control and 20px icon. */
+.image-credit summary{font-size:16px;line-height:1.4}
+.image-credit summary::before{font-size:20px;line-height:1;display:inline-block;vertical-align:-1px}
+
+/* Match the pause control's icon gap while retaining right alignment. */
+.image-credit summary{display:flex;align-items:center;justify-content:flex-end;gap:8px}
+.image-credit summary::before{content:'ⓘ';width:20px;flex:0 0 20px;text-align:center;vertical-align:baseline}
