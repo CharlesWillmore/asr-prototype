@@ -137,3 +137,14 @@ a.team-photo:focus-visible::after{opacity:.1}
 
 /* Half-line separation before the hospital image's photography attribution. */
 .about-authority .authority-image-credit .about-credit-flag p+p{margin-top:.75em}
+
+/* Equal half-width logos for the two new partner cards. */
+.partner-logo-half{width:50%}
+.partner-logo-half>a{width:100%}
+.partner-logo-half img{width:100%;max-height:none;height:auto}
+
+/* Match the logos' top inset to their cards' left padding. */
+.partner-logo-half,.partner-logo-half>a{align-items:flex-start}
+
+/* Align both partner wordmarks along a shared baseline. */
+.partner-logo-half>a{align-items:baseline}
