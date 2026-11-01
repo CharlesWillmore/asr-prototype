@@ -449,3 +449,8 @@
 @media(max-width:650px){
  .tile-chart .decorative-bars{top:auto;bottom:10%;height:40%;grid-template-rows:repeat(8,minmax(0,1fr));gap:1px}
 }
+
+/* Keep the phone body's lower gutter inside its teal section. */
+@media(max-width:759px){
+ .body-system-inner{display:flow-root}
+}
