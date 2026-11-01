@@ -1,0 +1,3 @@
+Built-in image generation tool. Reference: assets/home/tile-1.png.
+Prompt: Recreate the reference in its detailed glossy translucent 3D DNA double-helix style; warm vivid orange helix against deep dark navy (#002b49), with fine molecular/glass texture and restrained depth of field. Mirror the diagonal composition so it rises bottom left to top right. Landscape 3:2. Keep upper left quiet for HTML heading. No text, labels, or borders.
+Output: assets/home/tile-variant-orange.png

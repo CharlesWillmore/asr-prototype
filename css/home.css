@@ -417,3 +417,11 @@
 
 /* Emphasise database names in the Interoperability chart. */
 .interop-name{font-weight:700}
+
+/* Compact phone slides so their action links sit higher in the viewport. */
+@media(max-width:800px){
+ .home-page .slide-art{height:240px}
+ .home-page .slide-research .slide-art img{width:264px;height:264px}
+ .home-page .slide-copy h1,.home-page .slide-copy h2{font-size:23px}
+ .home-page .slide-copy p{font-size:16px}
+}
