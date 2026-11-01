@@ -429,14 +429,14 @@
 /* Phone artwork dividers use the colour assigned to each slide. */
 @media(max-width:800px){
  .slide-research .slide-art::after,.slide-body .slide-art::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;pointer-events:none;z-index:1}
- .slide-research .slide-art::after{background:#003f65}
- .slide-body .slide-art::after{background:#007768}
+ .slide-research .slide-art::after{background:#a7cae5}
+ .slide-body .slide-art::after{background:#95dcd4}
 }
 
 /* Give the phone disease-area card a less dense bar pattern. */
 @media(max-width:650px){
- .tile-chart .decorative-bars{grid-template-rows:repeat(16,minmax(0,1fr));gap:2px}
- .tile-chart .decorative-bars i:nth-child(n+17){display:none}
+ .tile-chart .decorative-bars{grid-template-rows:repeat(12,minmax(0,1fr));gap:2px}
+ .tile-chart .decorative-bars i:nth-child(n+13){display:none}
 }
 
 /* Inset phone count labels equally from the top, right and bottom of each bar. */
