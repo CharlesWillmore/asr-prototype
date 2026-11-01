@@ -1,0 +1,277 @@
+{
+  "source": "https://australianstemcellregistry.org.au/api/celllines_by_disease",
+  "retrieved": "2026-11-01",
+  "ranking": "rank <= 20, including ties",
+  "diseases": [
+    {
+      "id": 54,
+      "name": "relapsing-remitting multiple sclerosis",
+      "n_total": 18,
+      "n_lines_donor_source": 18,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/54/"
+    },
+    {
+      "id": 73,
+      "name": "epilepsy",
+      "n_total": 12,
+      "n_lines_donor_source": 12,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/73/"
+    },
+    {
+      "id": 50,
+      "name": "autism spectrum disorder",
+      "n_total": 11,
+      "n_lines_donor_source": 11,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/50/"
+    },
+    {
+      "id": 103,
+      "name": "neurodevelopmental disorder with epilepsy, spasticity, and brain atrophy",
+      "n_total": 9,
+      "n_lines_donor_source": 9,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/103/"
+    },
+    {
+      "id": 77,
+      "name": "neurofibromatosis type 1",
+      "n_total": 9,
+      "n_lines_donor_source": 9,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/77/"
+    },
+    {
+      "id": 85,
+      "name": "congenital myopathy 2a, typical, autosomal dominant",
+      "n_total": 7,
+      "n_lines_donor_source": 7,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/85/"
+    },
+    {
+      "id": 49,
+      "name": "retinitis pigmentosa",
+      "n_total": 7,
+      "n_lines_donor_source": 6,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 1,
+      "url": "/stem_cell/disease_areas/49/"
+    },
+    {
+      "id": 65,
+      "name": "central core myopathy",
+      "n_total": 7,
+      "n_lines_donor_source": 5,
+      "n_lines_extsource": 2,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/65/"
+    },
+    {
+      "id": 63,
+      "name": "cerebellar ataxia with neuropathy and bilateral vestibular areflexia syndrome",
+      "n_total": 6,
+      "n_lines_donor_source": 6,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/63/"
+    },
+    {
+      "id": 79,
+      "name": "stargardt disease",
+      "n_total": 6,
+      "n_lines_donor_source": 6,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/79/"
+    },
+    {
+      "id": 81,
+      "name": "usher syndrome type 2",
+      "n_total": 5,
+      "n_lines_donor_source": 5,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/81/"
+    },
+    {
+      "id": 64,
+      "name": "parkinson disease",
+      "n_total": 5,
+      "n_lines_donor_source": 3,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 2,
+      "url": "/stem_cell/disease_areas/64/"
+    },
+    {
+      "id": 57,
+      "name": "amyotrophic lateral sclerosis",
+      "n_total": 5,
+      "n_lines_donor_source": 4,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 1,
+      "url": "/stem_cell/disease_areas/57/"
+    },
+    {
+      "id": 52,
+      "name": "phenylketonuria",
+      "n_total": 4,
+      "n_lines_donor_source": 4,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/52/"
+    },
+    {
+      "id": 82,
+      "name": "central chorioretinal atrophy",
+      "n_total": 3,
+      "n_lines_donor_source": 3,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/82/"
+    },
+    {
+      "id": 56,
+      "name": "myh7-related skeletal myopathy",
+      "n_total": 3,
+      "n_lines_donor_source": 3,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/56/"
+    },
+    {
+      "id": 102,
+      "name": "secondary progressive multiple sclerosis",
+      "n_total": 3,
+      "n_lines_donor_source": 3,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/102/"
+    },
+    {
+      "id": 51,
+      "name": "huntington disease",
+      "n_total": 3,
+      "n_lines_donor_source": 3,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/51/"
+    },
+    {
+      "id": 70,
+      "name": "idiopathic spontaneous coronary artery dissection",
+      "n_total": 3,
+      "n_lines_donor_source": 3,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/70/"
+    },
+    {
+      "id": 55,
+      "name": "primary progressive multiple sclerosis",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/55/"
+    },
+    {
+      "id": 58,
+      "name": "usher syndrome type 1b",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/58/"
+    },
+    {
+      "id": 61,
+      "name": "attention deficit hyperactivity disorder",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/61/"
+    },
+    {
+      "id": 66,
+      "name": "hereditary spastic paraplegia 56",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/66/"
+    },
+    {
+      "id": 68,
+      "name": "schizophrenia",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/68/"
+    },
+    {
+      "id": 75,
+      "name": "broader autism phenotype",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/75/"
+    },
+    {
+      "id": 78,
+      "name": "osteogenesis imperfecta type 2",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/78/"
+    },
+    {
+      "id": 80,
+      "name": "retinitis pigmentosa 11",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/80/"
+    },
+    {
+      "id": 83,
+      "name": "retinitis pigmentosa 12",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/83/"
+    },
+    {
+      "id": 84,
+      "name": "developmental and epileptic encephalopathy",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/84/"
+    },
+    {
+      "id": 90,
+      "name": "alzheimer disease",
+      "n_total": 2,
+      "n_lines_donor_source": 2,
+      "n_lines_extsource": 0,
+      "n_lines_altered": 0,
+      "url": "/stem_cell/disease_areas/90/"
+    }
+  ]
+}

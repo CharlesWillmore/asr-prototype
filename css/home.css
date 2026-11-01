@@ -254,3 +254,166 @@
  .body-system-mobile a:hover{background:#d8f4f0}
  .body-system-note{padding:18px 0 0;font-size:12px}
 }
+
+/* Keep all blue systems visible beneath the full-colour rollover organ. */
+.body-system-base.is-active.is-muted{opacity:.5}
+
+/* White keyline around the Research Groups slider portrait. */
+.slide-research .slide-art img{border:4px solid #fff;box-sizing:border-box}
+
+/* Fit the body artwork from head to thighs to the slider artwork row. */
+.slide-body .slide-art img{position:absolute;top:0;left:50%;width:auto;height:100%;max-width:none;margin:0;object-fit:contain;transform:translateX(-50%)}
+
+/* Shared section headings follow the page gutter at every viewport size. */
+.variant-heading h2,.body-system-inner h2,.curation-inner h2,.location-heading h2{
+ font:700 20px/1.3 "Nunito",Arial,sans-serif;
+ text-align:left;
+}
+.variant-inner,.curation-inner{padding-inline:clamp(20px,4.4vw,60px)}
+.body-system-inner h2{left:clamp(20px,4.4vw,60px)}
+.location-inner{max-width:1366px}
+.location-heading{left:clamp(20px,4.4vw,60px);right:clamp(20px,4.4vw,60px)}
+@media(max-width:1000px){
+ .location-inner{padding-inline:clamp(20px,4.4vw,60px)}
+}
+@media(max-width:759px){
+ .body-system-inner{padding-inline:clamp(20px,4.4vw,60px)}
+}
+
+/* Two successive 10% reductions, centred in the row. */
+.variant-chart svg{width:81%;margin-inline:auto}
+
+/* Match the artwork's mint canvas across both outer page margins.
+   The source raster includes a one-pixel rule at its left edge. */
+.body-system-section{background:#c2ebe8}
+.body-system-art{clip-path:inset(0 0 0 1px)}
+
+/* Row instructions share the Variant Origin heading layout. */
+.section-heading,.location-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:40px}
+.section-heading h2,.location-heading h2{flex-shrink:0;margin:0;position:static}
+.section-instructions,.location-heading>p{display:block;max-width:62ch;text-align:left;font:400 17px/1.6 Nunito,Arial,sans-serif;margin:0;color:#52616b}
+.body-system-heading,.location-heading{padding:48px clamp(20px,4.4vw,60px) 30px}
+.body-system-inner{padding:0}
+.location-inner{padding:0}
+.location-heading{position:static;pointer-events:auto}
+.curation-heading{margin-bottom:30px}
+@media(max-width:759px){
+ .section-heading,.location-heading{flex-direction:column;gap:12px}
+ .section-instructions,.location-heading>p{display:block;font-size:16px;line-height:1.5}
+ .body-system-heading,.location-heading{padding-top:34px;padding-bottom:24px}
+ .body-system-mobile{margin-inline:clamp(20px,4.4vw,60px);margin-bottom:34px}
+}
+
+/* Trim the blank raster canvas when the spacing script pulls it upwards. */
+.body-system-diagram{clip-path:inset(17% 0 0)}
+
+/* Updated Search by Location card artwork and navy background. */
+.home-tile.tile-map{background:#002b49}
+
+/* Enlarge the location card map around the midpoint of its base. */
+.tile-map>img{transform:scale(1.1);transform-origin:50% 100%}
+
+/* Disease-area ranking imported from the existing Registry carousel. */
+.top-disease-section{background:#fff5e8;scroll-margin-top:24px;color:#282828}
+.top-disease-inner{max-width:1366px;margin:auto;padding:48px clamp(20px,4.4vw,60px) 36px}
+.top-disease-heading h2{font:700 20px/1.3 Nunito,Arial,sans-serif}
+.disease-area-chart{margin-top:80px;font:400 15px/1.45 Nunito,Arial,sans-serif;--disease-label: min(43%,440px);--count-width:40px}
+.disease-area-list{list-style:none;padding:0;margin:0}
+.disease-area-row{display:grid;grid-template-columns:var(--disease-label) minmax(0,1fr) var(--count-width);gap:20px;align-items:center;padding:8px 0;color:#002b49;border-radius:4px}
+.disease-area-name{text-align:right;overflow-wrap:anywhere}
+.disease-area-track{height:28px;background:repeating-linear-gradient(to right,#002b4918 0,#002b4918 1px,transparent 1px,transparent 25%);border-right:1px solid #002b4918}
+.disease-area-bar{display:block;height:100%;background:#f57c00;border-radius:0 5px 5px 0}
+.disease-area-count{font-weight:700;font-variant-numeric:tabular-nums}
+.disease-area-row:hover{background:#ffe5c2}
+.disease-area-row:hover .disease-area-name{text-decoration:underline}
+.disease-area-axis{display:flex;justify-content:space-between;margin-left:calc(var(--disease-label) + 20px);margin-right:calc(var(--count-width) + 20px);color:#52616b;font-size:13px}
+.disease-area-axis-title{text-align:center;margin-left:calc(var(--disease-label) + 20px);margin-right:60px;color:#52616b}
+.disease-area-source{font:400 12px/1.6 Inter,Arial,sans-serif;color:#52616b;margin:26px 0 0}
+.disease-area-source a{color:#00517b;text-decoration:underline}
+@media(max-width:759px){
+ .top-disease-inner{padding-top:34px}
+ .top-disease-heading{flex-direction:column;gap:12px}
+ .disease-area-chart{margin-top:24px}
+}
+@media(max-width:650px){
+ .disease-area-row{grid-template-columns:minmax(0,1fr) 32px;gap:6px 12px;padding:12px 0}
+ .disease-area-name{grid-column:1 / -1;text-align:left}
+ .disease-area-track{height:24px}
+ .disease-area-axis{margin-left:0;margin-right:44px}
+ .disease-area-axis-title{margin-left:0;margin-right:44px}
+}
+
+/* Twenty proportional disease counts, fitted into the card's lower area. */
+.tile-chart .decorative-bars{top:34%;bottom:10%;display:grid;grid-template-rows:repeat(20,minmax(0,1fr));gap:2px}
+.tile-chart .decorative-bars i:nth-child(n){height:100%;width:var(--disease-bar-width)}
+@media(max-width:650px){.tile-chart .decorative-bars{top:39%;gap:1px}}
+
+/* Full-width separators between home page content rows. */
+.home-page main>section+section{border-top:1px solid #242220}
+.home-page main>.home-tiles{position:relative;border-top:0}
+.home-page main>.home-tiles::before{content:"";position:absolute;top:0;left:50%;width:100vw;height:1px;background:#242220;transform:translateX(-50%);pointer-events:none}
+
+/* Axis title sits above the zero tick at the start of the bars. */
+.disease-area-axis-title{text-align:left;margin:0 calc(var(--count-width) + 20px) 12px calc(var(--disease-label) + 20px)}
+@media(max-width:650px){.disease-area-axis-title{margin-left:0;margin-right:44px}}
+
+/* Curation labels match the heading size, with shorter chart bars. */
+.curation-label{font-family:Inter,Arial,sans-serif;font-size:20px}
+.curation-bar{height:56px}
+@media(max-width:650px){.curation-bar{height:35px}}
+
+/* Taller white return row, centred on the visible capital height. */
+.home-page .page-back-top{min-height:160px;padding-block:0;display:flex;align-items:center}
+.home-page .page-back-top a{display:block;line-height:1;text-box-trim:trim-both;text-box-edge:cap alphabetic}
+.home-page .page-back-top+.site-footer{margin-top:0}
+@supports not (text-box-trim:trim-both){.home-page .page-back-top a{transform:translateY(1px)}}
+@media(max-width:600px){.home-page .page-back-top{min-height:144px}}
+
+/* Illustrative external-database coverage; each database can share cell lines. */
+.interoperability-section{background:#f2f8fd;color:#282828;scroll-margin-top:24px}
+.interoperability-inner{max-width:1366px;margin:auto;padding:48px clamp(20px,4.4vw,60px) 40px}
+.interoperability-heading h2{font:700 20px/1.3 Nunito,Arial,sans-serif}
+.interop-chart{--interop-label:min(36%,350px);--interop-gap:24px;--interop-count:48px;margin-top:80px;font:400 16px/1.45 Inter,Arial,sans-serif}
+.interop-axis-title{margin:0 0 12px calc(var(--interop-label) + var(--interop-gap));color:#52616b;font-size:15px}
+.interop-axis{display:flex;justify-content:space-between;margin-left:calc(var(--interop-label) + var(--interop-gap));margin-right:calc(var(--interop-count) + var(--interop-gap));padding-right:4.7619%;font-size:13px;color:#52616b}
+.interop-list{list-style:none;margin:8px 0 0;padding:0}
+.interop-row{display:grid;grid-template-columns:var(--interop-label) minmax(0,1fr) var(--interop-count);align-items:center;gap:var(--interop-gap);width:100%;padding:12px 0;border:0;border-radius:4px;background:transparent;color:#002b49;font:inherit;text-align:left;cursor:default}
+.interop-name{text-align:right;overflow-wrap:anywhere}
+.interop-track{position:relative;display:block;height:36px;background:repeating-linear-gradient(to right,#316b971c 0,#316b971c 1px,transparent 1px,transparent 23.8095%)}
+.interop-bar{display:block;height:100%;background:#316b97;border-radius:0 4px 4px 0}
+.interop-count{font-weight:600;font-variant-numeric:tabular-nums}
+.interop-tooltip{position:absolute;left:50%;bottom:calc(100% + 7px);transform:translateX(-50%);padding:7px 10px;border-radius:4px;background:#002b49;color:#fff;white-space:nowrap;font-size:13px;opacity:0;pointer-events:none;z-index:2}
+.interop-row:hover,.interop-row:focus-visible{background:#e2f1fc}
+.interop-row:hover .interop-tooltip,.interop-row:focus-visible .interop-tooltip{opacity:1}
+.interop-row:hover .interop-bar,.interop-row:focus-visible .interop-bar{background:#00517b}
+.interop-note{margin:30px 0 0;font:400 13px/1.6 Inter,Arial,sans-serif;color:#52616b;max-width:85ch}
+@media(max-width:759px){
+ .interoperability-inner{padding-top:34px}
+ .interoperability-heading{flex-direction:column;gap:12px}
+ .interop-chart{margin-top:24px}
+}
+@media(max-width:650px){
+ .interop-chart{--interop-gap:12px;--interop-count:38px}
+ .interop-row{grid-template-columns:minmax(0,1fr) var(--interop-count);gap:8px 12px;padding:14px 0}
+ .interop-name{grid-column:1 / -1;text-align:left;font-size:15px}
+ .interop-axis-title{margin-left:0}
+ .interop-axis{margin-left:0;padding-right:0}
+ .interop-track{height:30px}
+ .interop-tooltip{left:0;transform:none;font-size:12px}
+}
+/* Tick positions share the bars' 0–420 example scale. */
+.interop-axis{position:relative;display:block;height:20px;padding-right:0}
+.interop-axis span{position:absolute;transform:translateX(-50%)}
+.interop-axis span:nth-child(1){left:0}
+.interop-axis span:nth-child(2){left:23.8095%}
+.interop-axis span:nth-child(3){left:47.619%}
+.interop-axis span:nth-child(4){left:71.4286%}
+.interop-axis span:nth-child(5){left:95.2381%}
+
+/* Match the rendered size and regular Inter weight of the map's Overseas label.
+   The map uses 20 SVG units across a 1364.97-unit viewBox. */
+.curation-label{font:400 clamp(15px,1.46523vw,20.0151px)/1.3 Inter,Arial,sans-serif}
+.curation-label strong{font-weight:400}
+
+/* Emphasise database names in the Interoperability chart. */
+.interop-name{font-weight:700}

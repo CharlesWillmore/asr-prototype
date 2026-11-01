@@ -11,9 +11,9 @@
   const defaultImage = document.createElement('img');
   defaultImage.src = 'assets/home/body-systems/default.webp'; defaultImage.alt = '';
   defaultImage.width = 1366; defaultImage.height = 860;
-  defaultImage.className = 'body-system-art is-active'; host.append(defaultImage);
+  defaultImage.className = 'body-system-art body-system-base is-active'; host.append(defaultImage);
   function activate(id) {
-    defaultImage.classList.toggle('is-active',!id);
+    defaultImage.classList.toggle('is-muted', Boolean(id));
     images.forEach((image,key) => image.classList.toggle('is-active',key===id));
     links.forEach(link => link.classList.toggle('is-active',link.dataset.system===id));
   }
@@ -22,7 +22,7 @@
     const count = (window.registryRecords || []).filter(record => record.diseases.some(disease => keys.has(normalise(disease)))).length;
     const href = `index.html?body-system=${encodeURIComponent(system.id)}`;
     const image = document.createElement('img');
-    image.src = `assets/home/body-systems/${system.id}.webp`; image.alt = ''; image.width=1366; image.height=860;
+    image.src = `assets/home/body-systems/${system.id}-overlay.png`; image.alt = ''; image.width=1366; image.height=860;
     image.className='body-system-art'; images.set(system.id,image); host.append(image);
     const link = document.createElementNS(ns,'a');
     link.setAttribute('href',href); link.setAttribute('aria-label',`${system.name}: ${count} cell lines. Show matching lines.`);

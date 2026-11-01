@@ -9,3 +9,5 @@ Disease membership uses the existing Registry disease tree via data/body-systems
 Counts and body-system listing links use the same unexpanded Registry snapshot. The source illustration's 34 Cell Lines text is a placeholder and is not used as a count.
 
 Desktop labels support hover, focus, keyboard activation and direct links. Phones show system names and counts as a compact linked list.
+
+Rollover overlay PNGs are derived from the corresponding WebP states with the shared flat page, silhouette fill and outline colours made transparent. The default blue illustration remains underneath at 50% opacity during hover or keyboard focus; the selected overlay remains at full opacity. The default illustration returns to full opacity when the interaction ends.
