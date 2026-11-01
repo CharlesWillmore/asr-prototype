@@ -454,3 +454,8 @@
 @media(max-width:759px){
  .body-system-inner{display:flow-root}
 }
+
+/* Inset location disclosures to the same page gutter as their instructions. */
+@media(max-width:1000px){
+ .location-mobile-tree{margin-inline:clamp(20px,4.4vw,60px)}
+}
