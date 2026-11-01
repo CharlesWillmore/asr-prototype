@@ -435,8 +435,8 @@
 
 /* Give the phone disease-area card a less dense bar pattern. */
 @media(max-width:650px){
- .tile-chart .decorative-bars{grid-template-rows:repeat(12,minmax(0,1fr));gap:2px}
- .tile-chart .decorative-bars i:nth-child(n+13){display:none}
+ .tile-chart .decorative-bars{grid-template-rows:repeat(8,minmax(0,1fr));gap:2px}
+ .tile-chart .decorative-bars i:nth-child(n+9){display:none}
 }
 
 /* Inset phone count labels equally from the top, right and bottom of each bar. */
