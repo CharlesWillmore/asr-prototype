@@ -444,3 +444,8 @@
  .curation-row .curation-callout{left:auto;right:4px;top:4px;bottom:4px;transform:none;display:flex;align-items:center;justify-content:center;padding:0 6px;box-sizing:border-box}
 }
 @media(max-width:650px){.curation-row .curation-callout{gap:4px}}
+
+/* Keep the eight phone card bars clear of the wrapped title. */
+@media(max-width:650px){
+ .tile-chart .decorative-bars{top:auto;bottom:10%;height:40%;grid-template-rows:repeat(8,minmax(0,1fr));gap:1px}
+}
