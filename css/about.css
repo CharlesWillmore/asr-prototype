@@ -125,3 +125,15 @@ a.team-photo:focus-visible::after{opacity:.1}
 .cell-image-credit{display:block;grid-column:auto;width:100%;margin-top:12px;font-size:16px}
 .cell-image-credit summary{justify-content:flex-start}
 .cell-image-credit .about-credit-flag{left:0;max-width:100%;width:100%}
+
+/* Right-aligned pale-blue credit beneath the Authoritative Source image. */
+.authority-image{margin:0;min-width:0}
+.authority-image>img{display:block}
+.authority-image figcaption{margin-top:10px}
+.authority-image-credit{color:#cde6f9;grid-column:auto}
+.about-authority .authority-image-credit .about-credit-flag{color:#282828}
+.about-authority .authority-image-credit .about-credit-flag h2{font-size:15px;color:#282828;margin:0 0 8px}
+.about-authority .authority-image-credit .about-credit-flag p{font-size:16px;margin:0}
+
+/* Half-line separation before the hospital image's photography attribution. */
+.about-authority .authority-image-credit .about-credit-flag p+p{margin-top:.75em}
