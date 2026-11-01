@@ -85,6 +85,16 @@
     const delay = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 650;
     animation = setTimeout(() => { panel.hidden = false; section.classList.add('location-reveal'); }, delay);
   }
+  // Capital dots have their own hit targets above the geographic regions.
+  const hitAreas = section.querySelector('.location-hit-areas');
+  Object.entries(window.locationMapLayout).forEach(([region, layout]) => {
+    if (region === 'South Australia' || region === 'Overseas') return;
+    const target = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    target.setAttribute('cx', layout.dot[0]); target.setAttribute('cy', layout.dot[1]);
+    target.setAttribute('r', '16'); target.dataset.region = region;
+    target.setAttribute('aria-hidden', 'true');
+    hitAreas.append(target);
+  });
   section.querySelectorAll('[data-region]').forEach(target => {
     if (groupedRegion(target.dataset.region) === 'South Australia') {
       target.removeAttribute('tabindex');
@@ -93,8 +103,6 @@
       return;
     }
     target.setAttribute('aria-controls','location-region-title');
-    target.addEventListener('pointerenter', event => { if (event.pointerType !== 'touch') select(target.dataset.region); });
-    target.addEventListener('focus', () => select(target.dataset.region));
     target.addEventListener('click', () => select(target.dataset.region));
     if (target.tagName.toLowerCase() !== 'button') target.addEventListener('keydown', event => {
       if (['Enter',' '].includes(event.key)) { event.preventDefault(); select(target.dataset.region); }
@@ -103,9 +111,9 @@
   section.querySelector('.location-close').addEventListener('click', () => {
     const region = active;
     close();
-    // Focus without re-opening the panel via its focus handler.
+    // Return keyboard focus to the state that opened the panel.
     const target = [...section.querySelectorAll('[data-region]')].find(el => groupedRegion(el.dataset.region) === region);
-    if (target) { target.focus(); close(); }
+    if (target) target.focus();
   });
   section.addEventListener('keydown', event => { if (event.key === 'Escape') { section.querySelector('.location-close').click(); } });
 })();

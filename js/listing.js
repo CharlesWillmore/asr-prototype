@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   // Institution links use the actual snapshot so map counts and result counts agree.
-  const records = new URLSearchParams(location.search).has('institution')
+  const records = (new URLSearchParams(location.search).has('institution') || new URLSearchParams(location.search).has('body-system'))
     ? window.registryRecords.map((record, i) => ({ ...record, rowKey: `institution-${i}` }))
     : Array.from({ length: 300 }, (_, i) => ({ ...window.registryRecords[i % window.registryRecords.length], rowKey: `sample-${i}` }));
   const workspace = document.querySelector('#listing-workspace');
@@ -59,6 +59,12 @@
     saved = { selections: { organisation: institutionRecords.map(record => record.organisation.join(' / ')) }, reviewed: true, page: 1, pageSize: 25 };
     // An unmatched institution must show an empty result, never the full registry.
     if (!institutionRecords.length) saved.selections.organisation = ['Institution: ' + institutionRequest];
+  }
+  const bodySystemRequest = new URLSearchParams(location.search).get('body-system');
+  if (bodySystemRequest !== null) {
+    const system = window.registryBodySystems.find(item => item.id === bodySystemRequest);
+    const keys = system ? window.bodySystemDiseaseKeys(system) : [];
+    saved = { selections: { disease: keys.length ? keys : ['No diseases mapped for body system: ' + bodySystemRequest] }, reviewed: true, page: 1, pageSize: 25 };
   }
   for (const group of Object.keys(selections)) selections[group] = new Set(saved.selections?.[group] || []);
   nameInput.value = saved.query || '';
