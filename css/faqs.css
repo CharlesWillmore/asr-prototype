@@ -53,3 +53,15 @@
 /* Match the pause control's icon gap while retaining right alignment. */
 .faq-image-credit summary{display:flex;align-items:center;justify-content:flex-end;gap:8px}
 .faq-image-credit summary::before{content:'ⓘ';width:20px;flex:0 0 20px;text-align:center;vertical-align:baseline}
+
+/* Credit for the second FAQ section image, using the shared disclosure style. */
+.faq-credited-image{margin:0;min-width:0}
+.faq-credited-image figcaption{margin:10px 16px 0}
+.faq-colony-credit{grid-column:auto}
+.faq-colony-credit .faq-credit-flag{width:min(480px,calc(100vw - 32px));z-index:4}
+.faq-section .faq-colony-credit .faq-credit-flag h2{font-size:15px;margin:0 0 8px}
+@media(max-width:860px){.faq-credited-image figcaption{margin-inline:0}}
+@media(max-width:600px){
+ .faq-credited-image{width:55%;max-width:260px}
+ .faq-credited-image .faq-image{width:100%;max-width:none}
+}
