@@ -43,3 +43,6 @@ body :is(.about-credit-flag,.faq-credit-flag,.resources-credit-flag,.image-credi
 }
 @media(max-width:700px){.about-cells{left:16px;right:16px}}
 @media(prefers-reduced-motion:reduce){.cell{animation:none!important;translate:none!important}}
+
+/* Leave clearance above publication arrows so their top stroke is not clipped. */
+.publication-link .registry-link-arrow{width:1.25cap;height:1.25cap}
