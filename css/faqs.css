@@ -38,7 +38,7 @@
 .faq-image-credit summary{cursor:pointer;list-style:none;text-decoration:none;min-height:24px}
 .faq-image-credit summary::before{content:'ⓘ '}
 .faq-image-credit summary::-webkit-details-marker{display:none}
-.faq-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#e8f9f7;text-align:left;max-height:60vh;overflow-y:auto}
+.faq-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#effaf8;text-align:left;max-height:60vh;overflow-y:auto}
 .faq-credit-flag h2{margin:0 0 8px;font-size:15px;line-height:1.5;font-weight:600}
 .faq-credit-flag p{margin:0 0 12px}
 .faq-credit-flag p:last-child{margin-bottom:0}

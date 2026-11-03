@@ -4,7 +4,7 @@
 .footer-copy{max-width:740px}
 .site-footer .footer-copy p{margin:0 0 14px;color:inherit;font-size:12px;font-weight:400;line-height:1.4}
 .site-footer .footer-copy p:last-child{margin-bottom:0}
-.site-footer .footer-copy a{color:#83c5e9;text-decoration:none;overflow-wrap:anywhere}
+.site-footer .footer-copy a{color:#a7cae5;text-decoration:none;overflow-wrap:anywhere}
 .site-footer .footer-copy a:hover{text-decoration:underline;text-underline-offset:2px}
 .site-footer .footer-copy a:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 @media(max-width:600px){

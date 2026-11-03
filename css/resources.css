@@ -9,12 +9,12 @@
 .resources-intro p{font-size:23px;font-weight:300;line-height:1.5;margin:0 0 20px}
 .resources-jump{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
 .resources-jump a{border:1px solid #999;padding:9px 12px;min-width:275px;color:#555;font-size:16px;text-decoration:none}
-.resources-jump a:hover{background:#e8f9f7}
+.resources-jump a:hover{background:#effaf8}
 .resources-related{display:grid;gap:4px;font-size:16px;line-height:1.4}
 .resources-related a{color:#666;text-decoration:none}
 .resources-related a:hover{text-decoration:underline}
-.resources-publications,.resources-partners{background:#e8f9f7;padding-block:64px 80px}
-.resources-facilities{background:#cde6f7;padding-block:56px 88px;margin-block:80px 64px}
+.resources-publications,.resources-partners{background:#effaf8;padding-block:64px 80px}
+.resources-facilities{background:#cfe7f9;padding-block:56px 88px;margin-block:80px 64px}
 .resources-main h2{font-size:26px;font-weight:500;line-height:1.4;margin:0 0 40px}
 .resources-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
 .publication-card,.facility-card,.stemformatics-feature{background:#fff;border-radius:12px;padding:42px}
@@ -30,7 +30,7 @@
 .stemformatics-feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:40px}
 .stemformatics-feature>img{width:100%;height:auto}
 .stemformatics-feature p,.facility-card p{font-size:16px;line-height:1.5;color:#555;margin:0 0 16px}
-.resource-site-link{display:inline-block;color:#247f84;font-size:13px;font-weight:500;line-height:1.5;text-decoration:none;overflow-wrap:anywhere}
+.resource-site-link{display:inline-block;color:#007768;font-size:13px;font-weight:500;line-height:1.5;text-decoration:none;overflow-wrap:anywhere}
 .resource-site-link:hover{text-decoration:underline}
 .facility-logo{height:120px;display:flex;align-items:center;margin-bottom:24px}
 .facility-logo img{max-width:290px;max-height:115px;width:auto;height:auto;object-fit:contain}
@@ -48,7 +48,7 @@
 .resources-image-credit summary{cursor:pointer;list-style:none;text-decoration:none;min-height:24px}
 .resources-image-credit summary::before{content:'ⓘ '}
 .resources-image-credit summary::-webkit-details-marker{display:none}
-.resources-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#e8f9f7;text-align:left;max-height:60vh;overflow-y:auto}
+.resources-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#effaf8;text-align:left;max-height:60vh;overflow-y:auto}
 .resources-credit-flag h2{margin:0 0 8px;font-size:15px;line-height:1.5;font-weight:600}
 .resources-credit-flag p{margin:0 0 12px}
 .resources-credit-flag p:last-child{margin-bottom:0}

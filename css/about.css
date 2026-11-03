@@ -1,5 +1,5 @@
 .about-page{background:#fff}.about-main{flex:1}.about-banner{margin:0}.about-banner picture,.about-banner img{display:block;width:100%}.about-banner img{height:auto;max-height:530px;object-fit:cover}.about-inner{width:100%;max-width:1366px;margin:auto;padding-inline:clamp(20px,4.4vw,60px)}.about-sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
-.about-intro-wrap{position:relative}.about-intro{position:relative;padding-block:80px 64px;padding-left:calc(clamp(20px,4.4vw,60px) + (min(100vw,1366px) - 2 * clamp(20px,4.4vw,60px))/3)}.about-intro>p{font-size:23px;font-weight:300;line-height:1.5;margin:0 0 20px}.about-intro nav{display:grid;gap:4px}.about-intro a{font-size:16px;line-height:1.4;color:#666;text-decoration:none}.about-main h2{font-size:26px;font-weight:500;line-height:1.4;margin:0 0 32px}.about-team{padding-block:16px 72px}.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 32px}.team-card{min-width:0;background:#e8f9f7}.team-card>img{width:100%;aspect-ratio:1.5;object-fit:cover;display:block;border-radius:12px 12px 0 0}.team-copy{padding:20px 24px 24px}.about-main h3{font-size:18px;line-height:1.35;margin:0 0 4px;font-weight:600}.team-role{font-size:14px;line-height:1.4;margin:0 0 16px}.team-bio{display:inline;font-size:16px;line-height:1.5;color:#444;margin:0}.bio-toggle{display:inline;padding:0;margin-left:4px;background:none;border:0;font:inherit;font-size:16px;text-decoration:underline;cursor:pointer;color:#444}.about-site-link{display:block;color:#247f84;font-size:13px;font-weight:500;line-height:1.5;text-decoration:none;margin-top:18px;overflow-wrap:anywhere}.about-site-link:hover{text-decoration:underline}.about-authority{background:#030d45;color:#b7ede9;border-radius:12px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:80px}.about-authority h2{margin-bottom:24px}.about-authority p{font-size:18px;line-height:1.5;margin:0 0 16px}.about-authority img{width:100%;height:auto;border-radius:12px}.about-partners,.about-funders{background:#cde6f7;padding-block:56px 72px}.partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.partner-card{background:#fff;border-radius:12px;padding:36px}.partner-logo{height:120px;display:flex;align-items:center;margin-bottom:24px}.partner-logo img{max-height:110px;max-width:100%;width:auto;height:auto;object-fit:contain}.partner-card p{font-size:16px;line-height:1.5;color:#555;margin:14px 0}.phenomics-wordmark{display:block;font-size:25px;line-height:1.15;color:#b94f0b;font-weight:500}.about-alumni{background:#e8f9f7;padding-block:56px 64px;margin-block:72px}.alumni-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding-inline:32px}.alumni-card img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid #777;border-radius:50%;margin-bottom:20px}.alumni-card h3{font-size:17px}.alumni-card .about-site-link{margin-top:6px}.about-funders>div>p{max-width:85ch;font-size:18px;line-height:1.5;margin-bottom:36px}.funders-logos{display:flex;align-items:center;justify-content:space-around;gap:40px;background:#fff;border-radius:12px;padding:48px}.funders-logos img{max-width:24%;height:110px}.funders-logos a{text-decoration:none}.about-page :is(a,button):focus-visible{outline:3px solid #005a9c;outline-offset:4px}
+.about-intro-wrap{position:relative}.about-intro{position:relative;padding-block:80px 64px;padding-left:calc(clamp(20px,4.4vw,60px) + (min(100vw,1366px) - 2 * clamp(20px,4.4vw,60px))/3)}.about-intro>p{font-size:23px;font-weight:300;line-height:1.5;margin:0 0 20px}.about-intro nav{display:grid;gap:4px}.about-intro a{font-size:16px;line-height:1.4;color:#666;text-decoration:none}.about-main h2{font-size:26px;font-weight:500;line-height:1.4;margin:0 0 32px}.about-team{padding-block:16px 72px}.team-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 32px}.team-card{min-width:0;background:#effaf8}.team-card>img{width:100%;aspect-ratio:1.5;object-fit:cover;display:block;border-radius:12px 12px 0 0}.team-copy{padding:20px 24px 24px}.about-main h3{font-size:18px;line-height:1.35;margin:0 0 4px;font-weight:600}.team-role{font-size:14px;line-height:1.4;margin:0 0 16px}.team-bio{display:inline;font-size:16px;line-height:1.5;color:#444;margin:0}.bio-toggle{display:inline;padding:0;margin-left:4px;background:none;border:0;font:inherit;font-size:16px;text-decoration:underline;cursor:pointer;color:#444}.about-site-link{display:block;color:#007768;font-size:13px;font-weight:500;line-height:1.5;text-decoration:none;margin-top:18px;overflow-wrap:anywhere}.about-site-link:hover{text-decoration:underline}.about-authority{background:#002b49;color:#b7ede9;border-radius:12px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:80px}.about-authority h2{margin-bottom:24px}.about-authority p{font-size:18px;line-height:1.5;margin:0 0 16px}.about-authority img{width:100%;height:auto;border-radius:12px}.about-partners,.about-funders{background:#cfe7f9;padding-block:56px 72px}.partner-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.partner-card{background:#fff;border-radius:12px;padding:36px}.partner-logo{height:120px;display:flex;align-items:center;margin-bottom:24px}.partner-logo img{max-height:110px;max-width:100%;width:auto;height:auto;object-fit:contain}.partner-card p{font-size:16px;line-height:1.5;color:#555;margin:14px 0}.phenomics-wordmark{display:block;font-size:25px;line-height:1.15;color:#b94f0b;font-weight:500}.about-alumni{background:#effaf8;padding-block:56px 64px;margin-block:72px}.alumni-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px;padding-inline:32px}.alumni-card img{width:100%;aspect-ratio:1;object-fit:cover;border:1px solid #777;border-radius:50%;margin-bottom:20px}.alumni-card h3{font-size:17px}.alumni-card .about-site-link{margin-top:6px}.about-funders>div>p{max-width:85ch;font-size:18px;line-height:1.5;margin-bottom:36px}.funders-logos{display:flex;align-items:center;justify-content:space-around;gap:40px;background:#fff;border-radius:12px;padding:48px}.funders-logos img{max-width:24%;height:110px}.funders-logos a{text-decoration:none}.about-page :is(a,button):focus-visible{outline:3px solid #005a9c;outline-offset:4px}
 .about-cells{position:absolute;inset:0;max-width:1440px;margin:auto;pointer-events:none}.cell{position:absolute;width:80px;animation:cell-float 8s ease-in-out infinite alternate}.cell-1{width:140px;left:2%;top:-35px}.cell-2{width:72px;left:16%;top:20px;animation-delay:-3s}.cell-3{width:75px;left:19%;top:105px;animation-delay:-5s}.cell-4{width:33px;left:7%;top:165px;animation-delay:-1s}.cell-5{width:42px;left:29%;top:48px;animation-delay:-4s}.cell-6{width:80px;right:2%;bottom:0;animation-delay:-2s}@keyframes cell-float{from{transform:translate(0,-3px) rotate(-1deg)}to{transform:translate(3px,3px) rotate(1deg)}}
 @media(max-width:1000px){.team-grid{gap:28px 20px}.team-copy{padding:18px}.about-authority{padding:32px;gap:28px}.about-authority p{font-size:16px}.alumni-grid{gap:24px;padding-inline:0}.partner-card{padding:28px}.about-intro>p{font-size:20px}}
 @media(max-width:700px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-authority{grid-template-columns:1fr}.partner-grid{grid-template-columns:1fr}.alumni-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.about-intro{padding:110px 20px 40px}.cell-1{width:100px;top:-20px}.cell-2{left:28%;top:10px;width:55px}.cell-3{left:48%;top:25px;width:55px}.cell-4{left:69%;top:15px}.cell-5{left:83%;top:38px}.cell-6{display:none}}
@@ -8,7 +8,7 @@
 
 /* Clip every team photo against white, rather than the mint biography background. */
 .team-card{background:#fff}
-.team-copy{background:#e8f9f7}
+.team-copy{background:#effaf8}
 .team-card{display:flex;flex-direction:column}
 .team-copy{flex:1;height:auto}
 .team-card>img{border-top-left-radius:12px;border-top-right-radius:12px}
@@ -48,7 +48,7 @@
 .about-image-credit summary{cursor:pointer;list-style:none;text-decoration:none;min-height:24px}
 .about-image-credit summary::before{content:'ⓘ '}
 .about-image-credit summary::-webkit-details-marker{display:none}
-.about-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#e8f9f7;text-align:left;max-height:60vh;overflow-y:auto}
+.about-credit-flag{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#effaf8;text-align:left;max-height:60vh;overflow-y:auto}
 .about-credit-flag h2{margin:0 0 8px;font-size:15px;line-height:1.5;font-weight:600}
 .about-credit-flag p{margin:0 0 12px}
 .about-credit-flag p:last-child{margin-bottom:0}
@@ -57,13 +57,13 @@
 
 .team-photo{display:block;position:relative;z-index:1;overflow:hidden;border-radius:12px 12px 0 0;aspect-ratio:1.5;background:#fff;flex-shrink:0}
 .team-photo>img{display:block;width:100%;height:100%;object-fit:cover}
-.team-photo::after{content:"";position:absolute;inset:0;background:#000f46;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.team-photo::after{content:"";position:absolute;inset:0;background:#002b49;opacity:0;pointer-events:none;transition:opacity .25s ease}
 @media(hover:hover){.team-photo:hover::after{opacity:.1}}
 a.team-photo:focus-visible::after{opacity:.1}
 @media(prefers-reduced-motion:reduce){.team-photo::after{transition:none}}
 .team-copy{transition:background-color .25s ease}
-@media(hover:hover){.team-card:has(.team-photo:hover)>.team-copy{background:#cff9f3}}
-.team-card:has(a.team-photo:focus-visible)>.team-copy{background:#cff9f3}
+@media(hover:hover){.team-card:has(.team-photo:hover)>.team-copy{background:#d3f5f2}}
+.team-card:has(a.team-photo:focus-visible)>.team-copy{background:#d3f5f2}
 @media(prefers-reduced-motion:reduce){.team-copy{transition:none}}
 /* Three evenly positioned funders, matching the PDF's relative logo sizes. */
 .about-authority h2{color:#fff}
@@ -130,7 +130,7 @@ a.team-photo:focus-visible::after{opacity:.1}
 .authority-image{margin:0;min-width:0}
 .authority-image>img{display:block}
 .authority-image figcaption{margin-top:10px}
-.authority-image-credit{color:#cde6f9;grid-column:auto}
+.authority-image-credit{color:#cfe7f9;grid-column:auto}
 .about-authority .authority-image-credit .about-credit-flag{color:#282828}
 .about-authority .authority-image-credit .about-credit-flag h2{font-size:15px;color:#282828;margin:0 0 8px}
 .about-authority .authority-image-credit .about-credit-flag p{font-size:16px;margin:0}
@@ -153,3 +153,34 @@ a.team-photo:focus-visible::after{opacity:.1}
 .partner-logo-half{height:auto;aspect-ratio:2294/442;container-type:inline-size}
 .partner-logo-half>a{height:100%;align-items:flex-end}
 .partner-logo-half img[src$="willmore-design-logo.svg"]{margin-bottom:4.4cqw}
+
+/* Keep the original scattered composition, with clearance for floating motion. */
+@media(min-width:701px){
+ .about-intro{padding-left:calc(clamp(20px,4.4vw,60px) + (min(100vw,1366px) - 2 * clamp(20px,4.4vw,60px))/3)}
+ .about-cells{inset:0 auto 0 0;margin:0 0 0 max(clamp(20px,4.4vw,60px),calc((100vw - 1366px)/2 + 60px));width:calc((min(100vw,1366px) - 2 * clamp(20px,4.4vw,60px))/3 - 28px);max-width:none;container-type:inline-size}
+ .about-cells .cell{height:auto;right:auto;bottom:auto}
+ .about-cells .cell-1{width:36%;left:0;top:0}
+ .about-cells .cell-2{width:19%;left:56%;top:38px}
+ .about-cells .cell-3{width:20%;left:68%;top:138px}
+ .about-cells .cell-4{width:10%;left:14%;top:185px}
+ .about-cells .cell-5{width:12%;left:85%;top:80px}
+ .about-cells .cell-7{width:19%;left:37%;top:265px}
+ .about-cells .cell-8{width:10%;left:42%;top:145px}
+}
+@media(max-width:700px){
+ .about-intro{padding-top:155px}
+ .about-cells{inset:0 clamp(20px,4.4vw,60px) auto;max-width:none;margin:0;height:135px}
+ .about-cells .cell{height:auto;right:auto;bottom:auto}
+ .about-cells .cell-1{width:23%;left:0;top:0}
+ .about-cells .cell-2{width:15%;left:31%;top:40px}
+ .about-cells .cell-3{width:15%;left:58%;top:8px}
+ .about-cells .cell-4{width:9%;left:83%;top:75px}
+ .about-cells .cell-5{width:10%;left:54%;top:100px}
+}
+@media(max-width:700px){
+ .about-intro{padding-top:185px}
+ .about-cells .cell-1{max-width:100px}
+ .about-cells .cell-2,.about-cells .cell-3{max-width:55px}
+ .about-cells .cell-4{max-width:33px}
+ .about-cells .cell-5{max-width:42px;top:110px}
+}

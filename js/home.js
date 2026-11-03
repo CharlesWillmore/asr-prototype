@@ -2,6 +2,14 @@
   const slides = [...document.querySelectorAll('.slide')];
   const dots = [...document.querySelectorAll('.slide-dots button')];
   let current = 0, timer, moving = false;
+  let paused = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pauseButton = document.querySelector('#slide-pause');
+  function updatePauseButton() {
+    pauseButton.setAttribute('aria-pressed', String(paused));
+    pauseButton.setAttribute('aria-label', paused ? 'Resume slideshow' : 'Pause slideshow');
+  }
+  pauseButton.addEventListener('click', () => { paused = !paused; updatePauseButton(); schedule(); });
+  updatePauseButton();
   slides.forEach((slide, i) => {
     slide.hidden = false;
     slide.classList.toggle('is-active', i === current);
@@ -10,7 +18,7 @@
   });
   function schedule() {
     clearTimeout(timer);
-    if (!moving && !document.hidden) timer = setTimeout(() => show(current + 1), 4000);
+    if (!paused && !moving && !document.hidden) timer = setTimeout(() => show(current + 1), 4000);
   }
   async function show(index, direction = 1) {
     if (moving) return;

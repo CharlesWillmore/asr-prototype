@@ -7,7 +7,7 @@
 .image-credit summary{cursor:pointer;list-style:none;text-decoration:none;min-height:24px}
 .image-credit summary::before{content:'ⓘ ';text-decoration:none}
 .image-credit summary::-webkit-details-marker{display:none}
-.image-credit-flag{position:absolute;z-index:1;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#e8f9f7;text-align:left;max-height:60vh;overflow-y:auto}
+.image-credit-flag{position:absolute;z-index:1;bottom:calc(100% + 8px);left:0;width:100%;box-sizing:border-box;padding:20px 24px;background:#effaf8;text-align:left;max-height:60vh;overflow-y:auto}
 .image-credit-flag h2{margin:0 0 8px;font-size:15px;line-height:1.5;font-weight:600}
 .image-credit-flag p{margin:0 0 12px}
 .image-credit-flag p:last-child{margin-bottom:0}

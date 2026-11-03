@@ -1,0 +1,45 @@
+/* Shared editorial-page styles. Home section headings retain their own design. */
+:root{--registry-link:#007768;--registry-blue-03:#cfe7f9;--registry-blue-06:#316b97}
+.about-main>section h2,.about-team>h2,.about-authority>div>h2,.about-partners>.about-inner>h2,.about-alumni>.about-inner>h2,.about-funders>.about-inner>h2,.faq-section-content>h2,.resources-main h2,.faq-intro h1,.contact-intro h1{font:500 26px/1.4 Inter,Arial,sans-serif}
+.about-main h3,.resources-main h3{font-size:18px;font-weight:600;line-height:1.35}
+body .registry-link{font:500 13px/1.5 Inter,Arial,sans-serif;text-transform:uppercase;color:var(--registry-link);text-decoration:none}
+body .registry-link:hover{text-decoration:underline;text-underline-offset:3px}
+.registry-link-arrow{display:inline-block;width:1.25cap;height:1cap;margin-left:4px;vertical-align:baseline;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.registry-link-arrow path{vector-effect:non-scaling-stroke}
+body .page-back-top{min-height:160px;padding-block:0;display:flex;align-items:center}
+body .page-back-top a{line-height:1;text-box-trim:trim-both;text-box-edge:cap alphabetic}
+body .page-back-top+.site-footer{margin-top:0}
+/* One credit style for banners and inline scientific images. */
+body :is(.about-image-credit,.faq-image-credit,.resources-image-credit,.image-credit) summary{font:400 16px/1.4 Inter,Arial,sans-serif;gap:8px}
+body :is(.about-image-credit,.faq-image-credit,.resources-image-credit,.image-credit) summary::before{font-size:20px;line-height:1;width:20px;flex-basis:20px}
+body :is(.about-credit-flag,.faq-credit-flag,.resources-credit-flag,.image-credit-flag){font:400 16px/1.5 Inter,Arial,sans-serif}
+body :is(.about-main,.faq-section,.resources-main,.contact-main,.about-banner,.faq-banner,.resources-banner,.contact-banner) :is(.about-credit-flag,.faq-credit-flag,.resources-credit-flag,.image-credit-flag) h2{font:600 15px/1.5 Inter,Arial,sans-serif;margin:0 0 12px}
+body :is(.about-main,.faq-section,.resources-main,.contact-main,.about-banner,.faq-banner,.resources-banner,.contact-banner) :is(.about-credit-flag,.faq-credit-flag,.resources-credit-flag,.image-credit-flag) p{font:400 16px/1.5 Inter,Arial,sans-serif;margin:0}
+body :is(.about-credit-flag,.faq-credit-flag,.resources-credit-flag,.image-credit-flag) p+p{margin-top:12px!important}
+#slide-pause{display:grid;place-items:center;padding:6px}
+.slider-play-mark{display:none}
+#slide-pause[aria-pressed="true"] .slider-pause-mark{display:none}
+#slide-pause[aria-pressed="true"] .slider-play-mark{display:block}
+@media(max-width:700px){
+ .about-main>section h2,.about-team>h2,.about-authority>div>h2,.about-partners>.about-inner>h2,.about-alumni>.about-inner>h2,.about-funders>.about-inner>h2,.faq-section-content>h2,.resources-main h2,.faq-intro h1,.contact-intro h1{font-size:23px}
+}
+@media(max-width:600px){
+ body .page-back-top{min-height:144px}
+ .about-intro>p,.faq-intro-copy>p,.resources-intro p,.contact-intro>p{font-size:20px;line-height:1.5}
+ body .registry-link{font-size:14px}
+}
+@media(max-width:739px){
+ body .header-inner,body .listing-toolbar .toolbar-inner,body .home-toolbar .home-toolbar-inner,
+ .about-inner,.faq-main,.resources-inner,.contact-main,.about-image-caption,.faq-image-caption,.resources-image-caption,.contact-banner figcaption,
+ .home-page .slide-copy,.home-page .home-tiles,.variant-inner,.curation-inner,.interoperability-inner,.top-disease-inner{padding-inline:16px}
+ .body-system-heading,.location-heading{padding-inline:16px}
+ .location-inner{padding-inline:0}
+ .body-system-mobile,.location-mobile-tree{margin-inline:16px}
+ body .page-back-top{padding-inline:16px}
+ .about-intro{padding-left:16px;padding-right:16px}
+}
+@media(min-width:701px) and (max-width:739px){
+ .about-intro{padding-left:calc(16px + (100vw - 32px)/3)}
+}
+@media(max-width:700px){.about-cells{left:16px;right:16px}}
+@media(prefers-reduced-motion:reduce){.cell{animation:none!important;translate:none!important}}
