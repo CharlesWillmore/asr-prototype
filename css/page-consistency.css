@@ -4,7 +4,7 @@
 .about-main h3,.resources-main h3{font-size:18px;font-weight:600;line-height:1.35}
 body .registry-link{font:500 13px/1.5 Inter,Arial,sans-serif;text-transform:uppercase;color:var(--registry-link);text-decoration:none}
 body .registry-link:hover{text-decoration:underline;text-underline-offset:3px}
-.registry-link-arrow{display:inline-block;width:1.25cap;height:1cap;margin-left:4px;vertical-align:baseline;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.registry-link-arrow{display:inline-block;width:1.15em;height:1.15em;width:1.6cap;height:1.6cap;flex-shrink:0;overflow:visible;margin-left:4px;vertical-align:-.3cap;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .registry-link-arrow path{vector-effect:non-scaling-stroke}
 body .page-back-top{min-height:160px;padding-block:0;display:flex;align-items:center}
 body .page-back-top a{line-height:1;text-box-trim:trim-both;text-box-edge:cap alphabetic}
@@ -44,5 +44,5 @@ body :is(.about-credit-flag,.faq-credit-flag,.resources-credit-flag,.image-credi
 @media(max-width:700px){.about-cells{left:16px;right:16px}}
 @media(prefers-reduced-motion:reduce){.cell{animation:none!important;translate:none!important}}
 
-/* Leave clearance above publication arrows so their top stroke is not clipped. */
-.publication-link .registry-link-arrow{width:1.25cap;height:1.25cap}
+/* Publication arrows use the same padded geometry as other content links. */
+.publication-link .registry-link-arrow{width:1.15em;height:1.15em;width:1.6cap;height:1.6cap;flex-shrink:0;overflow:visible}
